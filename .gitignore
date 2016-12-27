@@ -1,1 +1,9 @@
+# Ignore Everything
+# Look at article mentioned in README, files are added with 'git add -f FILE_NAME_HERE'
 *
+
+# Some exceptions to the above rule
+!.bash_aliases.sh
+!.bash_functions/*
+!.bash_libs/*
+!.initial_install.sh
