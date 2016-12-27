@@ -7,11 +7,11 @@ _user_source() {
 
 # Function to source all files in folder
 _source_all() {
-	 for f in /home/$(whoami)/$1/*; do source $f; done;
+	 for f in /home/$(whoami)/$1/*.sh; do source $f; done;
 }
 
 # load our bash aliases
-_user_source .bash_aliases
+_user_source .bash_aliases.sh
 
 # load our bash function
 _source_all .bash_functions
