@@ -6,7 +6,7 @@ user_source() {
 }
 
 # Load Our bash libraries
-user_source .bash_libs/main.sh
+user_source .bash_libs/index.sh
 
 # Load NVM
 export NVM_DIR="/home/$(whoami)/.nvm"
