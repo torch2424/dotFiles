@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Bash Aliases by: torch2424
-# https://github.com/torch2424/dotFiles
+# Repo: https://github.com/torch2424/dotFiles 
 
 # Source our .bashrc again
 alias resource='source /home/$(whoami)/.bashrc'
