@@ -3,6 +3,9 @@
 # Bash Aliases by: torch2424
 # https://github.com/torch2424/dotFiles
 
+# Default ls with colors
+alias ls="ls --color"
+
 #Android aliases
 alias androidstudio="sh ~/android-studio/bin/studio.sh"
 

@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 
-# Load Bash Sexy theme
-# https://github.com/twolfson/sexy-bash-prompt/blob/master/.bash_prompt
-source ~/.sexy_bash.sh
+#Fucntion to source from the user home directory
+user_source() {
+	source /home/$(whoami)/$1
+}
+
+# Load Our bash libraries
+user_source .bash_libs/main.sh
 
 # Load NVM
 export NVM_DIR="/home/$(whoami)/.nvm"
@@ -10,4 +14,4 @@ export NVM_DIR="/home/$(whoami)/.nvm"
 
 
 # Load our aliases
-source .bash_aliases
+user_source .bash_aliases
