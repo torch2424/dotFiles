@@ -3,13 +3,13 @@
 # Bash Aliases by: torch2424
 # https://github.com/torch2424/dotFiles
 
+# Source our .bashrc again
+alias resource='source /home/$(whoami)/.bashrc'
+
 # Default ls with colors
 alias ls="ls --color"
 
-#Android aliases
-alias androidstudio="sh ~/android-studio/bin/studio.sh"
-
-#Github Aliases
+# Github Aliases
 alias gs='git status '
 alias gc='git commit'
 alias ga='git add -A '
@@ -19,7 +19,7 @@ alias gpo='git push origin '
 alias gpom='git push origin master '
 alias gpoh='git push origin HEAD '
 
-#Vagrant Aliases
+# Vagrant Aliases
 alias vu='vagrant up'
 alias vh='vagrant halt'
 alias vs='vagrant status'
@@ -31,15 +31,15 @@ alias cdv='cd ~/vagrantBox/'
 alias cds='cd ~/vagrantBox/source/'
 alias cdg='cd ~/vagrantBox/goPath/'
 
-#Cool speedtest alias, works by using wget
-#(Which shows speed in kilobytes per second
-#or Megabytes per second)
-#And tries to download an ubuntu iso
-#(Which has no affiliation to isps)
-#to a directory that auto deletes itself
+# Cool speedtest alias, works by using wget
+# (Which shows speed in kilobytes per second
+# or Megabytes per second)
+# And tries to download an ubuntu iso
+# (Which has no affiliation to isps)
+# to a directory that auto deletes itself
 alias speedtest='wget -O/dev/null https://dl.google.com/dl/android/studio/ide-zips/2.2.2.0/android-studio-ide-145.3360264-linux.zip'
 
-#Alias to scan wifi for things like raspberry pi's
+# Alias to scan wifi for things like raspberry pi's
 alias scanwifi='nmap -sP 192.168.1.0/24'
 alias scanwifi-onhub='nmap -sP 192.168.86.0/24'
 
