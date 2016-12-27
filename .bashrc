@@ -1,15 +1,23 @@
 #!/usr/bin/env bash
 
 #Fucntion to source from the user home directory
-user_source() {
+_user_source() {
 	source /home/$(whoami)/$1
 }
 
+# Function to source all files in folder
+_source_all() {
+	 for f in /home/$(whoami)/$1/*; do source $f; done;
+}
+
 # load our bash aliases
-user_source .bash_aliases
+_user_source .bash_aliases
+
+# load our bash function
+_source_all .bash_functions
 
 # Load Our bash libraries
-user_source .bash_libs/index.sh
+_user_source .bash_libs/index.sh
 
 # Load NVM
 export NVM_DIR="/home/$(whoami)/.nvm"
