@@ -9,4 +9,6 @@ The index.sh is sourced, which then handles loading these libraries in an approp
 
 [json.sh](https://github.com/dominictarr/JSON.sh)
 
+[sshrc.sh](https://github.com/Russell91/sshrc)
+
 [sexy_bash_prompt](https://github.com/twolfson/sexy-bash-prompt)
