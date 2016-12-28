@@ -6,6 +6,9 @@
 # Source our .bashrc again
 alias resource='source /home/$(whoami)/.bashrc'
 
+# Install .debs with ease
+alias install-deb="sudo dpkg -i "
+
 # Default ls with colors
 alias ls="ls --color"
 
