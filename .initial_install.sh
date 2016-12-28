@@ -27,7 +27,7 @@ gsettings set com.canonical.Unity.Launcher launcher-position Bottom
 
 # Change the status bar transparency
 # Get transparency: gsettings get org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ panel-opacity
-gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ panel-opacity 0.5
+gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ panel-opacity 0.25
 
 # Enable workspaces, and change size
 # Enable workspaces in Settings > Appearance > Behavior
