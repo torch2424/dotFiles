@@ -5,7 +5,8 @@
 echo "sshrc sourcing files..."
 
 # Source our vimrc
-source $SSHHOME/.sshrc.d/.vimrc
+export MYVIMRC='$SSHHOME/.sshrc.d/.vimrc'
+export VIMINIT='source $MYVIMRC'
 
 #Source our aliases
 source $SSHHOME/.sshrc.d/.bash_aliases.sh
