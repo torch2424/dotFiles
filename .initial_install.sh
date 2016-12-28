@@ -29,6 +29,11 @@ gsettings set com.canonical.Unity.Launcher launcher-position Bottom
 # Get transparency: gsettings get org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ panel-opacity
 gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ panel-opacity 0.5
 
+# Enable workspaces, and change size
+# Enable workspaces in Settings > Appearance > Behavior
+gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ hsize 3
+gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ vsize 3
+
 # Configure our git
 git config --global user.email "aaron@aaronthedev.com"
 git config --global user.name "Aaron Turner"
