@@ -8,3 +8,4 @@ _source_all .bash_libs/sexy_prompt
 alias json="sh /home/$(whoami)/.bash_libs/JSON.sh < "
 alias wifi="/home/$(whoami)/.bash_libs/wifi.sh "
 alias gifgen="/home/$(whoami)/.bash_libs/gifgen.sh "
+alias sshrc="/home/$(whoami)/.bash_libs/sshrc.sh "

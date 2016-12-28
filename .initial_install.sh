@@ -12,7 +12,7 @@ sudo add-apt-repository -y ppa:moka/stable
 sudo apt-get update
 
 # Install Some apt-get packages (Some from ppas)
-sudo apt-get install -y vim git atom ubuntu-restricted-extras vlc tlp tlp-rdw numix-icon-theme-circle steam conky moka-icon-theme gparted 
+sudo apt-get install -y vim git atom ubuntu-restricted-extras vlc tlp tlp-rdw numix-icon-theme-circle steam conky moka-icon-theme gparted
 
 # Start tlp for battery savings
 sudo tlp start
