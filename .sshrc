@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# This file will be run on ssh, along with files in ssh.d
+# Acces the file from: $SSHHOME/.sshrc.d/FILE_NAME_HERE
+echo "hello!"
