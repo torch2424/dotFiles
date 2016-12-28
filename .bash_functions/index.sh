@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-# Temp File remove once actual scripts are added
+# source our bash function
+source /home/$(whoami)/.bash_functions/curlsh.sh
