@@ -2,4 +2,10 @@
 
 # This file will be run on ssh, along with files in ssh.d
 # Acces the file from: $SSHHOME/.sshrc.d/FILE_NAME_HERE
-echo "hello!"
+echo "sshrc sourcing files..."
+
+# Source our vimrc
+source $SSHHOME/.sshrc.d/.vimrc
+
+#Source our aliases
+source $SSHHOME/.sshrc.d/.bash_aliases.sh
