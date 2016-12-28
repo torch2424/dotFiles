@@ -19,6 +19,9 @@ _source_all .bash_functions
 # Load Our bash libraries
 _user_source .bash_libs/index.sh
 
+# Cache our Git credentials
+git config --global credential.helper 'cache --timeout=36000'
+
 # Load NVM
 export NVM_DIR="/home/$(whoami)/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
