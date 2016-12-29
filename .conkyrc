@@ -8,9 +8,11 @@ xftalpha 1
 update_interval 1.0
 total_run_times 0
 own_window yes
-own_window_transparent yes
-own_window_type desktop
 own_window_argb_visual yes
+# Going to use semi transparent background
+#own_window_transparent yes
+own_window_argb_value 180
+own_window_type desktop
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 double_buffer yes
 minimum_size 200 200
@@ -82,10 +84,10 @@ wlan0: $alignr ${offset -4}${addr wlan0}
 └:::: Down:$alignr ${offset -10}${downspeedf wlan0}
 
 
-
-┌───────────────────────────┐
-│ Temp:$alignr${offset -1}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ kcak temperature 15}°F │
-│ Humidity:$alignr${offset -1}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ kcak humidity 15}% │
-│ Conditions:$alignr${offset -1}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ kcak cloud_cover 15} │
-│ Activity:$alignr${offset -1}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ kcak weather 15} │
-└───────────────────────────┘
+# No Weather for now
+#┌───────────────────────────┐
+#│ Temp:$alignr${offset -1}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ kcak temperature 15}°F │
+#│ Humidity:$alignr${offset -1}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ kcak humidity 15}% │
+#│ Conditions:$alignr${offset -1}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ kcak cloud_cover 15} │
+#│ Activity:$alignr${offset -1}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ kcak weather 15} │
+#└───────────────────────────┘
