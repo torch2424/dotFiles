@@ -4,6 +4,7 @@
 
 # Add our 3rd party ppas
 sudo add-apt-repository -y ppa:webupd8team/atom
+sudo add-apt-repository -y ppa:dawidd0811/neofetch
 sudo add-apt-repository -y ppa:linrunner/tlp
 sudo add-apt-repository -y ppa:numix/ppa
 sudo add-apt-repository -y ppa:moka/stable
@@ -12,7 +13,7 @@ sudo add-apt-repository -y ppa:moka/stable
 sudo apt-get update
 
 # Install Some apt-get packages (Some from ppas)
-sudo apt-get install -y vim git atom ubuntu-restricted-extras vlc tlp tlp-rdw numix-icon-theme-circle steam conky moka-icon-theme gparted
+sudo apt-get install -y vim git atom ubuntu-restricted-extras vlc tlp tlp-rdw numix-icon-theme-circle steam conky moka-icon-theme gparted neofetch
 
 # Start tlp for battery savings
 sudo tlp start
@@ -50,6 +51,10 @@ gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshel
 # Enable workspaces in Settings > Appearance > Behavior
 gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ hsize 3
 gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ vsize 3
+
+# Install our Ubuntu Themes
+# http://askubuntu.com/questions/660855/how-can-you-change-unitys-theme-from-the-command-line
+gsettings set org.gnome.desktop.interface icon-theme 'Numix-Circle'
 
 # Configure our git
 git config --global user.email "aaron@aaronthedev.com"
