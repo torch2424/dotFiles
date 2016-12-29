@@ -56,6 +56,12 @@ gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ vsize 3
 # http://askubuntu.com/questions/660855/how-can-you-change-unitys-theme-from-the-command-line
 gsettings set org.gnome.desktop.interface icon-theme 'Numix-Circle'
 
+# Get the vapor Video Boot Going
+rm -rf /home/$(whoami)/.vaporVideoBoot
+mkdir /home/$(whoami)/.vaporVideoBoot
+git clone https://github.com/torch2424/vaporVideoBoot.git /home/($whoami)/.vaporVideoBoot
+
+
 # Configure our git
 git config --global user.email "aaron@aaronthedev.com"
 git config --global user.name "Aaron Turner"

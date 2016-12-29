@@ -1,0 +1,91 @@
+##############################################
+# Settings
+##############################################
+background yes
+use_xft yes
+xftfont sans:pixelsize=11
+xftalpha 1
+update_interval 1.0
+total_run_times 0
+own_window yes
+own_window_transparent yes
+own_window_type desktop
+own_window_argb_visual yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+double_buffer yes
+minimum_size 200 200
+maximum_width 280
+draw_shades no
+draw_outline yes
+draw_borders no
+draw_graph_borders no
+
+#default_color 656667	#Default Grey
+#default_color fff1a1	#A Bright Yellow
+#default_color cd8905	#An orange color
+default_color ffffff
+
+default_shade_color 000000
+default_outline_color 000000
+alignment top_right
+gap_x 12
+gap_y 56
+no_buffers yes
+uppercase no
+cpu_avg_samples 2
+override_utf8_locale yes
+short_units yes
+temperature_unit fahrenheit
+##############################################
+#  Output
+##############################################
+#leet chars: ┤┤└└┴┴┐┐││┘┘┌┌├├┬┬┼┼┴┴── ││ ▽▼△▲▵▴▾▿
+TEXT
+┌───────────────────────────┐
+│ Uptime:        $uptime$alignr${offset -1}│
+├───────────────────────────┤
+│ Battery:       $battery$alignr${offset -1}│
+├┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┬┤
+
+┌ CPU 0 usage:$alignr ${offset -1}${cpu cpu0}% ┐
+├ CPU 1 usage:$alignr ${offset -1}${cpu cpu1}% ┤
+├ CPU 2 usage:$alignr ${offset -1}${cpu cpu2}% ┤
+└ CPU 3 usage:$alignr ${offset -1}${cpu cpu3}% ┘
+
+└┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┴┘
+
+
+RAM:$alignr$mem // $memmax
+${membar 15,130} ${voffset -10}$alignr$memperc% Used
+
+
+
+/ $alignr ${fs_used /} ${fs_bar 6,45 /} ${fs_size /}
+ ├─ /home $alignr${fs_used /home} ${fs_bar 6,45 /home}  ${fs_size /home}
+ ├─ /usr $alignr ${fs_used /usr} ${fs_bar 6,45 /usr} ${fs_size /usr}
+ ├─ /opt $alignr ${fs_used /opt} ${fs_bar 6,45 /opt} ${fs_size /opt}
+ ├─ /var $alignr ${fs_used /var} ${fs_bar 6,45 /var} ${fs_size /var}
+ └─ /tmp $alignr ${fs_used /tmp} ${fs_bar 6,45 /tmp} ${fs_size /tmp}
+
+Swap:$alignr $swap ${swapbar 6,45} $swapmax
+
+$alignc:::::::::::::::
+
+eth0: $alignr ${offset -4}${addr eth0}
+┌───────────────────────────┐
+├:::: Up:$alignr ${offset -10}${upspeedf eth0}
+└:::: Down:$alignr ${offset -10}${downspeedf eth0}
+
+wlan0: $alignr ${offset -4}${addr wlan0}
+┌───────────────────────────┐
+├:::: Up:$alignr ${offset -10}${upspeedf wlan0}
+└:::: Down:$alignr ${offset -10}${downspeedf wlan0}
+
+
+
+┌───────────────────────────┐
+│ Temp:$alignr${offset -1}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ kcak temperature 15}°F │
+│ Humidity:$alignr${offset -1}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ kcak humidity 15}% │
+│ Conditions:$alignr${offset -1}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ kcak cloud_cover 15} │
+│ Activity:$alignr${offset -1}${weather http://weather.noaa.gov/pub/data/observations/metar/stations/ kcak weather 15} │
+└───────────────────────────┘
