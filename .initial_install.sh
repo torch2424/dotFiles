@@ -68,3 +68,11 @@ git config --global user.name "Aaron Turner"
 
 
 # TODO: Install Node
+
+# FInished! Echo Some Reminders
+echo ""
+echo ""
+echo "Finished!"
+echo ""
+echo""
+echo"Please don't forget to create statup scripts for the vapor video boot, and set up syncthing at startup for consistent backups!"
