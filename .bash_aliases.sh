@@ -4,13 +4,13 @@
 # Repo: https://github.com/torch2424/dotFiles 
 
 # Source our .bashrc again
-alias re-source='source /home/$(whoami)/.bashrc'
+alias re-source='source ~/.bashrc'
 
 # Install .debs with ease
 alias install-deb="sudo dpkg -i "
 
 # Default ls with colors
-alias ls="ls --color"
+alias ls="ls -Gp"
 
 # Github Aliases
 alias gs='git status '

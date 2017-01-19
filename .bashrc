@@ -2,12 +2,12 @@
 
 #Fucntion to source from the user home directory
 _user_source() {
-	source /home/$(whoami)/$1
+	source ~/$1
 }
 
 # Function to source all files in folder
 _source_all() {
-	 for f in /home/$(whoami)/$1/*.sh; do source $f; done;
+	 for f in ~/$1/*.sh; do source $f; done;
 }
 
 # load our bash aliases
@@ -23,11 +23,11 @@ _user_source .bash_libs/index.sh
 git config --global credential.helper 'cache --timeout=36000'
 
 # Load NVM
-export NVM_DIR="/home/$(whoami)/.nvm"
+export NVM_DIR="~/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 #Npm no sudo
-export NPM_PACKAGES="/home/torch2424/.npm-packages"
+export NPM_PACKAGES="~/.npm-packages"
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules${NODE_PATH:+:$NODE_PATH}"
 export PATH="$NPM_PACKAGES/bin:$PATH"
 # Unset manpath so we can inherit from /etc/manpath via the `manpath`
