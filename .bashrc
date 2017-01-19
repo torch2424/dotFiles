@@ -23,7 +23,7 @@ _user_source .bash_libs/index.sh
 git config --global credential.helper 'cache --timeout=36000'
 
 # Load NVM
-export NVM_DIR="~/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 #Npm no sudo
