@@ -23,6 +23,7 @@ alias guc='git reset HEAD~ '
 alias gpo='git push origin '
 alias gpom='git push origin master '
 alias gpoh='git push origin HEAD '
+alias gic="git update-index --assume-unchanged "
 
 # Vagrant Aliases
 alias vu='vagrant up'
