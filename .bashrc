@@ -35,6 +35,8 @@ export PATH="$NPM_PACKAGES/bin:$PATH"
 unset MANPATH  # delete if you already modified MANPATH elsewhere in your config
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
+# Clear the console
+clear
 
 # Finally, load neo fetch if it is installed
 if hash neofetch 2>/dev/null; then

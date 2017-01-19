@@ -5,6 +5,8 @@
 
 # Source our .bashrc again
 alias re-source='source ~/.bashrc'
+alias resource="re-source"
+alias reSource="re-source"
 
 # Install .debs with ease
 alias install-deb="sudo dpkg -i "
