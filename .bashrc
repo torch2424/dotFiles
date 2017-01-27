@@ -42,3 +42,6 @@ clear
 if hash neofetch 2>/dev/null; then
         neofetch
 fi
+
+# Ls on init, because I always do this
+ls
