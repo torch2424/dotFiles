@@ -14,6 +14,9 @@ alias install-deb="sudo dpkg -i "
 # Default ls with colors
 alias ls="ls -Gp"
 
+# Default df with readable byte
+alias df="df -h"
+
 # Github Aliases
 alias gs='git status '
 alias gc='git commit'
