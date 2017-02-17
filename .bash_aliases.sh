@@ -40,6 +40,11 @@ alias cdv='cd ~/vagrantBox/'
 alias cds='cd ~/vagrantBox/source/'
 alias cdg='cd ~/vagrantBox/goPath/'
 
+# Ios Simulator alias: http://stackoverflow.com/questions/10379622/how-to-run-iphone-emulator-without-starting-xcode
+alias simulator='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
+alias iossimulator='simulator'
+alias ios-simulator='simulator'
+
 # Cool speedtest alias, works by using wget
 # (Which shows speed in kilobytes per second
 # or Megabytes per second)
