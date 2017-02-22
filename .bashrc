@@ -22,6 +22,10 @@ _user_source .bash_libs/index.sh
 # Cache our Git credentials
 git config --global credential.helper 'cache --timeout=36000'
 
+# Set Vim as default editor
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
 # Load NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -34,6 +38,11 @@ export PATH="$NPM_PACKAGES/bin:$PATH"
 # command
 unset MANPATH  # delete if you already modified MANPATH elsewhere in your config
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+
+#Set our OSX Java Path TODO: Add a conditional for ubuntu or osx
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home"
+# MFP For Work
+export PATH="/Applications/IBM/MobileFirst-CLI:$PATH"
 
 # Clear the console
 clear
