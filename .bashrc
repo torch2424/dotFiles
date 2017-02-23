@@ -43,8 +43,8 @@ export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/goPath
 
-#Set our OSX Java Path TODO: Add a conditional for ubuntu or osx
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home"
+#Set our OSX Java Path
+export JAVA_HOME=`/usr/libexec/java_home`
 # MFP For Work
 export PATH="/Applications/IBM/MobileFirst-CLI:$PATH"
 
