@@ -39,6 +39,10 @@ export PATH="$NPM_PACKAGES/bin:$PATH"
 unset MANPATH  # delete if you already modified MANPATH elsewhere in your config
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
+# Go Settings
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/goPath
+
 #Set our OSX Java Path TODO: Add a conditional for ubuntu or osx
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home"
 # MFP For Work
