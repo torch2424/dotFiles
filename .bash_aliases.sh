@@ -69,6 +69,10 @@ alias android-sdk="androidsdk"
 alias androidavd="androidsdk avd"
 alias android-avd="androidavd"
 
+#Pico 8 from console
+alias pico8="/Applications/PICO-8.app/Contents/MacOS/pico8"
+alias pico-8="pico8"
+
 # Cool speedtest alias, works by using wget
 # (Which shows speed in kilobytes per second
 # or Megabytes per second)
