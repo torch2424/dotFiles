@@ -3,6 +3,12 @@
 # Bash Aliases by: torch2424
 # Repo: https://github.com/torch2424/dotFiles 
 
+# Show our aliases
+alias showalias="cat ~/.bash_aliases.sh"
+alias showaliases="showalias"
+alias showbashalias="showalias"
+alias showbashalaises="showalias"
+
 # Source our .bashrc again
 alias re-source='source ~/.bashrc'
 alias resource="re-source"
@@ -17,6 +23,16 @@ alias ls="ls -Gp"
 # Default df with readable byte
 alias df="df -h"
 
+# Default cat to use syntax highlighting
+# Requires: https://www.npmjs.com/package/nocat
+cat() {
+    if hash nocat 2>/dev/null; then
+        nocat "$@"
+    else
+        cat "$@"
+    fi
+}
+
 # Github Aliases
 alias gs='git status '
 alias gc='git commit'
@@ -26,7 +42,8 @@ alias guc='git reset HEAD~ '
 alias gpo='git push origin '
 alias gpom='git push origin master '
 alias gpoh='git push origin HEAD '
-alias gic="git update-index --assume-unchanged "
+alias gauc="git update-index --assume-unchanged "
+alias guac="gauc"
 
 # Vagrant Aliases
 alias vu='vagrant up'
@@ -39,6 +56,22 @@ alias vd='vagrant destroy'
 alias cdv='cd ~/vagrantBox/'
 alias cds='cd ~/vagrantBox/source/'
 alias cdg='cd ~/vagrantBox/goPath/'
+
+# Ios Simulator alias: http://stackoverflow.com/questions/10379622/how-to-run-iphone-emulator-without-starting-xcode
+alias simulator='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
+alias iossimulator='simulator'
+alias ios-simulator='simulator'
+
+#Android SDK and simulator
+#http://stackoverflow.com/questions/19238476/mac-terminal-how-to-start-android-virtual-device-manager-on-cli
+alias androidsdk="bash ~/Library/Android/sdk/tools/android"
+alias android-sdk="androidsdk"
+alias androidavd="androidsdk avd"
+alias android-avd="androidavd"
+
+#Pico 8 from console
+alias pico8="/Applications/PICO-8.app/Contents/MacOS/pico8"
+alias pico-8="pico8"
 
 # Cool speedtest alias, works by using wget
 # (Which shows speed in kilobytes per second

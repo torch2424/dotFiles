@@ -22,6 +22,10 @@ _user_source .bash_libs/index.sh
 # Cache our Git credentials
 git config --global credential.helper 'cache --timeout=36000'
 
+# Set Vim as default editor
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
 # Load NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -34,6 +38,15 @@ export PATH="$NPM_PACKAGES/bin:$PATH"
 # command
 unset MANPATH  # delete if you already modified MANPATH elsewhere in your config
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
+
+# Go Settings
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/goPath
+
+#Set our OSX Java Path
+export JAVA_HOME=`/usr/libexec/java_home`
+# MFP For Work
+export PATH="/Applications/IBM/MobileFirst-CLI:$PATH"
 
 # Clear the console
 clear
