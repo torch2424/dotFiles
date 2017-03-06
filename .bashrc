@@ -43,14 +43,14 @@ export PATH="$NPM_PACKAGES/bin:$PATH"
 unset MANPATH  # delete if you already modified MANPATH elsewhere in your config
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
-# Nvm Fix
-nvm use --delete-prefix v6.9.2 --silent
+# Go Settings
+export PATH=$PATH:/usr/local/go/bin
+export GOPATH=$HOME/goPath
 
-# Installing Gogs/Go
-# https://www.digitalocean.com/community/tutorials/how-to-set-up-gogs-on-ubuntu-14-04
-export GOPATH=/home/gogs/goPath
-export GOROOT=/usr/local/src/go
-export PATH=${PATH}:$GOROOT/bin
+#Set our OSX Java Path
+export JAVA_HOME=`/usr/libexec/java_home`
+# MFP For Work
+export PATH="/Applications/IBM/MobileFirst-CLI:$PATH"
 
 # Clear the console
 clear
