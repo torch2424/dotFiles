@@ -30,8 +30,12 @@ export EDITOR="$VISUAL"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-#Npm no sudo
-export NPM_PACKAGES="~/.npm-packages"
+
+# Old Config from GOGS Install and things
+export NVM_DIR="/home/torch2424/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+export NPM_PACKAGES="/home/torch2424/.npm-packages"
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules${NODE_PATH:+:$NODE_PATH}"
 export PATH="$NPM_PACKAGES/bin:$PATH"
 # Unset manpath so we can inherit from /etc/manpath via the `manpath`
@@ -39,14 +43,14 @@ export PATH="$NPM_PACKAGES/bin:$PATH"
 unset MANPATH  # delete if you already modified MANPATH elsewhere in your config
 export MANPATH="$NPM_PACKAGES/share/man:$(manpath)"
 
-# Go Settings
-export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/goPath
+# Nvm Fix
+nvm use --delete-prefix v6.9.2 --silent
 
-#Set our OSX Java Path
-export JAVA_HOME=`/usr/libexec/java_home`
-# MFP For Work
-export PATH="/Applications/IBM/MobileFirst-CLI:$PATH"
+# Installing Gogs/Go
+# https://www.digitalocean.com/community/tutorials/how-to-set-up-gogs-on-ubuntu-14-04
+export GOPATH=/home/gogs/goPath
+export GOROOT=/usr/local/src/go
+export PATH=${PATH}:$GOROOT/bin
 
 # Clear the console
 clear
