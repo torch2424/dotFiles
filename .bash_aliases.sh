@@ -56,6 +56,8 @@ alias vd='vagrant destroy'
 alias cdv='cd ~/vagrantBox/'
 alias cds='cd ~/vagrantBox/source/'
 alias cdg='cd ~/vagrantBox/goPath/'
+alias cdpico='cd ~/Library/Application\ Support/pico-8/carts/'
+alias cdpico8='cdpico'
 
 # Ios Simulator alias: http://stackoverflow.com/questions/10379622/how-to-run-iphone-emulator-without-starting-xcode
 alias simulator='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
