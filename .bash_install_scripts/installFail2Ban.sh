@@ -6,7 +6,7 @@
 #@param $2 - The second argument, the line the will be replacing the entire first line
 #@param $3 - The Third/Last argument, the file this function will be run against
 find-replace-line() {
-    sed -i "/$1/c$2" $3
+    sudo sed -i "/$1/c$2" $3
 }
 
 # Install fail2ban
