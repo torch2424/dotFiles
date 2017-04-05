@@ -6,7 +6,7 @@
 #@param $2 - The second argument, the line the will be replacing the entire first line
 #@param $3 - The Third/Last argument, the file this function will be run against
 find-replace-line() {
-    sudo sed -i "/$1/c$2" $3
+    sudo sed -i "s/^$1.*/$2/" $3
 }
 
 # Install fail2ban
@@ -17,13 +17,12 @@ sudo apt-get install fail2ban
 sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
 
 # Replace some lines in the file
-find-replace-line "bantime =" "bantime = 10000000" /etc/fail2ban/jail.local
-find-replace-line "findtime =" "findtime = 6000" /etc/fail2ban/jail.local
+find-replace-line "bantime  =" "bantime  = 10000000" /etc/fail2ban/jail.local
+find-replace-line "findtime  =" "findtime  = 6000" /etc/fail2ban/jail.local
 find-replace-line "maxretry =" "maxretry = 10" /etc/fail2ban/jail.local
 
 # Enable for SSH
-find-replace-line "[ssh]" "[ssh]\nenable=true" /etc/fail2ban/jail.local
-find-replace-line "[sshd]" "[sshd]\nenable=true" /etc/fail2ban/jail.local
+find-replace-line "\[sshd\]" "[sshd]\nenable = true" /etc/fail2ban/jail.local
 
 # Restart fail2ban
 sudo service fail2ban stop
