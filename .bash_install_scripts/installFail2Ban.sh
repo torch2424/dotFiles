@@ -22,6 +22,7 @@ find-replace-line "findtime =" "findtime = 6000" /etc/fail2ban/jail.local
 find-replace-line "maxretry =" "maxretry = 10" /etc/fail2ban/jail.local
 
 # Enable for SSH
+# Remember we need to escape special characters!!!
 find-replace-line "[ssh]" "[ssh]\nenable=true" /etc/fail2ban/jail.local
 find-replace-line "[sshd]" "[sshd]\nenable=true" /etc/fail2ban/jail.local
 
