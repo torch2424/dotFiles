@@ -23,16 +23,6 @@ alias ls="ls -Gp"
 # Default df with readable byte
 alias df="df -h"
 
-# Default cat to use syntax highlighting
-# Requires: https://www.npmjs.com/package/nocat
-cat() {
-    if hash nocat 2>/dev/null; then
-        nocat "$@"
-    else
-        cat "$@"
-    fi
-}
-
 # Github Aliases
 alias gs='git status '
 alias gc='git commit'

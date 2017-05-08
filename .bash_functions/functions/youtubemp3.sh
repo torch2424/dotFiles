@@ -17,3 +17,4 @@ youtubemp3() {
 
 alias youtube-mp3="youtubemp3"
 alias youtubeMp3="youtubemp3"
+alias youtubetomp3="youtubemp3"
