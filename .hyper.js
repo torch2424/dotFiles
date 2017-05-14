@@ -1,7 +1,7 @@
 module.exports = {
   config: {
     // default font size in pixels for all tabs
-    fontSize: 12,
+    fontSize: 13,
 
     // font family with optional fallbacks
     fontFamily: 'Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
@@ -67,10 +67,10 @@ module.exports = {
     bell: 'SOUND',
 
     // if true, selected text will automatically be copied to the clipboard
-    copyOnSelect: true,
+    copyOnSelect: false,
 
     // URL to custom bell
-    bellSoundURL: 'https://files.aaronthedev.com/$/w997m'
+    bellSoundURL: 'https://files.aaronthedev.com/$/apg9a'
 
     // for advanced config flags please refer to https://hyper.is/#cfg
   },

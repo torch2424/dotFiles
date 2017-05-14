@@ -29,6 +29,7 @@ export EDITOR="$VISUAL"
 # Load NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This l    oads nvm bash_completion
 
 # Npm no Sudo
 export NPM_PACKAGES="~/.npm-packages"
