@@ -32,10 +32,10 @@ export NVM_DIR="$HOME/.nvm"
 
 
 # Old Config from GOGS Install and things
-export NVM_DIR="/home/torch2424/.nvm"
+export NVM_DIR="~/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
-export NPM_PACKAGES="/home/torch2424/.npm-packages"
+export NPM_PACKAGES="~/.npm-packages"
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules${NODE_PATH:+:$NODE_PATH}"
 export PATH="$NPM_PACKAGES/bin:$PATH"
 # Unset manpath so we can inherit from /etc/manpath via the `manpath`
