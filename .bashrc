@@ -45,8 +45,6 @@ export GOPATH=$HOME/goPath
 
 #Set our OSX Java Path
 export JAVA_HOME=`/usr/libexec/java_home`
-# MFP For Work
-export PATH="/Applications/IBM/MobileFirst-CLI:$PATH"
 
 # Clear the console
 clear
