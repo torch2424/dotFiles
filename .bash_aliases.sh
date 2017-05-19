@@ -43,11 +43,20 @@ alias vssh='vagrant ssh'
 alias vd='vagrant destroy'
 
 # cd aliases
-alias cdv='cd ~/vagrantBox/'
-alias cds='cd ~/vagrantBox/source/'
-alias cdg='cd ~/vagrantBox/goPath/'
+alias cdvs='cd ~/vagrantBox/'
+alias cds='cd ~/Source/'
+alias cdg='cd ~/goPath/'
 alias cdpico='cd ~/Library/Application\ Support/pico-8/carts/'
 alias cdpico8='cdpico'
+
+# tmux aliasas
+alias tmuxnew='tmux new -s'
+alias tmuxkill='tmux kill-session -t'
+alias tmuxrm='tmuxkill'
+alias tmuxls='tmux ls'
+alias tmuxattach='tmux attach -t'
+alias tmuxattatch='tmuxattach'
+alias tmuxjoin='tmuxattach'
 
 # Ios Simulator alias: http://stackoverflow.com/questions/10379622/how-to-run-iphone-emulator-without-starting-xcode
 alias simulator='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
