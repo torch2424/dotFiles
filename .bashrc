@@ -29,13 +29,10 @@ export EDITOR="$VISUAL"
 # Load NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This l    oads nvm bash_completion
 
-
-# Old Config from GOGS Install and things
-export NVM_DIR="/home/torch2424/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
-export NPM_PACKAGES="/home/torch2424/.npm-packages"
+# Npm no Sudo
+export NPM_PACKAGES="~/.npm-packages"
 export NODE_PATH="$NPM_PACKAGES/lib/node_modules${NODE_PATH:+:$NODE_PATH}"
 export PATH="$NPM_PACKAGES/bin:$PATH"
 # Unset manpath so we can inherit from /etc/manpath via the `manpath`
@@ -49,8 +46,6 @@ export GOPATH=$HOME/goPath
 
 #Set our OSX Java Path
 export JAVA_HOME=`/usr/libexec/java_home`
-# MFP For Work
-export PATH="/Applications/IBM/MobileFirst-CLI:$PATH"
 
 # Clear the console
 clear
