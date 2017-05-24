@@ -47,6 +47,9 @@ export GOPATH=$HOME/goPath
 #Set our OSX Java Path
 export JAVA_HOME=`/usr/libexec/java_home`
 
+# Set our OSX Android Path
+export ANDROID_PATH="/Users/aaron/Library/Android/sdk"
+
 # Clear the console
 clear
 
