@@ -49,6 +49,10 @@ alias cdg='cd ~/goPath/'
 alias cdpico='cd ~/Library/Application\ Support/pico-8/carts/'
 alias cdpico8='cdpico'
 
+#Copy recursively with progress
+alias copyprogress='rsync -avh --progress'
+alias cpprogress='copyprogress'
+
 # tmux aliasas
 alias tmuxnew='tmux new -s'
 alias tmuxkill='tmux kill-session -t'
