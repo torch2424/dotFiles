@@ -1,0 +1,1 @@
+apm install editorconfig es6-javascript atom-ternjs javascript-snippets linter linter-eslint language-babel autocomplete-modules file-icons atom-beautifyatom-typescript linter-golinter atom-zentabs gruvbox-plus-syntax
