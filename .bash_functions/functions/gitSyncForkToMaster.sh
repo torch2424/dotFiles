@@ -8,6 +8,11 @@ gitSyncForkToMaster() {
         echo "Exiting..."
         return 1;
     fi
+    
+    # Remove the old upstream
+    echo "Removing any old 'upstream' remote..."
+    git remote rm upstream
+
     # Add the remote, call it "upstream":
 
     git remote add upstream $1
