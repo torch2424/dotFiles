@@ -8,6 +8,10 @@ alias showalias="cat ~/.bash_aliases.sh"
 alias showaliases="showalias"
 alias showbashalias="showalias"
 alias showbashalaises="showalias"
+alias listalias="showalias"
+alias listaliases="showalias"
+alias lsalias="showalias"
+alias lsaliases="showalias"
 
 # Source our .bashrc again
 alias re-source='source ~/.bashrc'
