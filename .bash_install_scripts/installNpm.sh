@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Don't allow running as root, as it will not work
+if [ "$EUID" == 0 ]
+then echo "Do not run as root. Run as your user to get nvm, and no sudo npm install -g working :)"
+   exit
+fi
+
 #Install NVM (Node Version Manager)
 curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | sh
 source ~/.bashrc
