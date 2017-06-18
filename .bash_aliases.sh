@@ -66,6 +66,12 @@ alias tmuxattach='tmux attach -t'
 alias tmuxattatch='tmuxattach'
 alias tmuxjoin='tmuxattach'
 
+# Show our current app ports
+alias showports="sudo netstat -lptn"
+alias showserver="showports"
+alias showport="showports"
+alias showservers="showports"
+
 # Ios Simulator alias: http://stackoverflow.com/questions/10379622/how-to-run-iphone-emulator-without-starting-xcode
 alias simulator='open /Applications/Xcode.app/Contents/Developer/Applications/Simulator.app'
 alias iossimulator='simulator'
