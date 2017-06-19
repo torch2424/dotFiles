@@ -15,9 +15,11 @@ nvm install stable
 node -v
 
 # Echo how to set global npm packages in Home directory
-echo 'npm is notorious for getting permissions messed up, for using "npm install -g ..." in inappropriate places'
+echo 'npm is notorious for getting permissions messed up, for using "sudo npm install -g ..." in inappropriate places'
 echo "If you would like to have global packages installed to your home directory, and this is reccomended, please add the following to your .bashrc"
+echo 'Please note, if you do enable this, you will no longer need "sudo npm install -g .." and you should not be using sudo for this, as the packages are installed in your home directory'
 echo "------------------------------------------"
+echo "~/.bashrc"
 echo " "
 echo '# Npm no Sudo
 export NPM_PACKAGES="~/.npm-packages"
