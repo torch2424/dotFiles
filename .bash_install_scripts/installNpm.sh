@@ -15,7 +15,7 @@ nvm install stable
 node -v
 
 # Echo how to set global npm packages in Home directory
-echo "npm is notorious for getting permissions messed up, for using `npm install -g ...` in inappropriate places"
+echo 'npm is notorious for getting permissions messed up, for using "npm install -g ..." in inappropriate places'
 echo "If you would like to have global packages installed to your home directory, and this is reccomended, please add the following to your .bashrc"
 echo "------------------------------------------"
 echo " "
