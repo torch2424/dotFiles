@@ -13,6 +13,10 @@ alias listaliases="showalias"
 alias lsalias="showalias"
 alias lsaliases="showalias"
 
+# Show our functions
+alias showfunction='ls ~/.bash_functions/functions'
+alias showfunctions='showfunction'
+
 # Source our .bashrc again
 alias re-source='source ~/.bashrc'
 alias resource="re-source"
