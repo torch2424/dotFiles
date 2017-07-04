@@ -70,7 +70,7 @@ module.exports = {
     copyOnSelect: false,
 
     // URL to custom bell
-    bellSoundURL: 'https://files.aaronthedev.com/$/apg9a'
+    bellSoundURL: 'https://files.aaronthedev.com/$/s4rq9'
 
     // for advanced config flags please refer to https://hyper.is/#cfg
   },
