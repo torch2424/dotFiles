@@ -1,0 +1,58 @@
+# Home Page / Portfolio site
+aaronthedev.com {
+    gzip
+    proxy / localhost:8000 {
+        transparent
+    }
+}
+
+# Droppy File Server
+files.aaronthedev.com {
+    proxy / localhost:8989 {
+        transparent
+        websocket
+    }
+}
+
+# Leah's Portfolio Site
+leahrosegarza.com {
+    gzip
+    proxy / localhost:2525 {
+        transparent
+    }
+}
+
+# Sayonara Docs Pags
+sayonarajs.com {
+    gzip
+    proxy / localhost:4200 {
+        transparent
+    }
+}
+
+# Aaronthedev blog
+blog.aaronthedev.com {
+    gzip
+    proxy / localhost:8080 {
+        transparent
+    }
+}
+
+# Gogs, Aaronthedev git
+git.aaronthedev.com {
+    proxy / localhost:3000 {
+        transparent
+    }
+}
+
+# Mongo Manager, Similar to phpmy admin
+mongo.aaronthedev.com {
+    proxy / localhost:7000 {
+        transparent
+    }
+}
+
+# Testbuild, Droppy directory for hosting quick builds
+testbuild.aaronthedev.com {
+    browse /home/torch2424/droppyFileServer/files/testbuild.aaronthedev.com
+}
