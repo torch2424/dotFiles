@@ -1,4 +1,5 @@
 # Pi Hole
+# https://github.com/pi-hole/pi-hole/wiki/Caddy-Webserver-Frontend
 0.0.0.0:80 {
   root /var/www/html/pihole
 
@@ -18,4 +19,3 @@ karen.aaronthedev.com {
         transparent
     }
 }
-
