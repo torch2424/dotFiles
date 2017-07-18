@@ -1,0 +1,15 @@
+# Pi Hole
+0.0.0.0:80 {
+  root /var/www/html/pihole
+
+  rewrite {
+    ext js
+    to index.js
+  }
+
+  proxy / localhost:1080 {
+    transparent
+  }
+}
+
+
