@@ -11,13 +11,13 @@ _source_all() {
 }
 
 # load our bash aliases
-_user_source .bash_aliases.sh
+_user_source .files_aliases.sh
 
 # load our bash function
-_source_all .bash_functions
+_source_all .files_functions
 
 # Load Our bash libraries
-_user_source .bash_libs/index.sh
+_user_source .files_libs/index.sh
 
 # Cache our Git credentials
 git config --global credential.helper 'cache --timeout=36000'
