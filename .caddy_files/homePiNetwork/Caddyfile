@@ -12,4 +12,10 @@
   }
 }
 
+# Karen Go Smart Home
+karen.aaronthedev.com {
+    proxy / localhost:4000 {
+        transparent
+    }
+}
 
