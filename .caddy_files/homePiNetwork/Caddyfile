@@ -41,3 +41,11 @@ mail.aaronthedev.com {
         transparent
     }
 }
+
+#Galaxy Noise Radio Droppy
+files.galaxynoiseradio.com {
+    proxy / http://192.168.86.193:8989 {
+        transparent
+        websocket
+    }
+}

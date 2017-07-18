@@ -9,7 +9,7 @@ After=network.target
 Type=simple
 User=[INSERT USER HERE]
 WorkingDirectory=/home/[INSERT USER HERE]
-ExecStart=/bin/bash --login -c 'source /home/${whoami}/.bashrc; cd ~/.caddy_files/[Caddyfile Dir] && caddy'
+ExecStart=/bin/bash --login -c 'source /home/${whoami}/.bashrc; cd ~/.caddy_files/[Caddyfile Dir] && caddy -email [EMAIL HERE]'
 Restart=always
 
 [Install]
