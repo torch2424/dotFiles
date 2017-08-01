@@ -19,3 +19,7 @@ function backupPiSd() {
         echo "Or, if using torch2424/dotFiles, simply run the piShrink function!"
     fi
 }
+
+alias backuppi="backupPiSd"
+alias backuppiSd="backuppi"
+alias backup-pi-sd="backuppi"
