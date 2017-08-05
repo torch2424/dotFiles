@@ -58,5 +58,9 @@ mongo.aaronthedev.com {
 
 # Testbuild, Droppy directory for hosting quick builds
 testbuild.aaronthedev.com {
+<<<<<<< HEAD
+    browse /home/torch2424/droppyFileServer/files/testbuild.aaronthedev.com
+=======
     root /home/torch2424/droppyFileServer/files/testbuild.aaronthedev.com
+>>>>>>> c0486c45e860d113175bab0141896281e47c31ce
 }

@@ -4,7 +4,7 @@
 # Repo: https://github.com/torch2424/dotFiles 
 
 # Show our aliases
-alias showalias="cat ~/.bash_aliases.sh"
+alias showalias="cat ~/.files_aliases.sh"
 alias showaliases="showalias"
 alias showbashalias="showalias"
 alias showbashalaises="showalias"
@@ -14,7 +14,7 @@ alias lsalias="showalias"
 alias lsaliases="showalias"
 
 # Show our functions
-alias showfunction='ls ~/.bash_functions/functions'
+alias showfunction='ls ~/.files_functions/functions'
 alias showfunctions='showfunction'
 
 # Source our .bashrc again
