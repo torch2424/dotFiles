@@ -4,7 +4,12 @@
 gitgif() {
   if [ $# -ne 1 ]; then
     echo "This will make a best guess to convert a video into a github friendly .gif"
-    echo "USAGE: $0 [video file e.g (example.mp4)] [Optional: width of new video to scale to e.g 320]"
+    echo "Works best on videos ~30s"
+    echo " "
+    echo " "
+    echo "USAGE:"
+    echo " "
+    echo "    gitgif [video file e.g (example.mp4)] [Optional: width of new video to scale to e.g 320]"
   elif ! type "ffmpeg" > /dev/null 2>&1; then
     echo "ffmpeg and gifgen are required for $0"
   elif ! type "gifgen" > /dev/null 2>&1; then
