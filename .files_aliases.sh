@@ -113,3 +113,8 @@ alias screenrecord='ffmpeg -f x11grab -s 1280x720 -r 30 -i :0 screenrecord.avi'
 # Weather
 alias w='curl wttr.in'
 alias weather='w'
+
+# Use local project webpack
+# From the docs:
+# https://webpack.js.org/guides/getting-started/
+alias webpack='./node_modules/.bin/webpack --config webpack.config.js'
