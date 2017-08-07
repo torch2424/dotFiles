@@ -2,7 +2,7 @@
 
 
 gitgif() {
-  if [ $# -ne 1 ]; then
+  if [ $# -lt 1 ] || [ $# -gt 2 ]; then
     echo "This will make a best guess to convert a video into a github friendly .gif"
     echo "Works best on videos ~30s"
     echo " "
