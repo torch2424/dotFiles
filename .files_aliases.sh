@@ -109,3 +109,7 @@ alias scanwifi-onhub='nmap -sP 192.168.86.0/24'
 # -i is the x display
 # -s is video size (Make this bigger if only recording terminal or something. Starts from upper left corner of display)
 alias screenrecord='ffmpeg -f x11grab -s 1280x720 -r 30 -i :0 screenrecord.avi'
+
+# Weather
+alias w='curl wttr.in'
+alias weather='w'
