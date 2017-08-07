@@ -12,8 +12,16 @@ gitgif() {
     echo "    gitgif [video file e.g (example.mp4)] [Optional: width of new video to scale to e.g 320]"
   elif ! type "ffmpeg" > /dev/null 2>&1; then
     echo "ffmpeg and gifgen are required for $0"
+    echo "OSX: brew install gifgen"
+    echo "OSX: brew install ffmpeg"
+    echo "Ubuntu: https://github.com/lukechilds/gifgen"
+    echo "Ubuntu: sudo apt-get install ffmpeg"
   elif ! type "gifgen" > /dev/null 2>&1; then
     echo "ffmpeg and gifgen are required for $0"
+    echo "OSX: brew install gifgen"
+    echo "OSX: brew install ffmpeg"
+    echo "Ubuntu: https://github.com/lukechilds/gifgen"
+    echo "Ubuntu: sudo apt-get install ffmpeg"
   else
 
     # Get the dimensions of the video
