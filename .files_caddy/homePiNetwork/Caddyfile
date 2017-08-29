@@ -14,35 +14,43 @@
 }
 
 # Karen Go Smart Home
-karen.aaronthedev.com {
+# Support https and http for IFTTT and testing
+# Caddy will redirect all requests from http to https
+# GET requests will respect this, but not POST
+# https://github.com/mholt/caddy/issues/1014
+http://karen.aaronthedev.com, https://karen.aaronthedev.com {
+    
+    # Log Everything to stdout
+    log stdout
+    
     proxy / localhost:4000 {
         transparent
     }
 }
 
-#Pi Camera
+# Pi Camera
 28ba6kx8pq3.aaronthedev.com {
     proxy / http://192.168.86.111:8765 {
         transparent
     }
 }
 
-#Backup File Server
+# Backup File Server
 backup.aaronthedev.com {
     proxy / http://192.168.86.111:3000 {
         transparent
     }
 }
 
-#Inbucket Temp Mail
+# Inbucket Temp Mail
 mail.aaronthedev.com {
     basicauth / torch2424 htpasswd=.htpasswd
-    proxy / http://127.0.0.1:9000 {
+    proxy / localhost:9000 {
         transparent
     }
 }
 
-#Galaxy Noise Radio Droppy
+# Galaxy Noise Radio Droppy
 files.galaxynoiseradio.com {
     proxy / http://192.168.86.193:8989 {
         transparent
