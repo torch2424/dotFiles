@@ -1,25 +1,34 @@
 #!/usr/bin/env bash
 
 # Function to check our enviornment for variables quietly
+# Usage: checkenv [ENV_VARIABLE_TO_CHECK] [0 for it exists, 1 for it does not]
 checkenv() {
   if env | grep -q $1 ; then
     # True in bash = 0
-    return 0
+    if [ $2 -eq 0 ]; then
+      return 0
+    else
+      return 1
+    fi
   else
     # False in bash = 1
-    return 1
+    if [ $2 -eq 0 ]; then
+      return 1
+    else
+      return 0
+    fi
   fi
 }
 
-
-env | tr '\n' ' \\\ '
+# Command to check the current env
+# env | tr '\n' ' \\\ '
 
 # Check if we are scp or sftp by grepping our env
 # Run all check env commands here
-checkenv "USER" && checkenv "HOME"
+checkenv "SSH_CLIENT" 0 && checkenv "SSH_TTY" 1
 
 # Check if the previous check env commands all returned 0 for true / success
-if [ $? -ne 0 ] ; then
+if [ $? -eq 0 ] ; then
     # Do not allow sourcing the bashrc
     echo hello
     return
