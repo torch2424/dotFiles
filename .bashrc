@@ -30,7 +30,6 @@ checkenv "SSH_CLIENT" 0 && checkenv "SSH_TTY" 1
 # Check if the previous check env commands all returned 0 for true / success
 if [ $? -eq 0 ] ; then
     # Do not allow sourcing the bashrc
-    echo hello
     return
 else
   # Fucntion to source from the user home directory
