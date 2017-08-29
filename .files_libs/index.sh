@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 # This file is meant for sourcing all imported libraries
 
-#Source all function from .bashrc, load our theme
-_source_all .files_libs/sexy_prompt
+#Source all function from .bashrc, load our theme, if interactive shell
+if [[ $- == *i* ]]; then
+    _source_all .files_libs/sexy_prompt
+fi
 
 # Write some aliases to wrap around imported libs
 alias json="sh ~/.files_libs/JSON.sh < "
