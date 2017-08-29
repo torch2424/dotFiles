@@ -10,7 +10,7 @@ function gitCompletelyRemoveFile {
     echo " "
     echo " "
 
-    if [ "$#" -e 1 ]; then
+    if [ "$#" -eq 1 ]; then
 
     git filter-branch --force --index-filter \
         "git rm --cached --ignore-unmatch $1" \
