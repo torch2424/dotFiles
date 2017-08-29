@@ -14,7 +14,8 @@
 }
 
 # Karen Go Smart Home
-karen.aaronthedev.com {
+# Support https and http for IFTTT and testing
+http://karen.aaronthedev.com, https://karen.aaronthedev.com {
     
     # Log Everything to stdout
     log stdout
@@ -41,7 +42,7 @@ backup.aaronthedev.com {
 # Inbucket Temp Mail
 mail.aaronthedev.com {
     basicauth / torch2424 htpasswd=.htpasswd
-    proxy / http://127.0.0.1:9000 {
+    proxy / localhost:9000 {
         transparent
     }
 }
