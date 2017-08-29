@@ -4,10 +4,8 @@
 checkenv() {
   if env | grep -q $1 ; then
     # True in bash = 0
-    echo hi
     return 0
   else
-    echo bye
     # False in bash = 1
     return 1
   fi
