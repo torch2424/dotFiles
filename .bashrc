@@ -1,9 +1,25 @@
 #!/usr/bin/env bash
 
-# Check if we are scp or sftp
-env
-if [ false ]; then
-    echo test
+# Function to check our enviornment for variables quietly
+checkenv() {
+  if env | grep -q $1 ; then
+    # True in bash = 0
+    echo hi
+    return 0
+  else
+    echo bye
+    # False in bash = 1
+    return 1
+  fi
+}
+
+# Check if we are scp or sftp by grepping our env
+# Run all check env commands here
+checkenv "USER" && checkenv "HOME"
+
+# Check if the previous check env commands all returned 0 for true / success
+if [ $? -ne 0 ] ; then
+    # Do not allow sourcing the bashrc
     return
 else
   # Fucntion to source from the user home directory
