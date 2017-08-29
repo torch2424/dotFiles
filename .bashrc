@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# Return if this is being used for sftp scp
+if ! [ "$SSH_TTY" ]; then
+       echo "I am scp" 
+       exit
+fi
+
 #Fucntion to source from the user home directory
 _user_source() {
 	source ~/$1
