@@ -18,6 +18,7 @@ checkenv "USER" && checkenv "HOME"
 # Check if the previous check env commands all returned 0 for true / success
 if [ $? -ne 0 ] ; then
     # Do not allow sourcing the bashrc
+    echo hello
     return
 else
   # Fucntion to source from the user home directory
@@ -64,11 +65,13 @@ else
   export PATH=$PATH:/usr/local/go/bin
   export GOPATH=$HOME/goPath
 
-  #Set our OSX Java Path
-  export JAVA_HOME=`/usr/libexec/java_home`
-
-  # Set our OSX Android Path
-  export ANDROID_PATH="/Users/aaron/Library/Android/sdk"
+  # Set OSX Paths
+  if [ "$(uname)" == "Darwin" ]; then
+    # Java Path
+    export JAVA_HOME=`/usr/libexec/java_home`
+    # Android Path
+    export ANDROID_PATH="/Users/aaron/Library/Android/sdk"
+  fi
 
   # Clear the console
   clear
