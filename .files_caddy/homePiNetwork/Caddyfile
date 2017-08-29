@@ -20,21 +20,21 @@ karen.aaronthedev.com {
     }
 }
 
-#Pi Camera
+# Pi Camera
 28ba6kx8pq3.aaronthedev.com {
     proxy / http://192.168.86.111:8765 {
         transparent
     }
 }
 
-#Backup File Server
+# Backup File Server
 backup.aaronthedev.com {
     proxy / http://192.168.86.111:3000 {
         transparent
     }
 }
 
-#Inbucket Temp Mail
+# Inbucket Temp Mail
 mail.aaronthedev.com {
     basicauth / torch2424 htpasswd=.htpasswd
     proxy / http://127.0.0.1:9000 {
@@ -42,7 +42,7 @@ mail.aaronthedev.com {
     }
 }
 
-#Galaxy Noise Radio Droppy
+# Galaxy Noise Radio Droppy
 files.galaxynoiseradio.com {
     proxy / http://192.168.86.193:8989 {
         transparent
