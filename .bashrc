@@ -10,6 +10,7 @@ checkenv() {
     return 1
   fi
 }
+env
 
 # Check if we are scp or sftp by grepping our env
 # Run all check env commands here
