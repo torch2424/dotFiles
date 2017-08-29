@@ -86,7 +86,7 @@ else
   fi
 
   # Clear the console
-  # clear
+  clear
 
   # Finally, load neo fetch if it is installed
   if hash neofetch 2>/dev/null; then
