@@ -24,6 +24,7 @@ checkenv() {
 # env | tr '\n' ' \\\ '
 
 # Check if we are scp or sftp by grepping our env
+# SCP will have an ssh client, but not SSH TTY
 # Run all check env commands here
 checkenv "SSH_CLIENT" 0 && checkenv "SSH_TTY" 1
 
