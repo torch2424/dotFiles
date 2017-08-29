@@ -1,11 +1,9 @@
 #!/usr/bin/env bash
 
-# Return if this is being used for sftp scp
-if ! [ "$SSH_TTY" ]; then
-       echo "I am scp" 
-       exit
-fi
-
+# Check if we are scp or sftp
+if [ false ]; then
+echo hi
+else
 #Fucntion to source from the user home directory
 _user_source() {
 	source ~/$1
@@ -62,4 +60,6 @@ clear
 # Finally, load neo fetch if it is installed
 if hash neofetch 2>/dev/null; then
         neofetch
+fi
+
 fi
