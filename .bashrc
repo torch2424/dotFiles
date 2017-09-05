@@ -76,6 +76,8 @@ else
   # Go Settings
   export PATH=$PATH:/usr/local/go/bin
   export GOPATH=$HOME/goPath
+  # Go bin Global
+  export PATH="$PATH:$GOPATH/bin" 
 
   # Set OSX Paths
   if [ "$(uname)" == "Darwin" ]; then
