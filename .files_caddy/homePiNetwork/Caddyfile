@@ -55,6 +55,10 @@ galaxynoiseradio.com {
   proxy / http://192.168.86.193 {
     transparent
   }
+
+  cache {
+    default_max_age 30m
+  }
 }
 
 # Galaxy Noise Radio Droppy
