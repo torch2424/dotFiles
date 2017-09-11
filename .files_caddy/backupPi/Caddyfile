@@ -1,5 +1,6 @@
 0.0.0.0:3000 {
-    filemanager / /media/pi/Backup2TB {
-        timeouts 72h
-    }
+  errors visible
+  root /home/pi/filerun
+  gzip
+  fastcgi / /run/php/php7.0-fpm.sock php
 }
