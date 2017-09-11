@@ -52,7 +52,7 @@ mail.aaronthedev.com {
 
 # Galaxy Noise Radio Website
 galaxynoiseradio.com {
-  proxy / http://192.168.86.193 {
+  proxy / http://192.168.86.193:8080 {
     transparent
   }
 
