@@ -50,6 +50,13 @@ mail.aaronthedev.com {
     }
 }
 
+# Galaxy Noise Radio Website
+galaxynoiseradio.com {
+  proxy / http://192.168.86.193 {
+    transparent
+  }
+}
+
 # Galaxy Noise Radio Droppy
 files.galaxynoiseradio.com {
     proxy / http://192.168.86.193:8989 {
