@@ -35,6 +35,13 @@ http://karen.aaronthedev.com, https://karen.aaronthedev.com {
     }
 }
 
+# Mean chat app websockets with Josh
+http://chat.aaronthedev.com, https://chat.aaronthedev.com {
+    proxy / http://192.168.86.111:3000 {
+        transparent
+    }
+}
+
 # Backup File Server
 backup.aaronthedev.com {
 
