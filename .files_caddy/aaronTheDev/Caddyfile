@@ -42,6 +42,14 @@ blog.aaronthedev.com {
     }
 }
 
+# Get Dis Money
+getdismoney.com {
+    gzip
+    proxy / localhost:3030 {
+        transparent
+    }
+}
+
 # Gogs, Aaronthedev git
 git.aaronthedev.com {
     proxy / localhost:3000 {
