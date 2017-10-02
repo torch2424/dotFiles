@@ -73,6 +73,7 @@ alias tmuxjoin='tmuxattach'
 # Mosh aliases
 # Only my servers would be using mosh, so use my default ssh port
 alias mosh='mosh --ssh="ssh -p 1124"'
+alias mosh22='mosh --ssh="ssh -p 22"'
 
 # Show our current app ports
 alias showports="sudo netstat -lptn"

@@ -1,0 +1,6 @@
+0.0.0.0:3000 {
+  errors visible
+  root /home/pi/filerun
+  gzip
+  fastcgi / /run/php/php7.0-fpm.sock php
+}

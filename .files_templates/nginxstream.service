@@ -1,0 +1,15 @@
+# Follow this guide for compiling nginx for rtmp
+# https://obsproject.com/forum/resources/how-to-set-up-your-own-private-rtmp-server-using-nginx.50/
+#
+# Copy this file to: /etc/systemd/system 
+[Unit]
+Description=The NGINX HTTP and reverse proxy server
+After=syslog.target network.target remote-fs.target nss-lookup.target
+
+[Service]
+Type=forking
+ExecStart=/usr/local/nginx/sbin/nginx
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
