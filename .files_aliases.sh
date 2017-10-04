@@ -43,6 +43,14 @@ alias gpoh='git push origin HEAD '
 alias gauc="git update-index --assume-unchanged "
 alias guac="gauc"
 
+# systemctl alias
+alias ssstart='sudo systemctl start '
+alias ssrestart='sudo systemctl restart '
+alias ssenable='sudo systemctl enable '
+alias ssstop='sudo systemctl stop '
+alias ssdisable='sudo systemctl disable '
+alias sj='sudo journalctl -u '
+
 # Vagrant Aliases
 alias vu='vagrant up'
 alias vh='vagrant halt'
