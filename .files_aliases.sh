@@ -45,6 +45,7 @@ alias guac="gauc"
 
 # systemctl alias
 alias ssstart='sudo systemctl start '
+alias ssstatus='sudo systemctl status '
 alias ssrestart='sudo systemctl restart '
 alias ssenable='sudo systemctl enable '
 alias ssstop='sudo systemctl stop '
