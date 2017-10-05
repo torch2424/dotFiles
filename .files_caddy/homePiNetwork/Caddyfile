@@ -16,7 +16,7 @@ pi.hole:80, 0.0.0.0:80 {
 
 # Go / Karen / Short Links
 # https://github.com/torch2424/go
-karen:80, go:80, pi:80, karen.links:80, go.links:80, pi.links:80, link:80, links:80, house.links:80, house:80, apartment.links:80, apartment:80, waifu.links:80, waifu:80 {
+link.aaronthedev.com, karen:80, go:80, pi:80, karen.links:80, go.links:80, pi.links:80, link:80, links:80, house.links:80, house:80, apartment.links:80, apartment:80, waifu.links:80, waifu:80 {
     
     proxy / localhost:8067 {
         transparent
