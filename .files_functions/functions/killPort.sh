@@ -1,5 +1,6 @@
 #/bin/bash
 
+function killPort() {
 if [ "$#" -ne 1 ]; then
     echo "Usage (Requires sudo): ./killPort.sh [port number]"
 else
@@ -9,3 +10,7 @@ else
         sudo fuser -k $1/tcp
     fi
 fi
+}
+
+alias killport='killPort'
+alias kill-port='killport'
