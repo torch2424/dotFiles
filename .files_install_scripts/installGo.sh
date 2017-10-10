@@ -7,22 +7,24 @@ if [ "$#" -ne 1 ]; then
     echo "USAGE: ./installGo.sh [Go version => \"1.8.1\"]"
 else
  # Install Go
- GO_VERSION=1.8.1
+ GO_VERSION=$1
 
  GO_OS=""
 if [ "$(uname)" == "Darwin" ]; then
-   GO_OS="darwin"        
+   GO_OS="darwin-amd64"        
+elif [ "$(dpkg --print-architecture)" == "armhf" ]; then
+   GO_OS="linux-armv6l"
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-   GO_OS="linux"
+   GO_OS="linux-amd64"
 fi
 
- echo "Downloading go$GO_VERSION.$GO_OS-amd64.tar.gz"
- curl -O https://storage.googleapis.com/golang/go$GO_VERSION.$GO_OS-amd64.tar.gz
+ echo "Downloading go$GO_VERSION.$GO_OS.tar.gz"
+ curl -O https://storage.googleapis.com/golang/go$GO_VERSION.$GO_OS.tar.gz
  echo 'Unpacking go language'
- sudo tar -C /usr/local -xzf go$GO_VERSION.$GO_OS-amd64.tar.gz
+ sudo tar -C /usr/local -xzf go$GO_VERSION.$GO_OS.tar.gz
  sudo chown -R root:root /usr/local/go
  #Cleanup
- sudo rm go$GO_VERSION.$GO_OS-amd64.tar.gz
+ sudo rm go$GO_VERSION.$GO_OS.tar.gz
 
  #Editing .bashrc
  BASHRC="~/.bashrc"

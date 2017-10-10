@@ -1,6 +1,7 @@
 # Pi Hole
+# Need to set lighttpd on port 1080 from guide:
 # https://github.com/pi-hole/pi-hole/wiki/Caddy-Webserver-Frontend
-0.0.0.0:80 {
+pi.hole:80, 0.0.0.0:80 {
   root /var/www/html/pihole
 
   rewrite {
@@ -11,6 +12,15 @@
   proxy / localhost:1080 {
     transparent
   }
+}
+
+# Go / Karen / Short Links
+# https://github.com/torch2424/go
+karen:80, go:80, pi:80, karen.links:80, go.links:80, pi.links:80, link:80, links:80, house.links:80, house:80, apartment.links:80, apartment:80, waifu.links:80, waifu:80 {
+    
+    proxy / localhost:8067 {
+        transparent
+    }
 }
 
 # Karen Go Smart Home
@@ -60,6 +70,7 @@ mail.aaronthedev.com {
     basicauth / torch2424 htpasswd=.htpasswd
     proxy / localhost:9000 {
         transparent
+        websocket
     }
 }
 
