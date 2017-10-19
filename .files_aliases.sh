@@ -112,7 +112,7 @@ alias pico-8="pico8"
 # And tries to download an ubuntu iso
 # (Which has no affiliation to isps)
 # to a directory that auto deletes itself
-alias speedtest='wget -O/dev/null https://dl.google.com/dl/android/studio/ide-zips/2.2.2.0/android-studio-ide-145.3360264-linux.zip'
+alias speedtest='wget -O/dev/null https://dl.google.com/dl/android/studio/ide-zips/2.3.3.0/android-studio-ide-162.4069837-linux.zip'
 
 # Alias to scan wifi for things like raspberry pi's
 alias scanwifi='nmap -sP 192.168.1.0/24'
