@@ -76,7 +76,7 @@ function gvn() {
   elif [ "$1" == "checkout" ]; then
     # git checkout file -> svn checkout file
     echo "This is checkout for files..."
-    svn checkout $2
+    svn revert $2
   elif [ "$1" == "commit" ]; then
     # git add $1 && git commit -m "$2" && git push origin HEAD -> svn commit $2 -m "$3"
     svn commit $2 -m “$3”
