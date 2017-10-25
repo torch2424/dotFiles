@@ -47,6 +47,10 @@ function printgvninfo() {
   echo "Show latest 10 log changes to repository"
   echo "Compare to: git log -n 10"
   echo " "
+  echo "gvn diff [FILE]"
+  echo "Show diff between file and server. Only supports a single file however"
+  echo "Compare to: git diff"
+  echo " "
   echo "Don't see what you are looking for?"
   echo "Try: https://github.com/garethrees/git-to-svn-guide/blob/master/README.md"
 }
@@ -83,6 +87,9 @@ function gvn() {
   elif [ "$1" == "log" ]; then
     # git log -n 10 -> svn log -v -l10
     svn log -v -l10
+  elif [ "$1" == "diff" ]; then
+    # git diff [FILE]. If git supports single file diffing?
+    svn diff -r BASE:HEAD $2
   else
     echo "Command $1 is not suported. Type [gvn help] for info/help/usage and tips!"
   fi
