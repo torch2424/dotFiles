@@ -89,7 +89,7 @@ function gvn() {
     svn log -v -l10
   elif [ "$1" == "diff" ]; then
     # git diff [FILE]. If git supports single file diffing?
-    svn diff -r BASE:HEAD $2
+    svn diff $2
   else
     echo "Command $1 is not suported. Type [gvn help] for info/help/usage and tips!"
   fi
