@@ -1,0 +1,46 @@
+http://localhost:8000/services/lighthouse {
+
+    # Some Convienient logging to see what is going on
+    log / stdout "Proxied to: {upstream}, Request: {method} {path}, Rewrite Path(if any): {rewrite_path}, Rewrite URI(if any): {rewrite_uri}, Status: {status}"
+
+    # Run from source directory. This is where the app is built
+    # Need to support digital assistant and lighthouse, set root to source directory
+    root .
+
+    # Grab our index.html
+    # Will only match / and not /.*
+    # Set to our index.html with the correct imports
+    rewrite / /PractitionerPortalClientApps/WebContent/release/app/index.html
+
+    # Rewrite our except for /release/app to our correct folder
+    rewrite /release/app {
+        r  (.*)
+        to /PractitionerPortalClientApps/WebContent/release/app{1}
+    }
+
+    # Rewrite our except for /app to the correct folder
+    # Since I'm building the app with dev mode, also need to point this to /release/app
+    rewrite /app {
+        r  (.*)
+        to /PractitionerPortalClientApps/WebContent/release/app{1}
+    }
+
+    # Rewrite our except for /digital-assistant to the correct folder
+    # Simply our cloned project with the /dist
+    rewrite /digital-assistant {
+        r  (.*)
+        to /DigitalAssistantClientApp/WebContent{1}
+    }
+
+    # Proxy everything Else to the dev server
+    proxy / http://192.168.20.139:9081/services/lighthouse {
+        # Don't proxy our locally built app
+        # Except includes the path, so /services/lighthouse/test.txt becomes test.txts
+        # EXCEPTS MUST ALL BE ON SAME LINE, CAN NOT SPLIT INTO TWO EXCEPTS, THEY OVERRIDE EACHOTHER
+        # Except our rewrite paths, and the paths they rewrite to
+        except app release/app PractitionerPortalClientApps digital-assistant DigitalAssistantClientApp/WebContent
+
+        transparent
+    }
+}
+
