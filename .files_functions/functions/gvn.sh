@@ -39,9 +39,9 @@ function printgvninfo() {
   echo "Checkout local changes to a file"
   echo "Compare to: git checkout [FILE]"
   echo " "
-  echo "gvn commit [Commit message in quotes]"
+  echo "gvn commit [FILE] [Commit message in quotes]"
   echo "commit local changes to repo"
-  echo "Compare to: git commit -m [Commit message] && git push origin HEAD"
+  echo "Compare to: git add [FILE] && git commit -m [Commit message] && git push origin HEAD"
   echo " "
   echo "gvn log"
   echo "Show latest 10 log changes to repository"
@@ -78,8 +78,8 @@ function gvn() {
     echo "This is checkout for files..."
     svn checkout $2
   elif [ "$1" == "commit" ]; then
-    # git commit -m "$2" && git push origin HEAD -> svn commit -m "$2"
-    svn commit -m “$2”
+    # git add $1 && git commit -m "$2" && git push origin HEAD -> svn commit $2 -m "$3"
+    svn commit $2 -m “$3”
   elif [ "$1" == "log" ]; then
     # git log -n 10 -> svn log -v -l10
     svn log -v -l10
