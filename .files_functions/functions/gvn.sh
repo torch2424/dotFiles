@@ -86,7 +86,7 @@ function gvn() {
     svn commit "$2" -m "$3"
   elif [ "$1" == "log" ]; then
     # git log -n 10 -> svn log -v -l10
-    svn log -v -l10
+    svn log -l 5 -r PREV:HEAD
   elif [ "$1" == "diff" ]; then
     # git diff [FILE]. If git supports single file diffing?
     svn diff "$2"
@@ -96,7 +96,10 @@ function gvn() {
 }
 
 # Some gvn aliases
+alias gvnh="gvn help"
 alias gvna="gvn add"
 alias gvnp="gvn pull"
 alias gvns="gvn status"
 alias gvnc="gvn commit"
+alias gvnl="gvn log"
+alias gvnd="gvn diff"
