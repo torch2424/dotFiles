@@ -71,7 +71,7 @@ function gvn() {
     svn update
   elif [ "$1" == "add" ]; then
     # git add -> svn add
-    svn add $2
+    svn add "$2"
   elif [ "$1" == "status" ]; then
     # git status -> svn status
     # Doing both info and stuts, because git will show you current branch and stuff
@@ -80,16 +80,16 @@ function gvn() {
   elif [ "$1" == "checkout" ]; then
     # git checkout file -> svn checkout file
     echo "This is checkout for files..."
-    svn revert $2
+    svn revert "$2"
   elif [ "$1" == "commit" ]; then
     # git add $1 && git commit -m "$2" && git push origin HEAD -> svn commit $2 -m "$3"
-    svn commit $2 -m “$3”
+    svn commit "$2" -m "$3"
   elif [ "$1" == "log" ]; then
     # git log -n 10 -> svn log -v -l10
     svn log -v -l10
   elif [ "$1" == "diff" ]; then
     # git diff [FILE]. If git supports single file diffing?
-    svn diff $2
+    svn diff "$2"
   else
     echo "Command $1 is not suported. Type [gvn help] for info/help/usage and tips!"
   fi
