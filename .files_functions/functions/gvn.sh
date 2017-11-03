@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# First define our changelist name
+GVN_CHANGELIST="gvn-changelist"
+
 function printgvninfo() {
   echo " "
   echo ",---..    ,,---."
@@ -39,9 +42,17 @@ function printgvninfo() {
   echo "Checkout local changes to a file"
   echo "Compare to: git checkout [FILE]"
   echo " "
-  echo "gvn commit [FILE] [Commit message in quotes]"
+  echo "gvn add [FILE_PATH]"
+  echo "Add a file to be committed later"
+  echo "Compare to: git add [FILE]"
+  echo " "
+  echo "gvn reset [FILE_PATH]"
+  echo "Remove a file from being committed later"
+  echo "Compare to: git reset [FILE]"
+  echo " "
+  echo "gvn commit [Commit message in quotes]"
   echo "commit local changes to repo"
-  echo "Compare to: git add [FILE] && git commit -m [Commit message] && git push origin HEAD"
+  echo "Compare to: git commit -m [Commit message] && git push origin HEAD"
   echo " "
   echo "gvn log"
   echo "Show latest 10 log changes to repository"
@@ -70,20 +81,34 @@ function gvn() {
     # git pull -> svn update
     svn update
   elif [ "$1" == "add" ]; then
-    # git add -> svn add
-    svn add "$2"
+    # git add -> svn changelist my-changelist [File here]
+    svn add --force "$2"
+    svn changelist "$GVN_CHANGELIST" "$2"
+  elif [ "$1" == "reset" ]; then
+    # git reset -> svn changelist --remove [File here]
+    svn changelist --remove "$2"
   elif [ "$1" == "status" ]; then
     # git status -> svn status
     # Doing both info and stuts, because git will show you current branch and stuff
     svn info
-    svn status
+    echo " "
+    echo "SVN Status:"
+    echo " "
+    svn status | grep -v gvn
+    echo " "
+    echo "GVN Changes to be committed:"
+    echo "    (use \"gvn reset <file>\" to unstage)"
+    svn st --changelist "$GVN_CHANGELIST" | grep -v Changelist | cut -b 3-
+    echo " "
   elif [ "$1" == "checkout" ]; then
     # git checkout file -> svn checkout file
     echo "This is checkout for files..."
     svn revert "$2"
   elif [ "$1" == "commit" ]; then
     # git add $1 && git commit -m "$2" && git push origin HEAD -> svn commit $2 -m "$3"
-    svn commit "$2" -m "$3"
+    svn commit --changelist "$GVN_CHANGELIST" --keep-changelists -m "$2"
+    # Remove all files from changelist, but keep changelist
+    svn changelist --remove --recursive --cl "$GVN_CHANGELIST" . | grep -v D
   elif [ "$1" == "log" ]; then
     # git log -n 10 -> svn log -v -l10
     svn log -l 5 -r PREV:HEAD
@@ -99,6 +124,7 @@ function gvn() {
 # Some gvn aliases
 alias gvnh="gvn help"
 alias gvna="gvn add"
+alias gvnr="gvn reset"
 alias gvnp="gvn pull"
 alias gvns="gvn status"
 alias gvnc="gvn commit"
