@@ -112,7 +112,12 @@ alias pico-8="pico8"
 # And tries to download an ubuntu iso
 # (Which has no affiliation to isps)
 # to a directory that auto deletes itself
-alias speedtest='wget -O/dev/null https://dl.google.com/dl/android/studio/ide-zips/2.2.2.0/android-studio-ide-145.3360264-linux.zip'
+alias speedtest='wget -O/dev/null http://ubuntu-cd.mirror.iweb.ca/17.04/ubuntu-17.04-server-amd64.img'
+# Canadian Mirror capped at 4Gbps https://launchpad.net/ubuntu/+cdmirrors
+alias speedtest-canada-mirror='wget -O/dev/null http://ubuntu-cd.mirror.iweb.ca/17.04/ubuntu-17.04-server-amd64.img'
+# Pacific Northwest Mirror capped at 10 Gbps 
+alias speedtest-us-west-mirror='wget -O/dev/null http://mirror.pnl.gov/releases/17.04/ubuntu-17.04-server-amd64.img'
+
 
 # Alias to scan wifi for things like raspberry pi's
 alias scanwifi='nmap -sP 192.168.1.0/24'
@@ -132,3 +137,7 @@ alias weather='w'
 # From the docs:
 # https://webpack.js.org/guides/getting-started/
 alias webpack='./node_modules/.bin/webpack --config webpack.config.js'
+
+# Use local karma for stuff
+alias karma='./node_modules/karma/bin/karma'
+alias karmatestfile='karma start --auto-watch --grep'
