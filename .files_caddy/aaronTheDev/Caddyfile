@@ -34,6 +34,12 @@ sayonarajs.com {
     }
 }
 
+# No Comply Games Maintenance
+nocomplygames.com {
+    gzip
+    root /home/torch2424/nocomplygames-maintenance
+}
+
 # Aaronthedev blog
 blog.aaronthedev.com {
     gzip
