@@ -137,3 +137,7 @@ alias weather='w'
 # From the docs:
 # https://webpack.js.org/guides/getting-started/
 alias webpack='./node_modules/.bin/webpack --config webpack.config.js'
+
+# Use local karma for stuff
+alias karma='./node_modules/karma/bin/karma'
+alias karmatestfile='karma start --auto-watch --grep'
