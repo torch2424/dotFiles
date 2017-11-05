@@ -64,6 +64,15 @@ mongo.aaronthedev.com {
     }
 }
 
+# Crontab ui
+# https://github.com/alseambusher/crontab-ui
+cron.aaronthedev.com {
+    basicauth / torch2424 htpasswd=.htpasswd
+    proxy / localhost:9000 {
+        transparent
+    }
+}
+
 # Testbuild, Droppy directory for hosting quick builds
 testbuild.aaronthedev.com {
     browse /home/torch2424/droppyFileServer/files/testbuild.aaronthedev.com
