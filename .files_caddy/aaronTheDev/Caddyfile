@@ -34,6 +34,12 @@ sayonarajs.com {
     }
 }
 
+# No Comply Games Maintenance
+nocomplygames.com {
+    gzip
+    root /home/torch2424/nocomplygames-maintenance
+}
+
 # Aaronthedev blog
 blog.aaronthedev.com {
     gzip
@@ -60,6 +66,15 @@ git.aaronthedev.com {
 # Mongo Manager, Similar to phpmy admin
 mongo.aaronthedev.com {
     proxy / localhost:7000 {
+        transparent
+    }
+}
+
+# Crontab ui
+# https://github.com/alseambusher/crontab-ui
+cron.aaronthedev.com {
+    basicauth / torch2424 htpasswd=.htpasswd
+    proxy / localhost:9000 {
         transparent
     }
 }
