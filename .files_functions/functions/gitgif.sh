@@ -43,7 +43,7 @@ gitgif() {
     if [ $WIDTH -gt $BASEWIDTH ]; then
       # Allow CTRL C
       trap "exit" INT
-      until ffmpeg -y -i $1 -vf scale=$BASEWIDTH:-1 $TEMP
+      until ffmpeg -y -i $1 -r 30 -vf scale=$BASEWIDTH:-1 $TEMP
       do
         # Allow CTRL C
         sl -e
