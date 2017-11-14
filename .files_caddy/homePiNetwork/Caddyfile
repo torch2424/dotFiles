@@ -102,3 +102,11 @@ files.galaxynoiseradio.com {
         websocket
     }
 }
+
+# Paint with bob, Josh doesn't have ssl
+git.paintwithbob.com {
+    proxy / http://git.joshuawarejko.host/ {
+        transparent
+        websocket
+    }
+}
