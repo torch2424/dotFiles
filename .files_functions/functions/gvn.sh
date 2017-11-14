@@ -106,8 +106,8 @@ function gvn() {
     svn revert "$2"
   elif [ "$1" == "commit" ]; then
     # git add $1 && git commit -m "$2" && git push origin HEAD -> svn commit $2 -m "$3"
-    svn commit --changelist "$GVN_CHANGELIST" --keep-changelists -m "$2"
-    # Remove all files from changelist, but keep changelist
+    # After &&, # Remove all files from changelist, but keep changelist
+    svn commit --changelist "$GVN_CHANGELIST" --keep-changelists -m "$2" && \
     svn changelist --remove --recursive --cl "$GVN_CHANGELIST" . | grep -v D
   elif [ "$1" == "log" ]; then
     # git log -n 10 -> svn log -v -l10

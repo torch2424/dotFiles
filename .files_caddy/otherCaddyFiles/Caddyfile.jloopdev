@@ -1,7 +1,10 @@
 http://localhost:8000/services/lighthouse {
 
     # Some Convienient logging to see what is going on
-    log / stdout "Proxied to: {upstream}, Request: {method} {path}, Rewrite Path(if any): {rewrite_path}, Rewrite URI(if any): {rewrite_uri}, Status: {status}"
+    log / stdout "Proxied to: {upstream}, Request: {method} {path}, Rewrite Path(if any): {rewrite_path}, Status: {status}"
+    errors stdout
+
+    tls off
 
     # Run from source directory. This is where the app is built
     # Need to support digital assistant and lighthouse, set root to source directory
@@ -32,15 +35,44 @@ http://localhost:8000/services/lighthouse {
         to /DigitalAssistantClientApp/WebContent{1}
     }
 
+    # Rewrite our except for /digital-assistant assets to the correct folder
+    # Simply our cloned project with the /dist
+    rewrite /assets {
+        r  (.*)
+        to /DigitalAssistantClientApp/WebContent/dist/assets{1}
+    }
+
+    # Broken image choking caddy on 404
+    rewrite /content/images/lighthouse_v3.jpg {
+        r  (.*)
+        to /PractitionerPortalClientApps/WebContent/release/app/resources/img/avatar-default.png
+    }
+
     # Proxy everything Else to the dev server
     proxy / http://192.168.20.139:9081/services/lighthouse {
         # Don't proxy our locally built app
         # Except includes the path, so /services/lighthouse/test.txt becomes test.txts
         # EXCEPTS MUST ALL BE ON SAME LINE, CAN NOT SPLIT INTO TWO EXCEPTS, THEY OVERRIDE EACHOTHER
         # Except our rewrite paths, and the paths they rewrite to
-        except app release/app PractitionerPortalClientApps digital-assistant DigitalAssistantClientApp/WebContent
+        except app release/app PractitionerPortalClientApps digital-assistant assets DigitalAssistantClientApp/WebContent /search/results/knowledge /contribute /cognitive-search-beta /content/images/lighthouse_v3.jpg
 
         transparent
+    }
+
+    # Proxy web requests to IBM dev server
+    # Can't because go net tls error
+    # Can pass Auth headers using https://chrome.google.com/webstore/detail/modheader/idgpnmonknjnojddfkpgkljpfnnfcklj/reviews?hl=en
+    # Then find Authorization token from logging in manually in Chrome Dev Tools Network Tab
+
+    # Our pages that should return an index.html
+    proxy /search/results/knowledge http://localhost:3000 {
+      transparent
+    }
+    proxy /contribute http://localhost:3000 {
+      transparent
+    }
+    proxy /cognitive-search-beta http://localhost:3000 {
+      transparent
     }
 }
 
