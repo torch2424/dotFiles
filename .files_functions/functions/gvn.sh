@@ -21,9 +21,6 @@ function printgvninfo() {
   echo " "
   echo "2. svn workflow can vary greatly from github. In git it is usually encouraged to branch everything, as merging is not a headache once you understand it. Master is supposed to be an always working build, and feature branches are reviewed before being pulled in. However, rumor is, merging is kind of a pain in svn, because its master branch, called trunk, is a centralized source of truth, and will often times not like what you are brining in. So svn workflows can follow the standard git style. Or follow a wild wild west trunk that everyone just commits to, and makes branches when there is a well tested point in time, or revision, for release."
   echo " "
-  echo "MAJOR TODO:"
-  echo "1. Add support for branching"
-  echo " "
   echo "Commands:"
   echo " "
   echo "gvn clone [URL of repository]"
@@ -105,10 +102,16 @@ function gvn() {
     echo "This is checkout for files..."
     svn revert "$2"
   elif [ "$1" == "commit" ]; then
+
+    if [ "$#" -eq 2 ]; then
     # git add $1 && git commit -m "$2" && git push origin HEAD -> svn commit $2 -m "$3"
     # After &&, # Remove all files from changelist, but keep changelist
+    echo "Commiting changelist..."
     svn commit --changelist "$GVN_CHANGELIST" --keep-changelists -m "$2" && \
     svn changelist --remove --recursive --cl "$GVN_CHANGELIST" . | grep -v D
+    else
+      echo "Must enter a commit message to commit the current changelist."
+    fi
   elif [ "$1" == "log" ]; then
     # git log -n 10 -> svn log -v -l10
     svn log -l 5 -r PREV:HEAD
