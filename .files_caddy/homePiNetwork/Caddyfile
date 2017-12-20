@@ -97,7 +97,7 @@ galaxynoiseradio.com {
 
 # Galaxy Noise Radio Droppy
 files.galaxynoiseradio.com {
-    proxy / http://192.168.86.193:8989 {
+    proxy / http://192.168.86.214:8989 {
         transparent
         websocket
     }
