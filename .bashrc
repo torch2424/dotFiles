@@ -86,7 +86,17 @@ else
   # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
   export PATH="$PATH:$HOME/.rvm/bin"
 
-  # Set OSX Paths
+   # Elastic search for pedanco
+   export ES_HOME=~/elasticsearch-1.7.5
+   alias elasticsearch='~/elasticsearch-1.7.5/bin/elasticsearch'
+   
+   # Pedanco Postgres
+   export PATH=$PATH:/usr/local/bin/postgres
+  
+   # Pendanco Aliases
+  alias woprengine='WORKERS=ConversationEventWorker rake sneakers:run'
+  
+   # Set OSX Paths
   if [ "$(uname)" == "Darwin" ]; then
     # Java Path
     export JAVA_HOME=`/usr/libexec/java_home`
