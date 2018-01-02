@@ -144,3 +144,6 @@ alias karmatestfile='karma start --auto-watch --grep'
 
 # Vlc for osx
 alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
+
+# Pendanco Aliases
+alias woprengine='WORKERS=ConversationEventWorker rake sneakers:run

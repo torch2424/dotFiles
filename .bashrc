@@ -62,7 +62,7 @@ else
   # Load NVM
   export NVM_DIR="$HOME/.nvm"
   [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This l    oads nvm bash_completion
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
   # Npm no Sudo
   export NPM_PACKAGES="~/.npm-packages"
@@ -77,7 +77,14 @@ else
   export PATH=$PATH:/usr/local/go/bin
   export GOPATH=$HOME/goPath
   # Go bin Global
-  export PATH="$PATH:$GOPATH/bin" 
+  export PATH="$PATH:$GOPATH/bin"
+
+  # Ruby
+  # Load RVM into a shell session *as a function*
+  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+  # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+  export PATH="$PATH:$HOME/.rvm/bin"
 
   # Set OSX Paths
   if [ "$(uname)" == "Darwin" ]; then
