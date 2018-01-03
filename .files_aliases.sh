@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Bash Aliases by: torch2424
-# Repo: https://github.com/torch2424/dotFiles 
+# Repo: https://github.com/torch2424/dotFiles
 
 # Show our aliases
 alias showalias="cat ~/.files_aliases.sh"
@@ -115,9 +115,8 @@ alias pico-8="pico8"
 alias speedtest='wget -O/dev/null http://ubuntu-cd.mirror.iweb.ca/17.04/ubuntu-17.04-server-amd64.img'
 # Canadian Mirror capped at 4Gbps https://launchpad.net/ubuntu/+cdmirrors
 alias speedtest-canada-mirror='wget -O/dev/null http://ubuntu-cd.mirror.iweb.ca/17.04/ubuntu-17.04-server-amd64.img'
-# Pacific Northwest Mirror capped at 10 Gbps 
+# Pacific Northwest Mirror capped at 10 Gbps
 alias speedtest-us-west-mirror='wget -O/dev/null http://mirror.pnl.gov/releases/17.04/ubuntu-17.04-server-amd64.img'
-
 
 # Alias to scan wifi for things like raspberry pi's
 alias scanwifi='nmap -sP 192.168.1.0/24'
@@ -128,6 +127,11 @@ alias scanwifi-onhub='nmap -sP 192.168.86.0/24'
 # -i is the x display
 # -s is video size (Make this bigger if only recording terminal or something. Starts from upper left corner of display)
 alias screenrecord='ffmpeg -f x11grab -s 1280x720 -r 30 -i :0 screenrecord.avi'
+
+# Aliases to backup and restore atom settings
+# https://discuss.atom.io/t/how-to-backup-all-your-settings/15674
+alias backupatom='apm list --installed --bare > ~/.files_atom_packages.list'
+alias restoreatom='apm install `cat ~/.files_atom_packages.list`'
 
 # Weather
 alias w='curl wttr.in'
