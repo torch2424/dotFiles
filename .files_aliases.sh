@@ -111,18 +111,6 @@ alias android-avd="androidavd"
 alias pico8="/Applications/PICO-8.app/Contents/MacOS/pico8"
 alias pico-8="pico8"
 
-# Cool speedtest alias, works by using wget
-# (Which shows speed in kilobytes per second
-# or Megabytes per second)
-# And tries to download an ubuntu iso
-# (Which has no affiliation to isps)
-# to a directory that auto deletes itself
-alias speedtest='wget -O/dev/null http://ubuntu-cd.mirror.iweb.ca/17.04/ubuntu-17.04-server-amd64.img'
-# Canadian Mirror capped at 4Gbps https://launchpad.net/ubuntu/+cdmirrors
-alias speedtest-canada-mirror='wget -O/dev/null http://ubuntu-cd.mirror.iweb.ca/17.04/ubuntu-17.04-server-amd64.img'
-# Pacific Northwest Mirror capped at 10 Gbps
-alias speedtest-us-west-mirror='wget -O/dev/null http://mirror.pnl.gov/releases/17.04/ubuntu-17.04-server-amd64.img'
-
 # Alias to scan wifi for things like raspberry pi's
 alias scanwifi='nmap -sP 192.168.1.0/24'
 alias scanwifi-onhub='nmap -sP 192.168.86.0/24'
