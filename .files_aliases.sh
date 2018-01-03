@@ -66,7 +66,12 @@ alias cdg='cd ~/goPath/'
 alias cdpico='cd ~/Library/Application\ Support/pico-8/carts/'
 alias cdpico8='cdpico'
 
-#Copy recursively with progress
+# chmod aliases
+alias chmx='chmod +x'
+alias exe='chmx'
+alias +x='chmx'
+
+# Copy recursively with progress
 alias copyprogress='rsync -avh --progress'
 alias cpprogress='copyprogress'
 
