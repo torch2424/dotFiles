@@ -79,23 +79,6 @@ else
   # Go bin Global
   export PATH="$PATH:$GOPATH/bin"
 
-  # Ruby
-  # Load RVM into a shell session *as a function*
-  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
-  # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-  export PATH="$PATH:$HOME/.rvm/bin"
-
-   # Elastic search for pedanco
-   export ES_HOME=~/elasticsearch-1.7.5
-   alias elasticsearch='~/elasticsearch-1.7.5/bin/elasticsearch'
-   
-   # Pedanco Postgres
-   export PATH=$PATH:/usr/local/bin/postgres
-  
-   # Pendanco Aliases
-  alias woprengine='WORKERS=ConversationEventWorker rake sneakers:run'
-  
    # Set OSX Paths
   if [ "$(uname)" == "Darwin" ]; then
     # Java Path
@@ -103,6 +86,9 @@ else
     # Android Path
     export ANDROID_PATH="/Users/aaron/Library/Android/sdk"
   fi
+
+  # Finally source all things inside of .files_work, especially for pedanco rvm
+  _source_all .files_work
 
   # Clear the console
   clear
