@@ -6,7 +6,7 @@
 # (Which has no affiliation to isps)
 # to a directory that auto deletes itself
 function speedtest() {
-  if [ "$#" > 0 ]; then
+  if [ "$#" -gt 0 ]; then
     wget -O/dev/null $1
   else
     wget -O/dev/null http://mirror.pnl.gov/releases/17.04/ubuntu-17.04-server-amd64.img
