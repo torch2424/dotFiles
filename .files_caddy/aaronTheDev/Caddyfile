@@ -81,5 +81,7 @@ cron.aaronthedev.com {
 
 # Testbuild, Droppy directory for hosting quick builds
 testbuild.aaronthedev.com {
-    browse /home/torch2424/droppyFileServer/files/testbuild.aaronthedev.com
+    root /home/torch2424/droppyFileServer/files/testbuild.aaronthedev.com
+    
+    browse
 }
