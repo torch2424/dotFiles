@@ -56,7 +56,7 @@ else
   git config --global credential.helper 'cache --timeout=36000'
 
   # Set Vim as default editor
-  export VISUAL=vim
+  export VISUAL=micro
   export EDITOR="$VISUAL"
 
   # Load NVM

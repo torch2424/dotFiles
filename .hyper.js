@@ -84,7 +84,9 @@ module.exports = {
   plugins: [
       "hyper-blink", 
       "hyperterm-gruvbox-dark", 
-      "hyperfull"
+      "hyperterm-paste",
+      "hyperlinks",
+      "hyperfullscreen"
   ],
 
   // in development, you can create a directory under

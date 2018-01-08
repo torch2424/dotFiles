@@ -141,3 +141,6 @@ alias karmatestfile='karma start --auto-watch --grep'
 
 # Vlc for osx
 alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
+
+# Temp alias for using micro instead of vim
+alias vim='micro'
