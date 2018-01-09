@@ -17,15 +17,19 @@ alias woprengine='WORKERS=ConversationEventWorker rake sneakers:run'
 
 # Skip CI for pedanco
 # https://gist.github.com/shytikov/3132078
-function gc() {
-	TEXT=$(cat "$1" | sed '/^#.*/d')
+function pedanco_gc() {
 	
-	if [ -n "$TEXT" ]
-	then
-	    echo "--skip-ci "': '$(cat "$1" | sed '/^#.*/d') > "$1"
+	if [ "$#" -eq 1 ]; then
+	    echo "$1 --skip-ci" > "$1"
 	else
+		echo " "
+		echo "pedanco_gc USAGE:"
+		echo " "
+		echo "pedanco_gc 'COMMIT_MESSAGE_IN_QUOTES'"
+		echo " "
 	    echo "Aborting commit due to empty commit message."
-	    exit 1
 	fi
 	
 }
+
+alias gc='pedanco_gc'
