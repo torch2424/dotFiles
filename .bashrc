@@ -52,6 +52,9 @@ else
   # Load Our bash libraries
   _user_source .files_libs/index.sh
 
+  # Completion for all of our aliases
+  _user_source .files_completion.sh
+
   # Cache our Git credentials
   git config --global credential.helper 'cache --timeout=36000'
 
