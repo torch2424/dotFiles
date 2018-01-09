@@ -1,6 +1,6 @@
 #/bin/bash
 
-resizeVideo() {
+__resizeVideo() {
 
 if [ "$#" -ne 2 ]; then
     echo "shortcut for: https://trac.ffmpeg.org/wiki/Scaling%20(resizing)%20with%20ffmpeg"
@@ -12,6 +12,7 @@ fi
 
 }
 
+alias resizeVideo='__resizeVideo'
 alias resizevideo="resizeVideo"
 alias scaleVideo="resizeVideo"
 alias scalevideo="resizeVideo"

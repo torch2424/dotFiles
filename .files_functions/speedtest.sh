@@ -5,13 +5,16 @@
 # And tries to download an ubuntu iso
 # (Which has no affiliation to isps)
 # to a directory that auto deletes itself
-function speedtest() {
+function __speedtest() {
   if [ "$#" -gt 0 ]; then
     wget -O/dev/null $1
   else
     wget -O/dev/null http://mirror.pnl.gov/releases/17.04/ubuntu-17.04-server-amd64.img
   fi
 }
+
+# Aliases
+alias speedtest='__speedtest'
 
 # Pacific Northwest Mirror capped at 10 Gbps
 alias speedtest-us-west-mirror='speedtest http://mirror.pnl.gov/releases/17.04/ubuntu-17.04-server-amd64.img'

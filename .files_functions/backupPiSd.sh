@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function backupPiSd() {
+function __backupPiSd() {
     if [ "$#" -ne 2 ]; then
         echo "USAGE: ./backupPiSd.sh [Disk e.g (/dev/disk1) or (/dev/sdb)] [nameOfImageFile]"
     else
@@ -21,6 +21,6 @@ function backupPiSd() {
     fi
 }
 
-alias backuppi="backupPiSd"
-alias backuppiSd="backuppi"
+alias backuppi="__backupPiSd"
+alias backuppisd="backuppi"
 alias backup-pi-sd="backuppi"

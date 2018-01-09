@@ -1,7 +1,7 @@
 #/bin/bash
 
 
-gitgif() {
+__gitgif() {
   if [ $# -lt 1 ] || [ $# -gt 2 ]; then
     echo "This will make a best guess to convert a video into a github friendly .gif"
     echo "Works best on videos ~30s"
@@ -65,7 +65,8 @@ gitgif() {
   fi
 }
 
-alias gg='gitgif'
+alias gg='__gitgif'
+alias gitgif='gg'
 alias githubgif='gg'
 alias preetypr='gg'
 alias gif='gg'

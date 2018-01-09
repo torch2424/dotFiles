@@ -1,6 +1,6 @@
 #/bin/bash
 
-function killPort() {
+function __killPort() {
 if [ "$#" -ne 1 ]; then
     echo "Usage (Requires sudo): ./killPort.sh [port number]"
 else
@@ -12,5 +12,6 @@ else
 fi
 }
 
+alias killPort='__killPort'
 alias killport='killPort'
 alias kill-port='killport'

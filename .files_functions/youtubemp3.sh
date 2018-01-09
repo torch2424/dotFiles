@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Function to download a youtube video and convert to mp3
-youtubemp3() {
+__youtubemp3() {
 	if [ $# -ne "2" ]; then
 		echo "Youtube mp3. First argument url. Second argument, output path"
 		return
@@ -15,6 +15,7 @@ youtubemp3() {
 	fi
 }
 
+alias youtubemp3='__youtubemp3'
 alias youtube-mp3="youtubemp3"
 alias youtubeMp3="youtubemp3"
 alias youtubetomp3="youtubemp3"

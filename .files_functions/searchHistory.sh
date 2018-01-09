@@ -1,9 +1,9 @@
 #/bin/bash
 
-searchHistory() {
+__searchHistory() {
 
     if (("$#" == 1)); then
-        history | grep -on "$1.*"
+        history | grep "$1.*"
     elif (("$#" == 0)); then
         history
     else
@@ -11,9 +11,9 @@ searchHistory() {
     fi
 }
 
-alias searchhistory='searchHistory'
-alias showHistory='searchHistory'
+alias searchhistory='__searchHistory'
+alias showHistory='searchhistory'
 alias showhistory='showHistory'
-alias historySearch='searchHistory'
-alias search-history='searchHistory'
-alias show-history='searchHistory'
+alias historySearch='searchhistory'
+alias search-history='searchhistory'
+alias show-history='searchhistory'

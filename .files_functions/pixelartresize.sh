@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Function to resize pixel with pint filter, to not lose any quality at any size
-function pixelartupscale() {
+function __pixelartupscale() {
   if [ "$#" -ne 2 ]; then
     echo "USAGE:"
     echo "./pixelartresize [file to be resized] [new width of file (can only be scaled by aspect ratio)]"
@@ -12,4 +12,5 @@ function pixelartupscale() {
   fi
 }
 
+alias pixelartupscale='__pixelartupscale'
 alias pixelartresize='pixelartupscale'

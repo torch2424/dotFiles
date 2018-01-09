@@ -38,8 +38,8 @@ alias ga='git add -A '
 alias gp='git push origin HEAD '
 alias guc='git reset HEAD~ '
 alias gpo='git push origin '
-alias gpom='git push origin master '
 alias gpoh='git push origin HEAD '
+alias gpom='gpoh '
 alias gauc="git update-index --assume-unchanged "
 alias guac="gauc"
 

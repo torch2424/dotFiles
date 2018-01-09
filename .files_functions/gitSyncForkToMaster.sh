@@ -1,6 +1,6 @@
 #/bin/bash
 
-gitSyncForkToMaster() {
+__gitSyncForkToMaster() {
 
     if [ "$#" -ne 1 ]; then
         echo "Must pass fork git clone url"
@@ -8,7 +8,7 @@ gitSyncForkToMaster() {
         echo "Exiting..."
         return 1;
     fi
-    
+
     # Remove the old upstream
     echo "Removing any old 'upstream' remote..."
     git remote rm upstream
@@ -37,7 +37,7 @@ gitSyncForkToMaster() {
 }
 
 # Alaises
-
+alias gitSyncForkToMaster='__gitSyncForkToMaster'
 alias gitSyncFork='gitSyncForkToMaster'
 alias git-sync-fork='gitSyncFork'
 alias gitforksync='gitSyncFork'
