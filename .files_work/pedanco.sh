@@ -13,3 +13,8 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
  # Pendanco Aliases
 alias woprengine='WORKERS=ConversationEventWorker rake sneakers:run'
+
+
+# Skip CI for pedanco
+alias gpoh='git push origin HEAD --skip-ci'
+alias gpom='gpoh'
