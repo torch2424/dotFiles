@@ -84,7 +84,6 @@ module.exports = {
   plugins: [
       "hyper-blink", 
       "hyperterm-gruvbox-dark", 
-      "hyperterm-paste",
       "hyperlinks",
       "hyperfullscreen"
   ],
