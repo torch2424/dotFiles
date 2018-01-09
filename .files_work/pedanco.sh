@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Aliases and things for pedanco
+ # Aliases and things for pedanco
 
 # Pedanco Postgres
  export PATH=$PATH:/usr/local/bin/postgres
@@ -16,4 +16,16 @@ alias woprengine='WORKERS=ConversationEventWorker rake sneakers:run'
 
 
 # Skip CI for pedanco
-alias gc='git commit --skip-ci '
+# https://gist.github.com/shytikov/3132078
+function gc() {
+	TEXT=$(cat "$1" | sed '/^#.*/d')
+	
+	if [ -n "$TEXT" ]
+	then
+	    echo "--skip-ci "': '$(cat "$1" | sed '/^#.*/d') > "$1"
+	else
+	    echo "Aborting commit due to empty commit message."
+	    exit 1
+	fi
+	
+}
