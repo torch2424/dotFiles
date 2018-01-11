@@ -7,9 +7,9 @@ After=network.target
 
 [Service]
 Type=simple
-User=[INSERT USER HERE]
-WorkingDirectory=/home/[INSERT USER HERE]
-ExecStart=/bin/bash --login -c 'source /home/${whoami}/.bashrc; cd ~/.files_caddy/[Caddyfile Dir] && caddy -email [EMAIL HERE]'
+User=torch2424
+WorkingDirectory=/home/torch2424
+ExecStart=/bin/bash --login -c 'source /home/torch2424/.bashrc; cd ~/.files_caddy/canadaVpn && caddy -email aaron@aaronthedev.com'
 Restart=always
 
 [Install]

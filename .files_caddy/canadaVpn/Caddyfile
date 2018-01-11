@@ -1,0 +1,26 @@
+0.0.0.0:80 {
+  root /var/www/html/pihole
+
+  rewrite {
+    ext js
+    to index.js
+  }
+  
+  proxy / localhost:1080 {
+    transparent
+  }
+}
+
+vpn.aaronthedev.com {
+    root html
+	
+	rewrite {
+		ext js
+		to index.js
+	}
+
+    basicauth /admin torch2424 htpasswd=../.htpasswd
+	proxy /admin localhost:1080 {
+		transparent
+	}
+}
