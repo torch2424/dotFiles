@@ -39,3 +39,5 @@ function pedanco_gc() {
 
 alias gc='pedanco_gc'
 alias gcnoskip='git commit'
+
+source ~/.files_work/sourceEnvVariablesPedanco.sh
