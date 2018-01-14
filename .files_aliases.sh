@@ -3,6 +3,11 @@
 # Bash Aliases by: torch2424
 # Repo: https://github.com/torch2424/dotFiles
 
+# Show our bash rc
+alias cb='cat ~/.bashrc'
+alias catbash='cb'
+alias catbashrc='cb'
+
 # Show our aliases
 alias showalias="cat ~/.files_aliases.sh"
 alias showaliases="showalias"
@@ -142,5 +147,7 @@ alias karmatestfile='karma start --auto-watch --grep'
 # Vlc for osx
 alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
 
-# Temp alias for using micro instead of vim
+# Micro Aliases
+alias m='micro'
 alias vim='micro'
+alias mic='micro'
