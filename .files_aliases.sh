@@ -49,6 +49,7 @@ alias gauc="git update-index --assume-unchanged "
 alias guac="gauc"
 
 # systemctl alias
+alias ssdr='sudo systemctl daemon-reload'
 alias ssstart='sudo systemctl start '
 alias ssstatus='sudo systemctl status '
 alias ssrestart='sudo systemctl restart '
