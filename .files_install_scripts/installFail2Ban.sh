@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Fail2ban guide
+
+
 #Find a line containing the text, and replace the entire line with the other passed text
 #Reference: http://stackoverflow.com/questions/11245144/replace-whole-line-containing-a-string-using-sed
 #@param $1 - The First argument, The Text to be found in a file
@@ -29,5 +32,12 @@ find-replace-line "\[sshd\]" "[sshd]\nenable = true" /etc/fail2ban/jail.local
 sudo service fail2ban stop
 sudo service fail2ban start
 
-# Show the iptables to prove it is working
-sudo iptables -S
+# Show fail2ban is working
+
+echo " "
+echo "fail2ban installed! use 'sudo fail2ban-client' for future use:"
+echo "showing some statuses..."
+echo " "
+
+sudo fail2ban-client status
+sudo fail2ban-client status sshd
