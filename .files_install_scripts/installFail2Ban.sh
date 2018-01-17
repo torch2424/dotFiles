@@ -11,7 +11,7 @@ find-replace-line() {
 
 # Install fail2ban
 sudo apt-get update
-sudo apt-get install fail2ban
+sudo apt-get install -y fail2ban
 
 # Copy into a jail.local
 sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
