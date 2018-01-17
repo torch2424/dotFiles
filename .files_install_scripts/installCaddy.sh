@@ -42,13 +42,17 @@ if [ $? -eq 0 ]; then
       # May need to pass -goos= and -goarch=
       go run build.go
 
+      # Copy to our go path bin
+      cp caddy "$GOPATH/bin"
+
       echo "Build Complete! Please check \$GOPATH/src/github.com/torch2424/caddy/caddy"
       echo "For Instance:"
       echo " "
       echo "'cd \$GOPATH/src/github.com/torch2424/caddy/caddy'"
       echo "'./caddy'"
       echo " "
-      echo "You may now copy this binary wherever you would like..."
+      echo "Copied to the binary to: $GOPATH/bin"
+      echo "However, you may now copy this binary wherever you would like..."		
     else
       echo "Caddy requires Go 1.8 to be installed."
     fi
