@@ -3,6 +3,7 @@
 # Make sure we pass our version
 if [ "$#" -ne 1 ]; then
     echo "Must pass the go version you would like to install"
+	echo "Go Downloads page: https://golang.org/dl/"
     echo " "
     echo "USAGE: ./installGo.sh [Go version => \"1.8.1\"]"
 else
@@ -26,14 +27,17 @@ fi
  #Cleanup
  sudo rm go$GO_VERSION.$GO_OS.tar.gz
 
+echo "Finished! Run the following code to set up your go paths in your bashrc if you have not already:"
+echo '
  #Editing .bashrc
  BASHRC="~/.bashrc"
- echo 'Setting up correct env. variables'
- echo 'export GOROOT=/usr/local/go' >> $BASHRC
- echo 'export GOPATH=~/goPath' >> $BASHRC
- echo 'export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"' >> $BASHRC
+ echo "Setting up correct env. variables"
+ echo "export GOROOT=/usr/local/go" >> $BASHRC
+ echo "export GOPATH=~/goPath" >> $BASHRC
+ echo "export PATH=\"$PATH:$GOROOT/bin:$GOPATH/bin\"" >> $BASHRC
  source $BASHRC
 
  #Create reuired go folders
  mkdir -p $GOPATH/{bin,pkg,src}
+'
 fi
