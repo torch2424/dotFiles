@@ -1,6 +1,6 @@
 # How to create systemd services: http://neilwebber.com/notes/2016/02/10/making-a-simple-systemd-file-for-raspberry-pi-jessie/
-# Digital ocean on a mongodb service: https://www.digitalocean.com/community/tutorials/how-to-install-mongodb-on-ubuntu-16-04
 # Original Template: https://github.com/torch2424/dotFiles/blob/master/.bash_templates/systemctl.service 
+
 # Copy the file to /etc/systemd/system
 [Unit]
 Description=Torch2424 Template for simple systemctl service
