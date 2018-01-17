@@ -44,7 +44,7 @@ else
   __find_and_replace_in_file "\[COMMAND\]" "$3" /tmp/tmpSystemctl.service
 
   echo " "
-  echo "Resulting .service file..."
+  echo "Resulting $1.service file..."
   echo " "
 
   cat /tmp/tmpSystemctl.service
@@ -56,7 +56,7 @@ else
     cp /tmp/tmpSystemctl.service "./$1.service"
     sudo cp /tmp/tmpSystemctl.service "/etc/systemd/system/$1.service"
     echo " "
-    echo "Copied to current directory, and /etc/systemd/system"
+    echo "Copied to ./$1.service, and /etc/systemd/system/$1.service"
     echo " "
   else
     echo " "
