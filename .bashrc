@@ -99,5 +99,9 @@ else
   # Finally, load neo fetch if it is installed
   if hash neofetch 2>/dev/null; then
           neofetch
+  else
+  	echo " "
+  	echo "To be really cool, install neofetch: https://github.com/dylanaraps/neofetch"
+  	echo " "
   fi
 fi
