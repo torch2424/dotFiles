@@ -15,7 +15,7 @@ alias piShrink="~/.files_libs/piShrink.sh "
 alias pishrink="piShrink"
 
 # Gvn Alias
-alias gvn='~/.files_libs/gvn.sh'
+alias gvn='bash ~/.files_libs/gvn.sh'
 alias gvnh="gvn help"
 alias gvna="gvn add"
 alias gvnr="gvn reset"
