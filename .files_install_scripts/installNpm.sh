@@ -7,7 +7,8 @@ then echo "Do not run as root. Run as your user to get nvm, and no sudo npm inst
 fi
 
 #Install NVM (Node Version Manager)
-curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | sh
+mkdir $HOME/.nvm
+curl -o- https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash
 source ~/.bashrc
 
 #Install Node

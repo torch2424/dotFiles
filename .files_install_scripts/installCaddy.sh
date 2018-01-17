@@ -5,14 +5,25 @@
 # Please see my reason for doing this at:
 # https://github.com/torch2424/dotFiles/issues/12
 
+
+# Slightly Go version parser
+# https://gist.github.com/pyk/ab63cfbd53668c3eed50
+function go_version {
+  version=$(go version)
+  regex="([0-9].[0-9].[0-9])"
+  if [[ $version =~ $regex ]]; then 
+    echo ${BASH_REMATCH[1]}
+  fi
+}
+
 # Check go to be installed
 go version > /dev/null
 if [ $? -eq 0 ]; then
-    # Check go version
-    GO_VERSION_PARSED="$(go version | grep -Eo "(\d+\.)+\d+")"
     # https://stackoverflow.com/questions/30874579/bash-comparison-of-version-strings-with-2-dots
-    GO_VERSION="$(echo $GO_VERSION_PARSED | sed 's/\.//g')"
+    GO_VERSION="$(echo $(go_version) | sed 's/\.//g')"
     MIN_VERSION="$(echo "1.8.0" | sed 's/\.//g')"
+
+    # Compare our versions
     if [ "$GO_VERSION" -gt "$MIN_VERSION" ]; then
 
       # Install caddy from source
@@ -31,13 +42,17 @@ if [ $? -eq 0 ]; then
       # May need to pass -goos= and -goarch=
       go run build.go
 
+      # Copy to our go path bin
+      cp caddy "$GOPATH/bin"
+
       echo "Build Complete! Please check \$GOPATH/src/github.com/torch2424/caddy/caddy"
       echo "For Instance:"
       echo " "
       echo "'cd \$GOPATH/src/github.com/torch2424/caddy/caddy'"
       echo "'./caddy'"
       echo " "
-      echo "You may now copy this binary wherever you would like..."
+      echo "Copied to the binary to: $GOPATH/bin"
+      echo "However, you may now copy this binary wherever you would like..."		
     else
       echo "Caddy requires Go 1.8 to be installed."
     fi
