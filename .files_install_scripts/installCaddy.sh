@@ -22,8 +22,8 @@ if [ $? -eq 0 ]; then
     # https://stackoverflow.com/questions/30874579/bash-comparison-of-version-strings-with-2-dots
     GO_VERSION="$(echo $(go_version) | sed 's/\.//g')"
     MIN_VERSION="$(echo "1.8.0" | sed 's/\.//g')"
-    echo $GO_VERSION
-    echo $MIN_VERSION
+
+    # Compare our versions
     if [ "$GO_VERSION" -gt "$MIN_VERSION" ]; then
 
       # Install caddy from source
