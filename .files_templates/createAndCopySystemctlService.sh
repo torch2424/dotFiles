@@ -26,22 +26,22 @@ __is_confirmed() {
   return 1
 }
 
-if [ "$#" -lt 2 ]; then
+if [ "$#" -lt 3 ]; then
   echo "USAGE: ./createAndCopySystemctlService.sh : Generate systemctl service for the current user, and copies to /etc/systemd/system, as well as keeps a copy in current directory"
   echo " "
-  echo "./createAndCopySystemctlService.sh [Directory to navigate to in quotes] [Command to run in quotes]"
+  echo "./createAndCopySystemctlService.sh [service name without .service] [Directory to navigate to] [Command to run in quotes]"
 else
 
   # Copy the cyctemctl service to temp
   cp systemctl.service /tmp/tmpSystemctl.service
   __find_and_replace_in_file "\[USER\]" "$(whoami)" /tmp/tmpSystemctl.service
 
-  DIRECTORY=$(realpath $1)
+  DIRECTORY=$(realpath $2)
   #https://unix.stackexchange.com/questions/265267/bash-converting-path-names-for-sed-so-they-escape/265572
   DIRECTORY_ESCAPED=${DIRECTORY//\//\\/}
   __find_and_replace_in_file "\[DIRECTORY\]" "$DIRECTORY_ESCAPED" /tmp/tmpSystemctl.service
 
-  __find_and_replace_in_file "\[COMMAND\]" "$2" /tmp/tmpSystemctl.service
+  __find_and_replace_in_file "\[COMMAND\]" "$3" /tmp/tmpSystemctl.service
 
   echo " "
   echo "Resulting .service file..."
@@ -53,8 +53,8 @@ else
   __seek_confirmation "Does this look okay?"
 
   if __is_confirmed; then
-    cp /tmp/tmpSystemctl.service .
-    sudo cp /tmp/tmpSystemctl.service /etc/systemd/system
+    cp /tmp/tmpSystemctl.service "./$1.service"
+    sudo cp /tmp/tmpSystemctl.service "/etc/systemd/system/$1.service"
     echo " "
     echo "Copied to current directory, and /etc/systemd/system"
     echo " "
