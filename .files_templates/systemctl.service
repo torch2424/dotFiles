@@ -8,9 +8,9 @@ After=network.target
 
 [Service]
 Type=simple
-User=[INSERT USER HERE]
-WorkingDirectory=/home/[INSERT USER HERE]
-ExecStart=/bin/bash --login -c 'source /home/${whoami}/.bashrc; cd [Directory to run] && [COMMAND/SERVICE TO RUN]'
+User=[USER]
+WorkingDirectory=/home/[USER]
+ExecStart=/bin/bash --login -c 'source $HOME/.bashrc; cd [DIRECTORY] && [COMMAND]'
 Restart=always
 
 [Install]
