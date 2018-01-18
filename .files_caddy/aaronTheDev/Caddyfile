@@ -63,7 +63,8 @@ git.aaronthedev.com {
     }
 }
 
-# Mongo Manager, Similar to phpmy admin
+# adminMongo, Mongo Manager, Similar to phpmy admin
+# https://github.com/mrvautin/adminMongo
 mongo.aaronthedev.com {
     proxy / localhost:7000 {
         transparent
