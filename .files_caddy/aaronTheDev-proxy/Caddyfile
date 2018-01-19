@@ -55,14 +55,6 @@ nocomplygames.com {
     }
 }
 
-# Aaronthedev blog
-blog.aaronthedev.com {
-    gzip
-    proxy / {$APP_IP}:8080 0.0.0.0:5000 {
-        import importProxyFailover
-    }
-}
-
 # Get Dis Money
 getdismoney.com {
     gzip
