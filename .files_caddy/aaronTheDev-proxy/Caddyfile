@@ -15,14 +15,18 @@ http://0.0.0.0:5000 {
 aaronthedev.com {
     gzip
     proxy / {$APP_IP}:8000 0.0.0.0:5000 {
-        import "./importProxyFailover"
+        policy first
+        transparent
+        health_check /
     }
 }
 
 # Droppy File Server
 files.aaronthedev.com {
     proxy / {$APP_IP}:8989 0.0.0.0:5000 {
-        import "./importProxyFailover"
+        policy first
+        transparent
+        health_check /
         websocket
     }
 
@@ -35,7 +39,9 @@ files.aaronthedev.com {
 leahrosegarza.com {
     gzip
     proxy / {$APP_IP}:2525 0.0.0.0:5000 {
-        import "./importProxyFailover"
+        policy first
+        transparent
+        health_check /
     }
 }
 
@@ -43,7 +49,9 @@ leahrosegarza.com {
 sayonarajs.com {
     gzip
     proxy / {$APP_IP}:4200 0.0.0.0:5000 {
-        import "./importProxyFailover"
+        policy first
+        transparent
+        health_check /
     }
 }
 
@@ -51,7 +59,9 @@ sayonarajs.com {
 nocomplygames.com {
     gzip
     proxy / {$APP_IP}:2424 0.0.0.0:5000 {
-        import "./importProxyFailover"
+        policy first
+        transparent
+        health_check /
     }
 }
 
@@ -59,21 +69,27 @@ nocomplygames.com {
 getdismoney.com {
     gzip
     proxy / {$APP_IP}:3030 0.0.0.0:5000 {
-        import "./importProxyFailover"
+        policy first
+        transparent
+        health_check /
     }
 }
 
 # Gogs, Aaronthedev git
 git.aaronthedev.com {
     proxy / {$APP_IP}:3000 0.0.0.0:5000 {
-        import "./importProxyFailover"
+        policy first
+        transparent
+        health_check /
     }
 }
 
 # Mongo Manager, Similar to phpmy admin
 mongo.aaronthedev.com {
     proxy / {$APP_IP}:7000 0.0.0.0:5000 {
-        import "./importProxyFailover"
+        policy first
+        transparent
+        health_check /
     }
 }
 
@@ -81,13 +97,17 @@ mongo.aaronthedev.com {
 # https://github.com/alseambusher/crontab-ui
 cron.aaronthedev.com {
     proxy / {$APP_IP}:9000 0.0.0.0:5000 {
-        import "./importProxyFailover"
+        policy first
+        transparent
+        health_check /
     }
 }
 
 # Testbuild, Droppy directory for hosting quick builds
 testbuild.aaronthedev.com {
     proxy / {$APP_IP}:2425 0.0.0.0:5000 {
-        import "./importProxyFailover"
+        policy first
+        transparent
+        health_check /
     }
 }
