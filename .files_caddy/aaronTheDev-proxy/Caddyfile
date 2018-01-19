@@ -4,21 +4,25 @@
 http://0.0.0.0:5000 {
   gzip
   root /home/torch2424/maintenanceFailover
+
+  rewrite / {
+  	regexp .*
+  	to /
+  }
 }
 
 # Home Page / Portfolio site
 aaronthedev.com {
     gzip
-    proxy / {$APP_IP}:8000 {
-        policy first
-        transparent
+    proxy / {$APP_IP}:8000 0.0.0.0:5000 {
+        import importProxyFailover
     }
 }
 
 # Droppy File Server
 files.aaronthedev.com {
-    proxy / {$APP_IP}:8989 {
-        transparent
+    proxy / {$APP_IP}:8989 0.0.0.0:5000 {
+        import importProxyFailover
         websocket
     }
 
@@ -30,69 +34,68 @@ files.aaronthedev.com {
 # Leah's Portfolio Site
 leahrosegarza.com {
     gzip
-    proxy / {$APP_IP}:2525 {
-        transparent
+    proxy / {$APP_IP}:2525 0.0.0.0:5000 {
+        import importProxyFailover
     }
 }
 
 # Sayonara Docs Pags
 sayonarajs.com {
     gzip
-    proxy / {$APP_IP}:4200 {
-        transparent
+    proxy / {$APP_IP}:4200 0.0.0.0:5000 {
+        import importProxyFailover
     }
 }
 
 # No Comply Games Maintenance
 nocomplygames.com {
     gzip
-    proxy / {$APP_IP}:4200 {
-        transparent
+    proxy / {$APP_IP}:2424 0.0.0.0:5000 {
+        import importProxyFailover
     }
 }
 
 # Aaronthedev blog
 blog.aaronthedev.com {
     gzip
-    proxy / {$APP_IP}:8080 {
-        transparent
+    proxy / {$APP_IP}:8080 0.0.0.0:5000 {
+        import importProxyFailover
     }
 }
 
 # Get Dis Money
 getdismoney.com {
     gzip
-    proxy / {$APP_IP}:3030 {
-        transparent
+    proxy / {$APP_IP}:3030 0.0.0.0:5000 {
+        import importProxyFailover
     }
 }
 
 # Gogs, Aaronthedev git
 git.aaronthedev.com {
-    proxy / {$APP_IP}:3000 {
-        transparent
+    proxy / {$APP_IP}:3000 0.0.0.0:5000 {
+        import importProxyFailover
     }
 }
 
 # Mongo Manager, Similar to phpmy admin
 mongo.aaronthedev.com {
-    proxy / {$APP_IP}:7000 {
-        transparent
+    proxy / {$APP_IP}:7000 0.0.0.0:5000 {
+        import importProxyFailover
     }
 }
 
 # Crontab ui
 # https://github.com/alseambusher/crontab-ui
 cron.aaronthedev.com {
-    basicauth / torch2424 htpasswd=.htpasswd
-    proxy / {$APP_IP}:9000 {
-        transparent
+    proxy / {$APP_IP}:9000 0.0.0.0:5000 {
+        import importProxyFailover
     }
 }
 
 # Testbuild, Droppy directory for hosting quick builds
 testbuild.aaronthedev.com {
-    root /home/torch2424/droppyFileServer/files/testbuild.aaronthedev.com
-
-    browse
+    proxy / {$APP_IP}:2425 0.0.0.0:5000 {
+        import importProxyFailover
+    }
 }
