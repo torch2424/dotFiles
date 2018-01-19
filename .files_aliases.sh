@@ -47,6 +47,10 @@ alias gpoh='git push origin HEAD '
 alias gpom='gpoh '
 alias gauc="git update-index --assume-unchanged "
 alias guac="gauc"
+alias ungauc="git update-index --no-assume-changed "
+alias gnac="ungauc"
+alias unguac="ungauc"
+
 
 # systemctl alias
 alias ssdr='sudo systemctl daemon-reload'
