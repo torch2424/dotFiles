@@ -15,14 +15,14 @@ http://0.0.0.0:5000 {
 aaronthedev.com {
     gzip
     proxy / {$APP_IP}:8000 0.0.0.0:5000 {
-        import importProxyFailover
+        import "./importProxyFailover"
     }
 }
 
 # Droppy File Server
 files.aaronthedev.com {
     proxy / {$APP_IP}:8989 0.0.0.0:5000 {
-        import importProxyFailover
+        import "./importProxyFailover"
         websocket
     }
 
@@ -35,7 +35,7 @@ files.aaronthedev.com {
 leahrosegarza.com {
     gzip
     proxy / {$APP_IP}:2525 0.0.0.0:5000 {
-        import importProxyFailover
+        import "./importProxyFailover"
     }
 }
 
@@ -43,7 +43,7 @@ leahrosegarza.com {
 sayonarajs.com {
     gzip
     proxy / {$APP_IP}:4200 0.0.0.0:5000 {
-        import importProxyFailover
+        import "./importProxyFailover"
     }
 }
 
@@ -51,7 +51,7 @@ sayonarajs.com {
 nocomplygames.com {
     gzip
     proxy / {$APP_IP}:2424 0.0.0.0:5000 {
-        import importProxyFailover
+        import "./importProxyFailover"
     }
 }
 
@@ -59,7 +59,7 @@ nocomplygames.com {
 blog.aaronthedev.com {
     gzip
     proxy / {$APP_IP}:8080 0.0.0.0:5000 {
-        import importProxyFailover
+        import "./importProxyFailover"
     }
 }
 
@@ -67,21 +67,21 @@ blog.aaronthedev.com {
 getdismoney.com {
     gzip
     proxy / {$APP_IP}:3030 0.0.0.0:5000 {
-        import importProxyFailover
+        import "./importProxyFailover"
     }
 }
 
 # Gogs, Aaronthedev git
 git.aaronthedev.com {
     proxy / {$APP_IP}:3000 0.0.0.0:5000 {
-        import importProxyFailover
+        import "./importProxyFailover"
     }
 }
 
 # Mongo Manager, Similar to phpmy admin
 mongo.aaronthedev.com {
     proxy / {$APP_IP}:7000 0.0.0.0:5000 {
-        import importProxyFailover
+        import "./importProxyFailover"
     }
 }
 
@@ -89,13 +89,13 @@ mongo.aaronthedev.com {
 # https://github.com/alseambusher/crontab-ui
 cron.aaronthedev.com {
     proxy / {$APP_IP}:9000 0.0.0.0:5000 {
-        import importProxyFailover
+        import "./importProxyFailover"
     }
 }
 
 # Testbuild, Droppy directory for hosting quick builds
 testbuild.aaronthedev.com {
     proxy / {$APP_IP}:2425 0.0.0.0:5000 {
-        import importProxyFailover
+        import "./importProxyFailover"
     }
 }
