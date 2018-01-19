@@ -1,11 +1,11 @@
 # No Comply Games Maintenance
-http://0.0.0.0:1000 {
+http://0.0.0.0:2424 {
     gzip
     root /home/torch2424/nocomplygames-maintenance
 }
 
 # Testbuild, Droppy directory for hosting quick builds
-http://0.0.0.0:2000 {
+http://0.0.0.0:2425 {
     root /home/torch2424/droppyFileServer/files/testbuild.aaronthedev.com
 
     browse
