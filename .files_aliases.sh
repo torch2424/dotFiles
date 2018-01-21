@@ -55,12 +55,12 @@ alias unguac="ungauc"
 # systemctl alias
 alias ssdr='sudo systemctl daemon-reload'
 alias ssstart='sudo systemctl start '
-alias ssstatus='sudo systemctl status '
+alias ssstatus='sudo systemctl status --no-pager '
 alias ssrestart='sudo systemctl restart '
 alias ssenable='sudo systemctl enable '
 alias ssstop='sudo systemctl stop '
 alias ssdisable='sudo systemctl disable '
-alias sj='sudo journalctl -u '
+alias sj='sudo journalctl --no-pager -u '
 
 # Vagrant Aliases
 alias vu='vagrant up'

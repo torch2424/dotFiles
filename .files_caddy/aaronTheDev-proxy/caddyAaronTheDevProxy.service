@@ -10,7 +10,7 @@ After=network.target
 Type=simple
 User=torch2424
 WorkingDirectory=/home/torch2424
-ExecStart=/bin/bash --login -c 'source $HOME/.bashrc; cd /home/torch2424/.files_caddy/aaronTheDev-proxy && caddy -email aaron@aaronthedev.com'
+ExecStart=/bin/bash --login -c 'source $HOME/.bashrc; cd /home/torch2424/.files_caddy/aaronTheDev-proxy && APP_IP=10.138.4.57 caddy -email aaron@aaronthedev.com'
 Restart=always
 
 [Install]

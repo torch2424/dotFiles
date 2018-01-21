@@ -12,17 +12,21 @@ http://0.0.0.0:5000 {
 }
 
 # Home Page / Portfolio site
-aaronthedev.com {
+aaronthedev.com, http://0.0.0.0:8000 {
     gzip
     proxy / {$APP_IP}:8000 0.0.0.0:5000 {
-        import importProxyFailover
+        policy first
+        transparent
+        health_check /
     }
 }
 
 # Droppy File Server
-files.aaronthedev.com {
+files.aaronthedev.com, http://0.0.0.0:8989 {
     proxy / {$APP_IP}:8989 0.0.0.0:5000 {
-        import importProxyFailover
+        policy first
+        transparent
+        health_check /
         websocket
     }
 
@@ -32,70 +36,78 @@ files.aaronthedev.com {
 }
 
 # Leah's Portfolio Site
-leahrosegarza.com {
+leahrosegarza.com, http://0.0.0.0:2525 {
     gzip
     proxy / {$APP_IP}:2525 0.0.0.0:5000 {
-        import importProxyFailover
+        policy first
+        transparent
+        health_check /
     }
 }
 
 # Sayonara Docs Pags
-sayonarajs.com {
+sayonarajs.com, http://0.0.0.0:4200 {
     gzip
     proxy / {$APP_IP}:4200 0.0.0.0:5000 {
-        import importProxyFailover
+        policy first
+        transparent
+        health_check /
     }
 }
 
 # No Comply Games Maintenance
-nocomplygames.com {
+nocomplygames.com, http://0.0.0.0:2424 {
     gzip
     proxy / {$APP_IP}:2424 0.0.0.0:5000 {
-        import importProxyFailover
-    }
-}
-
-# Aaronthedev blog
-blog.aaronthedev.com {
-    gzip
-    proxy / {$APP_IP}:8080 0.0.0.0:5000 {
-        import importProxyFailover
+        policy first
+        transparent
+        health_check /
     }
 }
 
 # Get Dis Money
-getdismoney.com {
+getdismoney.com, http://0.0.0.0:3030 {
     gzip
     proxy / {$APP_IP}:3030 0.0.0.0:5000 {
-        import importProxyFailover
+        policy first
+        transparent
+        health_check /
     }
 }
 
 # Gogs, Aaronthedev git
-git.aaronthedev.com {
+git.aaronthedev.com, http://0.0.0.0:3000 {
     proxy / {$APP_IP}:3000 0.0.0.0:5000 {
-        import importProxyFailover
+        policy first
+        transparent
+        health_check /
     }
 }
 
 # Mongo Manager, Similar to phpmy admin
-mongo.aaronthedev.com {
+mongo.aaronthedev.com, http://0.0.0.0:7000 {
     proxy / {$APP_IP}:7000 0.0.0.0:5000 {
-        import importProxyFailover
+        policy first
+        transparent
+        health_check /
     }
 }
 
 # Crontab ui
 # https://github.com/alseambusher/crontab-ui
-cron.aaronthedev.com {
+cron.aaronthedev.com, http://0.0.0.0:9000 {
     proxy / {$APP_IP}:9000 0.0.0.0:5000 {
-        import importProxyFailover
+        policy first
+        transparent
+        health_check /
     }
 }
 
 # Testbuild, Droppy directory for hosting quick builds
-testbuild.aaronthedev.com {
+testbuild.aaronthedev.com, http://0.0.0.0:2425 {
     proxy / {$APP_IP}:2425 0.0.0.0:5000 {
-        import importProxyFailover
+        policy first
+        transparent
+        health_check /
     }
 }
