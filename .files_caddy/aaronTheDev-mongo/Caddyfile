@@ -1,0 +1,16 @@
+# Basic Auth for crontab-ui
+# https://github.com/alseambusher/crontab-ui
+cron.mongo.aaronthedev.com, http://0.0.0.0:9000 {
+  basicauth / torch2424 htpasswd=.htpasswd
+  proxy / localhost:9001 {
+    transparent
+  }
+}
+
+# Droppy
+files.mongo.aaronthedev.com {
+	proxy / localhost:8989 {
+		transparent
+		websocket
+	}
+}
