@@ -93,16 +93,6 @@ mongo.aaronthedev.com, http://0.0.0.0:7000 {
     }
 }
 
-# Crontab ui
-# https://github.com/alseambusher/crontab-ui
-cron.aaronthedev.com, http://0.0.0.0:9000 {
-    proxy / {$APP_IP}:9000 0.0.0.0:5000 {
-        policy first
-        transparent
-        health_check /
-    }
-}
-
 # Testbuild, Droppy directory for hosting quick builds
 testbuild.aaronthedev.com, http://0.0.0.0:2425 {
     proxy / {$APP_IP}:2425 0.0.0.0:5000 {
