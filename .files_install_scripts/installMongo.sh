@@ -25,6 +25,8 @@ echo "If you see a status here, Mongo is installed! And control mongo (mongod) w
 echo " "
 echo "Learn how to secure mongodb:"
 echo "https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-mongodb-on-ubuntu-16-04"
+echo "Create a escalate user admin to root:"
+echo "https://docs.mongodb.com/v2.6/tutorial/add-admin-user/"
 echo " "
 echo "Done! Enjoy Losing your data! Jk! See the joke below:"
 echo "https://www.reddit.com/r/mongodb/comments/43m2om/how_exactly_does_mongodb_lose_data_and_is_it/"
