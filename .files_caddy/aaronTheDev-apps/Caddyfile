@@ -12,7 +12,7 @@ http://0.0.0.0:2425 {
 }
 
 # Basic Auth for crontab-ui
-http://0.0.0.0:9000 {
+cron.aaronthedev.com, http://0.0.0.0:9000 {
     basicauth / torch2424 htpasswd=.htpasswd
     proxy / localhost:9001 {
         transparent
