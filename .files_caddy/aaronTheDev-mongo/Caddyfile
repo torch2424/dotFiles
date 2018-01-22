@@ -1,6 +1,6 @@
 # Basic Auth for crontab-ui
 # https://github.com/alseambusher/crontab-ui
-cron.mongo.aaronthedev.com, http://0.0.0.0:9000 {
+cron.mongo.aaronthedev.com {
   basicauth / torch2424 htpasswd=.htpasswd
   proxy / localhost:9001 {
     transparent
