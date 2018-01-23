@@ -1,0 +1,10 @@
+# Our Maintenance Failover Website
+http://0.0.0.0:5000 {
+  gzip
+  root /home/torch2424/maintenanceFailover
+
+  rewrite / {
+  	regexp .*
+  	to /
+  }
+}
