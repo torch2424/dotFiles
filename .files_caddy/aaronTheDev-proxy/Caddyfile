@@ -7,7 +7,8 @@ http://0.0.0.0:5000 {
 
   rewrite / {
   	regexp .*
-  	to /
+    # Rewrite to the path, then path with slash, then if both 404, just /
+  	to {path} {path}/ /
   }
 }
 

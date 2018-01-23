@@ -1,10 +1,11 @@
 # Our Maintenance Failover Website
 http://0.0.0.0:5000 {
   gzip
-  root /home/torch2424/maintenanceFailover
+  root /Users/aaron/Source/maintenanceFailover
 
   rewrite / {
   	regexp .*
-  	to /
+    # Rewrite to the path, then path with slash, then if both 404, just /
+  	to {path} {path}/ /
   }
 }
