@@ -47,8 +47,9 @@ alias gpoh='git push origin HEAD '
 alias gpom='gpoh '
 alias gauc="git update-index --assume-unchanged "
 alias guac="gauc"
-alias ungauc="git update-index --no-assume-changed "
-alias gnac="ungauc"
+alias ungauc="git update-index --no-assume-unchanged "
+alias noguac="ungauc"
+alias gnauc="ungauc"
 alias unguac="ungauc"
 
 
