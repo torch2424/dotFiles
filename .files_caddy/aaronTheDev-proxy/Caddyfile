@@ -15,31 +15,17 @@ http://0.0.0.0:5000 {
 # Home Page / Portfolio site
 aaronthedev.com, http://0.0.0.0:8000 {
     gzip
-    proxy / {$APP_IP}:8000 0.0.0.0:5000 {
+    proxy / {$APP_IP}:8000 0.0.0.0:5000/aaronTheDev {
         policy first
         transparent
         health_check /
-    }
-}
-
-# Droppy File Server
-files.aaronthedev.com, http://0.0.0.0:8989 {
-    proxy / {$APP_IP}:8989 0.0.0.0:5000 {
-        policy first
-        transparent
-        health_check /
-        websocket
-    }
-
-    header /$/ {
-        Cache-Control  "public, max-age=2678400"
     }
 }
 
 # Leah's Portfolio Site
 leahrosegarza.com, http://0.0.0.0:2525 {
     gzip
-    proxy / {$APP_IP}:2525 0.0.0.0:5000 {
+    proxy / {$APP_IP}:2525 0.0.0.0:5000/leahRoseGarza {
         policy first
         transparent
         health_check /
@@ -73,6 +59,20 @@ getdismoney.com, http://0.0.0.0:3030 {
         policy first
         transparent
         health_check /
+    }
+}
+
+# Droppy File Server
+files.aaronthedev.com, http://0.0.0.0:8989 {
+    proxy / {$APP_IP}:8989 0.0.0.0:5000 {
+        policy first
+        transparent
+        health_check /
+        websocket
+    }
+
+    header /$/ {
+        Cache-Control  "public, max-age=2678400"
     }
 }
 
