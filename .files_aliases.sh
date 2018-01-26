@@ -71,7 +71,7 @@ alias vssh='vagrant ssh'
 alias vd='vagrant destroy'
 
 # Docker Aliases
-alias dcu='docker-compuse up'
+alias dcu='docker-compose up'
 
 # cd aliases
 alias cdvs='cd ~/vagrantBox/'
