@@ -74,6 +74,11 @@ alias vd='vagrant destroy'
 alias dcu='docker-compose up'
 alias dcr='docker-compose run'
 alias dsp="docker system prune"
+alias dcp='dsp'
+alias di='docker images'
+alias dl='di'
+alias dci='di'
+alias dcl='di'
 
 # cd aliases
 alias cdvs='cd ~/vagrantBox/'
