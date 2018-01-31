@@ -71,6 +71,7 @@ alias vssh='vagrant ssh'
 alias vd='vagrant destroy'
 
 # Docker Aliases
+alias dcb='docker-compose build --no-cache'
 alias dcu='docker-compose up'
 alias dcr='docker-compose run'
 alias dsp="docker system prune"
