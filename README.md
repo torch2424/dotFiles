@@ -6,3 +6,4 @@ A repo containing all the cool stuff that makes my ~ feel like $HOME.
 
 Also, [this is quite handy of a guide](https://dotfiles.github.io/)
 
+Iterm colors are from: https://github.com/morhetz/gruvbox-contrib/blob/master/iterm2/gruvbox-dark.itermcolors
