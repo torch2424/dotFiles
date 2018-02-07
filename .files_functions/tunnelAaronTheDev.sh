@@ -46,3 +46,4 @@ aaronTheDevHttpPortShare() {
 alias shareport='aaronTheDevHttpPortShare'
 alias portshare='shareport'
 alias sp='shareport'
+alias tunnel='sp'
