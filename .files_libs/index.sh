@@ -24,3 +24,12 @@ alias gvns="gvn status"
 alias gvnc="gvn commit"
 alias gvnl="gvn log"
 alias gvnd="gvn diff"
+
+# Aliases for local gh-md-toc
+# https://github.com/ekalinin/github-markdown-toc
+alias toc='~/.files_libs/github-markdown-toc/gh-md-toc'
+alias table='toc'
+alias tableofcontents='toc'
+alias readmetable='toc'
+alias gh-md-toc='toc'
+alias github-markdown-toc='toc'

@@ -70,6 +70,17 @@ alias vs='vagrant status'
 alias vssh='vagrant ssh'
 alias vd='vagrant destroy'
 
+# Docker Aliases
+alias dcb='docker-compose build --no-cache'
+alias dcu='docker-compose up'
+alias dcr='docker-compose run'
+alias dsp="docker system prune"
+alias dcp='dsp'
+alias di='docker images'
+alias dl='di'
+alias dci='di'
+alias dcl='di'
+
 # cd aliases
 alias cdvs='cd ~/vagrantBox/'
 alias cds='cd ~/Source/'
