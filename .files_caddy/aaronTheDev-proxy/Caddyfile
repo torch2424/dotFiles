@@ -105,7 +105,9 @@ testbuild.aaronthedev.com, http://0.0.0.0:2425 {
 
 # Tunnel, for ngrok-like ssh port sharing
 tunnel.aaronthedev.com {
-	proxy / localhost:9090 {
+	proxy / localhost:9090 0.0.0.0:5000 {
+		policy first
+		health_check /
 		transparent
 	}
 }
