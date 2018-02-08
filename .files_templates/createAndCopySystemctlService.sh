@@ -62,6 +62,7 @@ else
     echo " "
     echo "NOTE: If this service needs to be restarted by a script, but dont want to get prompted for password"
     echo "Check out: https://askubuntu.com/questions/692701/allowing-user-to-run-systemctl-systemd-services-without-password"
+    echo "Edit sudoers file with 'sudo visudo -f /etc/sudoers' and then add: 'MY_USER ALL=NOPASSWD: /bin/systemctl'"
     echo "And make sure to use sudo /bin/systemctl , not just sudo systemctl"
     echo " "
   else
