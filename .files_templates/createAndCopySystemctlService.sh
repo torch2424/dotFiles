@@ -58,6 +58,12 @@ else
     echo " "
     echo "Copied to ./$1.service, and /etc/systemd/system/$1.service"
     echo " "
+    echo "Done!"
+    echo " "
+    echo "NOTE: If this service needs to be restarted by a script, but dont want to get prompted for password"
+    echo "Check out: https://askubuntu.com/questions/692701/allowing-user-to-run-systemctl-systemd-services-without-password"
+    echo "And make sure to use sudo /bin/systemctl , not just sudo systemctl"
+    echo " "
   else
     echo " "
     echo "Cancelled."
