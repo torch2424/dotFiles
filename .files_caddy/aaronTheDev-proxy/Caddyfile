@@ -64,6 +64,7 @@ getdismoney.com, http://0.0.0.0:3030 {
 
 # Droppy File Server
 files.aaronthedev.com, http://0.0.0.0:8989 {
+    gzip
     proxy / {$APP_IP}:8989 0.0.0.0:5000 {
         policy first
         transparent
@@ -78,6 +79,7 @@ files.aaronthedev.com, http://0.0.0.0:8989 {
 
 # Gogs, Aaronthedev git
 git.aaronthedev.com, http://0.0.0.0:3000 {
+    gzip
     proxy / {$APP_IP}:3000 0.0.0.0:5000 {
         policy first
         transparent
@@ -87,6 +89,7 @@ git.aaronthedev.com, http://0.0.0.0:3000 {
 
 # Mongo Manager, Similar to phpmy admin
 mongo.aaronthedev.com, http://0.0.0.0:7000 {
+    gzip
     proxy / {$APP_IP}:7000 0.0.0.0:5000 {
         policy first
         transparent
@@ -96,6 +99,7 @@ mongo.aaronthedev.com, http://0.0.0.0:7000 {
 
 # Testbuild, Droppy directory for hosting quick builds
 testbuild.aaronthedev.com, http://0.0.0.0:2425 {
+    gzip
     proxy / {$APP_IP}:2425 0.0.0.0:5000 {
         policy first
         transparent
@@ -105,6 +109,7 @@ testbuild.aaronthedev.com, http://0.0.0.0:2425 {
 
 # Tunnel, for ngrok-like ssh port sharing
 tunnel.aaronthedev.com {
+  gzip
 	proxy / localhost:9090 0.0.0.0:5000 {
 		policy first
 		health_check /
@@ -122,6 +127,7 @@ stream.paintwithbob.com, http://0.0.0.0:6969 {
 }
 
 api.paintwithbob.com, http://0.0.0.0:6970 {
+  gzip
     proxy / {$APP_IP}:6970 0.0.0.0:5000 {
         policy first
         transparent
@@ -130,6 +136,7 @@ api.paintwithbob.com, http://0.0.0.0:6970 {
 }
 
 dev.paintwithbob.com, http://0.0.0.0:6971 {
+  gzip
     proxy / {$APP_IP}:6971 0.0.0.0:5000 {
         policy first
         transparent
