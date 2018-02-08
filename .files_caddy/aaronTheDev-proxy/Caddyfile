@@ -117,7 +117,7 @@ stream.paintwithbob.com, http://0.0.0.0:6969 {
     proxy / {$APP_IP}:6969 0.0.0.0:5000 {
         policy first
         transparent
-        health_check /
+        health_check /stream.ogg
     }
 }
 
