@@ -111,3 +111,28 @@ tunnel.aaronthedev.com {
 		transparent
 	}
 }
+
+# Paint with Bob
+stream.paintwithbob.com, http://0.0.0.0:6969 {
+    proxy / {$APP_IP}:6969 0.0.0.0:5000 {
+        policy first
+        transparent
+        health_check /
+    }
+}
+
+api.paintwithbob.com, http://0.0.0.0:6970 {
+    proxy / {$APP_IP}:6970 0.0.0.0:5000 {
+        policy first
+        transparent
+        health_check /
+    }
+}
+
+dev.paintwithbob.com, http://0.0.0.0:6971 {
+    proxy / {$APP_IP}:6971 0.0.0.0:5000 {
+        policy first
+        transparent
+        health_check /
+    }
+}
