@@ -88,6 +88,7 @@ else
     export JAVA_HOME=`/usr/libexec/java_home`
     # Android Path
     export ANDROID_PATH="/Users/aaron/Library/Android/sdk"
+    export PATH="/Applications/VLC.app/Contents/MacOS/VLC:$PATH"
   fi
 
   # Finally source all things inside of .files_work, especially for pedanco rvm

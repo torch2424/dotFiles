@@ -161,9 +161,6 @@ alias webpack='./node_modules/.bin/webpack --config webpack.config.js'
 alias karma='./node_modules/karma/bin/karma'
 alias karmatestfile='karma start --auto-watch --grep'
 
-# Vlc for osx
-alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
-
 # Micro Aliases
 alias m='micro'
 alias vim='micro'
