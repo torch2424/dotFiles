@@ -19,11 +19,3 @@ cron.aaronthedev.com, http://0.0.0.0:9000 {
         transparent
     }
 }
-
-# Paint wit Bob dev git CD
-http://0.0.0.0:8024 {
-  git git@github.com:PaintWithBob/paint-with-bob {
-    hook /webhook
-    then  bash /home/torch2424/paint-with-bob/restartAll.sh
-  }
-}
