@@ -19,3 +19,8 @@ cron.aaronthedev.com, http://0.0.0.0:9000 {
         transparent
     }
 }
+
+# Paint with Bob Dev
+http://0.0.0.0:6971 {
+  root /home/torch2424/paint-with-bob/frontend/dist
+}
