@@ -137,8 +137,8 @@ api.paintwithbob.com, http://0.0.0.0:6970 {
 
 dev.paintwithbob.com, http://0.0.0.0:6971 {
     proxy / {$APP_IP}:6971 {
-        policy first
-        transparent
-        health_check /
+        #policy first
+        #transparent
+        #health_check /
     }
 }
