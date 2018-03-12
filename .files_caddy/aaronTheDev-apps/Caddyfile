@@ -26,6 +26,6 @@ http://0.0.0.0:6971 {
 
   # SPA Rewrites
   rewrite {
-    to {uri} {uri}/ /index.html
+    to {path} {path}/ /index.html
   }
 }
