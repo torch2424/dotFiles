@@ -22,11 +22,10 @@ cron.aaronthedev.com, http://0.0.0.0:9000 {
 
 # Paint with Bob Dev
 http://0.0.0.0:6971 {
-  gzip
   root /home/torch2424/paint-with-bob/frontend/dist
 
   # SPA Rewrites
   rewrite {
-    to {path} {path}/ /index.html
+    to {uri} {uri}/ /index.html
   }
 }
