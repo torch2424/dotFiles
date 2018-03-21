@@ -118,36 +118,36 @@ tunnel.aaronthedev.com {
 }
 
 # Paint with Bob
-# files.paintwithbob.com, http://0.0.0.0:6966 {
-#     proxy / {$APP_IP}:6966 0.0.0.0:5000 {
-#         policy first
-#         transparent
-#         websocket
-#     }
-# }
-#
-# stream.paintwithbob.com, http://0.0.0.0:6969 {
-#     proxy / {$APP_IP}:6969 0.0.0.0:5000 {
-#         policy first
-#         transparent
-#         health_check /stream.ogg
-#     }
-# }
-#
-# api.paintwithbob.com, http://0.0.0.0:6970 {
-#     gzip
-#     proxy / {$APP_IP}:6970 0.0.0.0:5000 {
-#         policy first
-#         transparent
-#         health_check /
-#     }
-# }
-#
-# dev.paintwithbob.com, http://0.0.0.0:6971 {
-#
-#     proxy / {$APP_IP}:6971 0.0.0.0:5000 {
-#         policy first
-#         transparent
-#         health_check /
-#     }
-# }
+files.paintwithbob.com, http://0.0.0.0:6966 {
+    proxy / {$APP_IP}:6966 0.0.0.0:5000 {
+        policy first
+        transparent
+        websocket
+    }
+}
+
+stream.paintwithbob.com, http://0.0.0.0:6969 {
+    proxy / {$APP_IP}:6969 0.0.0.0:5000 {
+        policy first
+        transparent
+        health_check /stream.ogg
+    }
+}
+
+api.paintwithbob.com, http://0.0.0.0:6970 {
+    gzip
+    proxy / {$APP_IP}:6970 0.0.0.0:5000 {
+        policy first
+        transparent
+        health_check /
+    }
+}
+
+dev.paintwithbob.com, http://0.0.0.0:6971 {
+
+    proxy / {$APP_IP}:6971 0.0.0.0:5000 {
+        policy first
+        transparent
+        health_check /
+    }
+}
