@@ -141,7 +141,7 @@ api.paintwithbob.com, http://0.0.0.0:6970 {
     }
 }
 
-dev.paintwithbob.com, http://0.0.0.0:6971 {
+paintwithbob.com, dev.paintwithbob.com, http://0.0.0.0:6971 {
 
     proxy / {$APP_IP}:6971 0.0.0.0:5000 {
         policy first
