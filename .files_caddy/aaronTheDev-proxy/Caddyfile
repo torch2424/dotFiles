@@ -127,6 +127,7 @@ files.paintwithbob.com, http://0.0.0.0:6966 {
 }
 
 stream.paintwithbob.com, http://0.0.0.0:6969 {
+    header / Strict-Transport-Security "max-age=31536000;"
     proxy / {$APP_IP}:6969 {
         transparent
     }
@@ -134,6 +135,7 @@ stream.paintwithbob.com, http://0.0.0.0:6969 {
 
 api.paintwithbob.com, http://0.0.0.0:6970 {
     gzip
+    header / Strict-Transport-Security "max-age=31536000;"
     proxy / {$APP_IP}:6970 0.0.0.0:5000 {
         policy first
         transparent
@@ -142,7 +144,7 @@ api.paintwithbob.com, http://0.0.0.0:6970 {
 }
 
 paintwithbob.com, dev.paintwithbob.com, http://0.0.0.0:6971 {
-
+    header / Strict-Transport-Security "max-age=31536000;"
     proxy / {$APP_IP}:6971 0.0.0.0:5000 {
         policy first
         transparent
