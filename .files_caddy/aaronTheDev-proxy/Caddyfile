@@ -62,6 +62,16 @@ getdismoney.com, http://0.0.0.0:3030 {
     }
 }
 
+# Programming Languages talk
+programminglanguages.talks.aaronthedev.com, http://0.0.0.0:4240 {
+    gzip
+    proxy / {$APP_IP}:4240 0.0.0.0:4240 {
+        policy first
+        transparent
+        health_check /
+    }
+}
+
 # Droppy File Server
 files.aaronthedev.com, http://0.0.0.0:8989 {
     gzip
