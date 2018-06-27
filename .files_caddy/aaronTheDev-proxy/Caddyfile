@@ -62,6 +62,16 @@ getdismoney.com, http://0.0.0.0:3030 {
     }
 }
 
+# VaporBoy
+vaporboy.net, http://0.0.0.0:9080 {
+	gzip
+	proxy / {$APP_IP}:9080 0.0.0.0:5000 {
+		policy first
+		transparent
+		health_check /
+	}
+}
+
 # Programming Languages talk
 programminglanguages.talks.aaronthedev.com, programminglanguages.talks.aaronthedev.app, http://0.0.0.0:4240 {
     gzip

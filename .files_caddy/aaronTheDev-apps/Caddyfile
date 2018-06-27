@@ -20,6 +20,17 @@ cron.aaronthedev.com, http://0.0.0.0:9000 {
     }
 }
 
+# Vaporboy
+http://0.0.0.0:9080 {
+	gzip
+	root /home/torch2424/vaporBoy/build
+
+	rewrite {
+		regexp .*
+		to {path} {path}/ /
+	}
+}
+
 # Paint with Bob Dev
 http://0.0.0.0:6971 {
   gzip
