@@ -23,7 +23,7 @@ cron.aaronthedev.com, http://0.0.0.0:9000 {
 # Vaporboy
 http://0.0.0.0:9080 {
 	gzip
-	root /home/torch2424/vaporBoy/build
+	root /home/torch2424/vaporBoy/public
 
 	rewrite {
 		regexp .*
