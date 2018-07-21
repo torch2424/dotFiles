@@ -1,7 +1,7 @@
 #/bin/bash
 
 # Inform user of copy
-echo " "
+echo "  "
 echo "Copying dotfiles with 'cp -r .* ~', and deleting the extra 'dotFiles' folder"
 echo " "
 
