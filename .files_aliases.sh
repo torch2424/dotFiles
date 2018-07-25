@@ -166,5 +166,7 @@ alias m='micro'
 alias mic='micro'
 
 # Vim Aliases
+# Need to allow CTRL S for vim: https://stackoverflow.com/questions/3446320/in-vim-how-to-map-save-to-ctrl-s
+alias vim="stty stop '' start '' -ixoff; vim"
 alias v='vim'
 alias vi='vim'

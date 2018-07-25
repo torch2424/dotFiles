@@ -7,9 +7,10 @@
 " Enable most vim settings
 set nocompatible
 
+
 " Vundle Setup
 filetype off
- 
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
  
@@ -21,6 +22,10 @@ Plugin 'itchyny/lightline.vim'
 
 " Color Scheme
 Plugin 'morhetz/gruvbox'
+
+" File Tree
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
 
 call vundle#end()
  
@@ -44,33 +49,33 @@ let g:lightline = {
       \ 'colorscheme': 'wombat',
       \ }
 
+" File tree
+" ----- jistr/vim-nerdtree-tabs -----
+" Open/close NERDTree Tabs with \t
+nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
+" To have NERDTree always open on startup
+let g:nerdtree_tabs_open_on_console_startup = 1
+let NERDTreeShowHidden=1
+autocmd VimEnter * call NERDTreeAddKeyMap({ 'key': '<2-LeftMouse>', 'scope': "FileNode", 'callback': "OpenInTab", 'override':1 })
+    function! OpenInTab(node)
+        call a:node.activate({'reuse': 'all', 'where': 't'})
+    endfunction
+
 " --- PLUGIN SETTINGS END   ---
 
 " Use the mouse for everything
-set mouse=a
+" http://vim.wikia.com/wiki/Make_mouse_drag_not_select_text_or_go_into_visual_mode
+set mouse=nicr
 " Copy paste only:
 " set mouse=r
 
-" Indenting in vim: http://stackoverflow.com/questions/234564/tab-key-4-spaces-and-auto-indent-after-curly-braces-in-vim
-filetype plugin indent on
+" Stop auto comment insertion
+set formatoptions-=cro
 
-" show existing tab with 4 spaces width
-set tabstop=42
+" Ctrl s to save
+nmap <c-s> :w<cr>
+imap <c-s> <esc>:w<cr>a
 
-" when indenting with '>', use 4 spaces width
-set shiftwidth=42
-
-" On pressing tab, insert 4 spaces
-set expandtab
-
-" File tree for current directory
-" https://shapeshed.com/vim-netrw/#netrw-the-unloved-directory-browser
-let g:netrw_banner = 0
-let g:netrw_liststyle = 3
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
-let g:netrw_winsize = 25
-augroup ProjectDrawer
-  autocmd!
-  autocmd VimEnter * :Vexplore
-augroup END
+" Ctrl q to quit
+nmap <c-q> :q<cr>
+imap <c-q> <esc>:q<cr>a
