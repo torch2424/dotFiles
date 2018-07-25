@@ -7,7 +7,6 @@
 " Enable most vim settings
 set nocompatible
 
-
 " Vundle Setup
 filetype off
 
@@ -26,6 +25,29 @@ Plugin 'morhetz/gruvbox'
 " File Tree
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
+
+" Editor Config
+Plugin 'editorconfig/editorconfig-vim'
+
+" () and {} autocomplete
+Plugin 'tpope/vim-surround'
+
+" Syntax Checking
+Plugin 'vim-syntastic/syntastic'
+
+" Inline Git
+Plugin 'airblade/vim-gitgutter'
+
+" Fuzzy Finding
+Plugin 'ctrlpvim/ctrlp.vim'
+
+" Better JS Support
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
+Plugin 'elzr/vim-json'
+
+" Linting
+Plugin 'w0rp/ale'
 
 call vundle#end()
  
@@ -61,6 +83,18 @@ autocmd VimEnter * call NERDTreeAddKeyMap({ 'key': '<2-LeftMouse>', 'scope': "Fi
         call a:node.activate({'reuse': 'all', 'where': 't'})
     endfunction
 
+" We need this for plugins like Syntastic and vim-gitgutter which put symbols
+" in the sign column.
+hi clear SignColumn
+
+" ----- scrooloose/syntastic settings -----
+let g:syntastic_error_symbol = '✘'
+let g:syntastic_warning_symbol = "▲"
+augroup mySyntastic
+  au!
+  au FileType tex let b:syntastic_mode = "passive"
+augroup END
+    
 " --- PLUGIN SETTINGS END   ---
 
 " Use the mouse for everything
@@ -79,3 +113,8 @@ imap <c-s> <esc>:w<cr>a
 " Ctrl q to quit
 nmap <c-q> :q<cr>
 imap <c-q> <esc>:q<cr>a
+
+" Tabs to spaces, and indentation
+:set tabstop=2
+:set shiftwidth=2
+:set expandtab
