@@ -12,7 +12,7 @@ filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
- 
+
 " Vundle set up
 Plugin 'VundleVim/Vundle.vim'
 
@@ -49,8 +49,11 @@ Plugin 'elzr/vim-json'
 " Linting
 Plugin 'w0rp/ale'
 
+"Vim scrolling that wont make your eyes bleed
+Plugin 'yuttie/comfortable-motion.vim'
+
 call vundle#end()
- 
+
 filetype plugin indent on
 
 " General Vim Settings
@@ -94,7 +97,14 @@ augroup mySyntastic
   au!
   au FileType tex let b:syntastic_mode = "passive"
 augroup END
-    
+
+" Comfortable motion Mouse support
+let g:comfortable_motion_no_default_key_mappings = 1
+noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(50)<CR>
+noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-50)<CR>
+let g:comfortable_motion_friction = 100.0
+let g:comfortable_motion_air_drag = 8.0
+
 " --- PLUGIN SETTINGS END   ---
 
 " Use the mouse for everything
