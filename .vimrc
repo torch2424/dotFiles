@@ -2,8 +2,29 @@
 
 " https://github.com/jez/vim-as-an-ide/commit/dff7da3
 
+" Need to run ':PluginInstall' for Vundle Plugins
+
 " Enable most vim settings
 set nocompatible
+
+" Vundle Setup
+filetype off
+ 
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+ 
+" Vundle set up
+Plugin 'VundleVim/Vundle.vim'
+
+" Vim Powerling clone
+Plugin 'itchyny/lightline.vim'
+
+" Color Scheme
+Plugin 'morhetz/gruvbox'
+
+call vundle#end()
+ 
+filetype plugin indent on
 
 " General Vim Settings
 set backspace=indent,eol,start
@@ -13,6 +34,17 @@ set showcmd
 set incsearch
 set hlsearch
 syntax on
+
+" --- PLUGIN SETTINGS START ---
+
+" Theme
+colorscheme gruvbox
+set background=dark
+let g:lightline = {
+      \ 'colorscheme': 'wombat',
+      \ }
+
+" --- PLUGIN SETTINGS END   ---
 
 " Use the mouse for everything
 set mouse=a
