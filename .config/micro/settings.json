@@ -9,6 +9,8 @@
     "eofnewline": true,
     "fastdirty": true,
     "fileformat": "unix",
+    "filemanager-showdotfiles": true,
+    "filemanager-showignored": true,
     "ftoptions": true,
     "ignorecase": false,
     "indentchar": " ",

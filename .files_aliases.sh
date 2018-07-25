@@ -163,5 +163,8 @@ alias karmatestfile='karma start --auto-watch --grep'
 
 # Micro Aliases
 alias m='micro'
-alias vim='micro'
 alias mic='micro'
+
+# Vim Aliases
+alias v='vim'
+alias vi='vim'
