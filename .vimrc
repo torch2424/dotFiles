@@ -118,3 +118,6 @@ imap <c-q> <esc>:q<cr>a
 :set tabstop=2
 :set shiftwidth=2
 :set expandtab
+
+" Disable swap files for git
+set noswapfile
