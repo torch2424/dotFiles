@@ -15,7 +15,9 @@ alias piShrink="~/.files_libs/piShrink.sh "
 alias pishrink="piShrink"
 
 # Gvn Alias
-alias gvn='~/.files_libs/gvn.sh'
+gvn() {
+  ~/.files_libs/gvn.sh $@
+}
 alias gvnh="gvn help"
 alias gvna="gvn add"
 alias gvnr="gvn reset"
@@ -27,7 +29,9 @@ alias gvnd="gvn diff"
 
 # Aliases for local gh-md-toc
 # https://github.com/ekalinin/github-markdown-toc
-alias toc='~/.files_libs/github-markdown-toc/gh-md-toc'
+toc() {
+  ~/.files_libs/github-markdown-toc/gh-md-toc $@
+}
 alias table='toc'
 alias tableofcontents='toc'
 alias readmetable='toc'
