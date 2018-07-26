@@ -44,7 +44,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " Better JS Support
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
-Plugin 'elzr/vim-json'
 
 " Linting
 Plugin 'w0rp/ale'
@@ -98,11 +97,20 @@ augroup mySyntastic
   au FileType tex let b:syntastic_mode = "passive"
 augroup END
 
+" ALE Linter settings
+let g:ale_sign_column_always = 1
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+let g:ale_linters = {'javascript': ['prettier']}
+let g:ale_fixers = {}
+let g:ale_fixers['javascript'] = ['prettier']
+
 " Comfortable motion Mouse support
 let g:comfortable_motion_no_default_key_mappings = 1
 noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(55)<CR>
 noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-55)<CR>
-let g:comfortable_motion_friction = 20.0
+let g:comfortable_motion_friction = 22.0
 let g:comfortable_motion_air_drag = 8.5
 
 " --- PLUGIN SETTINGS END   ---
