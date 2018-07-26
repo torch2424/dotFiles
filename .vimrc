@@ -100,10 +100,10 @@ augroup END
 
 " Comfortable motion Mouse support
 let g:comfortable_motion_no_default_key_mappings = 1
-noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(50)<CR>
-noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-50)<CR>
-let g:comfortable_motion_friction = 100.0
-let g:comfortable_motion_air_drag = 8.0
+noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(55)<CR>
+noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-55)<CR>
+let g:comfortable_motion_friction = 20.0
+let g:comfortable_motion_air_drag = 8.5
 
 " --- PLUGIN SETTINGS END   ---
 
