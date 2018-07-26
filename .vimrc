@@ -117,7 +117,7 @@ let g:comfortable_motion_air_drag = 8.5
 
 " Use the mouse for everything
 " http://vim.wikia.com/wiki/Make_mouse_drag_not_select_text_or_go_into_visual_mode
-set mouse=nicr
+set mouse=ncr
 " Copy paste only:
 " set mouse=r
 
