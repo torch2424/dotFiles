@@ -51,6 +51,9 @@ Plugin 'w0rp/ale'
 "Vim scrolling that wont make your eyes bleed
 Plugin 'yuttie/comfortable-motion.vim'
 
+" Vim Multiple Cursors
+Plugin 'terryma/vim-multiple-cursors'
+
 call vundle#end()
 
 filetype plugin indent on
@@ -108,10 +111,10 @@ let g:ale_fixers['javascript'] = ['prettier']
 
 " Comfortable motion Mouse support
 let g:comfortable_motion_no_default_key_mappings = 1
-noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(55)<CR>
-noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-55)<CR>
-let g:comfortable_motion_friction = 22.0
-let g:comfortable_motion_air_drag = 8.5
+noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(30)<CR>
+noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-30)<CR>
+let g:comfortable_motion_friction = 35.0
+let g:comfortable_motion_air_drag = 9.75
 
 " --- PLUGIN SETTINGS END   ---
 
@@ -120,6 +123,9 @@ let g:comfortable_motion_air_drag = 8.5
 set mouse=a
 " Copy paste only:
 " set mouse=r
+" Mouse select on long lines
+" https://stackoverflow.com/questions/7000960/in-vim-why-doesnt-my-mouse-work-past-the-220th-column
+set ttymouse=sgr
 
 " Fix Copy Paste
 " https://stackoverflow.com/questions/17561706/vim-yank-does-not-seem-to-work
@@ -130,7 +136,8 @@ else
 endif
 
 " Stop auto comment insertion
-set formatoptions-=cro
+" https://superuser.com/questions/271023/can-i-disable-continuation-of-comments-to-the-next-line-in-vim
+autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
 
 " Ctrl s to save
 nmap <c-s> :w<cr>
@@ -140,6 +147,25 @@ imap <c-s> <esc>:w<cr>a
 nmap <c-q> :q<cr>
 imap <c-q> <esc>:q<cr>a
 
+" Ctrl p to paste like a normal person (with auto fixing indentation)
+" http://vim.wikia.com/wiki/Format_pasted_text_automatically
+nmap p p=`]
+nmap <c-v> p
+
+" Vim Tips for normal Copy/Pase/Undo, etc..
+" http://vim.wikia.com/wiki/VimTip356
+vmap <C-c> y<Esc>i
+vmap <C-x> d<Esc>i
+imap <C-v> <Esc>pi
+imap <C-y> <Esc>ddi
+map <C-z> <Esc>
+imap <C-z> <Esc>ui
+
+" Reselect visual paste after shifting block
+" https://vi.stackexchange.com/questions/598/faster-way-to-move-a-block-of-text
+xnoremap > >gv
+xnoremap < <gv
+
 " Tabs to spaces, and indentation
 :set tabstop=2
 :set shiftwidth=2
@@ -147,3 +173,14 @@ imap <c-q> <esc>:q<cr>a
 
 " Disable swap files for git
 set noswapfile
+
+" Change cursor for normal vs insert mode
+" https://stackoverflow.com/questions/15217354/how-to-make-cursor-change-in-different-modes-in-vim
+autocmd InsertEnter * set cul
+autocmd InsertLeave * set nocul
+
+" Change Vim Cursor Depending on mode:
+" http://vim.wikia.com/wiki/Change_cursor_shape_in_different_modes
+let &t_SI = "\<Esc>[6 q"
+let &t_SR = "\<Esc>[4 q"
+let &t_EI = "\<Esc>[2 q"

@@ -11,6 +11,9 @@ module.exports = {
 
     // `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
     cursorShape: 'BLOCK',
+     
+    // If true, cursor will blink
+    cursorBlink: true,
 
     // color of the text
     foregroundColor: '#fff',
@@ -82,7 +85,6 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
-      "hyper-blink", 
       "hyperterm-gruvbox-dark",
       "hyperfullscreen"
   ],
