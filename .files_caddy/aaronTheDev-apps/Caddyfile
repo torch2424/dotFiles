@@ -26,8 +26,19 @@ http://0.0.0.0:9080 {
 	root /home/torch2424/vaporBoy/public
 
 	rewrite {
+	  if {path} not_starts_with /scrape
 		regexp .*
 		to {path} {path}/ /
+	}
+
+	proxy scrape/igdb api-endpoint.igdb.com {
+	  without /scrape/igdb
+	  header_upstream user-key {$IGDB_API_KEY}
+	  header_upstream Accept application/json
+	}
+
+	proxy /scrape/giantbomb https://www.giantbomb.com/api/games?api_key={$GIANTBOMB_API_KEY} {
+	  without /scrape/giantbomb
 	}
 }
 
