@@ -10,7 +10,7 @@
 # https://gist.github.com/pyk/ab63cfbd53668c3eed50
 function go_version {
   version=$(go version)
-  regex="([0-9].[0-9].[0-9])"
+  regex="([0-9][0-9]?.[0-9][0-9]?.[0-9][0-9]?)"
   if [[ $version =~ $regex ]]; then 
     echo ${BASH_REMATCH[1]}
   fi
@@ -25,8 +25,8 @@ if [ $? -eq 0 ]; then
 
     echo " "
     echo " "
-    echo "Current Version: $GO_VERSION"
-    echo "Min Version: $MIN_VERSION"
+    echo "Current Go Version: $GO_VERSION"
+    echo "Min Go Version: $MIN_VERSION"
     echo " "
     echo " " 
   
