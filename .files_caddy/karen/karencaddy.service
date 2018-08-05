@@ -9,7 +9,7 @@ After=network.target
 Type=simple
 User=pi
 WorkingDirectory=/home/pi
-ExecStart=/bin/bash --login -c 'source /home/${whoami}/.bashrc; cd ~/.files_caddy/backupPi && caddy -email aaron@aaronthedev.com'
+ExecStart=/bin/bash --login -c 'source /home/pi/.bashrc; cd ~/.files_caddy/karen && caddy -email aaron@aaronthedev.com -agree'
 Restart=always
 
 [Install]
