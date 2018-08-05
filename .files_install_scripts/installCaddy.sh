@@ -23,6 +23,13 @@ if [ $? -eq 0 ]; then
     GO_VERSION="$(echo $(go_version) | sed 's/\.//g')"
     MIN_VERSION="$(echo "1.8.0" | sed 's/\.//g')"
 
+    echo " "
+    echo " "
+    echo "Current Version: $GO_VERSION"
+    echo "Min Version: $MIN_VERSION"
+    echo " "
+    echo " " 
+  
     # Compare our versions
     if [ "$GO_VERSION" -gt "$MIN_VERSION" ]; then
 
