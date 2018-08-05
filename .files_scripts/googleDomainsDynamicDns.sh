@@ -5,7 +5,7 @@
 # Add this to your crontab for autmated usage
 # https://www.raspberrypi.org/documentation/linux/usage/cron.md
 # Runs every 30 minutes
-# */30 * * * * ./googleDomainsDynamicDns.sh
+# */30 * * * * /my/absolute/path/googleDomainsDynamicDns.sh [USERNAME] [PASSWORD] [HOSTNAME] >> /my/absolute/path/googleDomainsDynamicDns.log 
 
 # Make sure we pass our version
 if [ "$#" -ne 3 ]; then
