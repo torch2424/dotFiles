@@ -21,6 +21,13 @@ else
   echo " "
   echo " "
 
+  echo "Date for logging purposes"
+
+  date
+
+  echo " "
+  echo " "
+
   echo "Making a Request to: $URL"
 
   echo "See response values here: https://support.google.com/domains/answer/6147083"
