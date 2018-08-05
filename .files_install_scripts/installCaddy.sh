@@ -25,6 +25,7 @@ if [ $? -eq 0 ]; then
 
     echo " "
     echo " "
+    echo "Comparing Go Versions, to ensure it is compatible for Caddy..."
     echo "Current Go Version: $GO_VERSION"
     echo "Min Go Version: $MIN_VERSION"
     echo " "
