@@ -11,6 +11,14 @@ http://0.0.0.0:2425 {
     browse
 }
 
+# Basic Auth for Inbucket
+http://0.0.0.0:9025 {
+    basicauth / torch2424 htpasswd=.htpasswd
+    proxy / localhost:9024 {
+        transparent
+    }
+}
+
 # Basic Auth for crontab-ui
 # https://github.com/alseambusher/crontab-ui
 cron.aaronthedev.com, http://0.0.0.0:9000 {
