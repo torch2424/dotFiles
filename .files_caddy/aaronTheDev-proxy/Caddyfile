@@ -97,6 +97,17 @@ files.aaronthedev.com, http://0.0.0.0:8989 {
     }
 }
 
+# Inbucket tempmail
+tempmail.aaronthedev.com, http://0.0.0.0:9025 {
+  gzip
+  proxy / {$APP_IP}:9025 0.0.0.0:5000 {
+      policy first
+      transparent
+      health_check /
+      websocket
+  }
+}
+
 # Gogs, Aaronthedev git
 git.aaronthedev.com, http://0.0.0.0:3000 {
     gzip
