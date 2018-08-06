@@ -1,0 +1,148 @@
+
+<!doctype html>
+<html amp>
+
+  <head>
+    <!-- The charset definition must be the first child of the `<head>` tag. -->
+    <meta charset="utf-8">
+
+    <!-- The AMP runtime must be loaded as the second child of the `<head>` tag.-->
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+
+    <!--
+      AMP HTML files require a canonical link pointing to the regular HTML. If no HTML version exists, it should point to itself.
+    -->
+    <link rel="canonical" href="<%host%>">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+
+    <script async custom-element="amp-video" src="https://cdn.ampproject.org/v0/amp-video-0.1.js"></script>
+
+    <title>Torch2424</title>
+    <link rel="icon" type="image/png"
+                     href="https://avatars1.githubusercontent.com/u/1448289?s=460&v=4">
+
+    <!--
+      CSS must be embedded inline
+    -->
+    <style amp-custom>
+        * {
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        html {
+          background-color: #020202;
+          z-index: -2;
+        }
+
+        html, body {
+          color: #F1F1F1;
+          min-height: 100vh;
+          min-width: 100vw;
+        }
+
+        .container {
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          z-index: 1;
+
+          background-color: rgba(0, 0, 0, 0.25);
+
+          min-height: 100vh;
+          min-width: 100vw;
+        }
+
+        main {
+          font-size: 16px;
+        }
+
+        h1 {
+          text-align: center;
+          margin-left: 0px;
+          margin-right: 0px;
+
+          text-shadow: -2px 2px 1px #020202;
+        }
+
+        amp-img,
+        img {
+          max-width: 300px;
+        }
+
+        a {
+          font-size: 18px;
+        }
+
+
+        .giphyAmpVideo {
+          margin: 0;
+          padding: 0;
+        }
+
+        .backgroundVideo {
+          position: fixed;
+          top: 0px;
+          left: 0px;
+
+          width: 100vw;
+          height: 100vh;
+          z-index: -1;
+
+          background-color: #020202;
+        }
+
+    </style>
+
+    <!--
+      The AMP boilerplate.
+    -->
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    </head>
+
+
+    <body>
+
+      <!-- Cool background gif -->
+      <div class="backgroundVideo giphyEmbed">
+        <amp-video id="gif-mp4"
+                   class="giphyAmpVideo"
+                   poster="https://i.giphy.com/media/RDJfOSOdlnhu/200_s.gif"
+                   layout="fill"
+                   autoplay
+                   noaudio
+                   noloading
+                   loop>
+
+          <div fallback>
+            <p>Your browser doesn't support HTML5 video.</p>
+          </div>
+
+          <source src="https://i.giphy.com/media/RDJfOSOdlnhu/giphy.mp4" type="video/mp4">
+          </source>
+        </amp-video>
+      </div>
+
+      <div class="container">
+
+        <main>
+
+        <h1>TORCH2424.COM</h1>
+
+        <p>
+        <i>Hosted by Karen</i>
+        </p>
+
+        <amp-img src="https://images.duckduckgo.com/iu/?u=https%3A%2F%2Fvignette.wikia.nocookie.net%2Fnickelodeon%2Fimages%2F8%2F8d%2FSpongeBob_SquarePants_Karen_the_Computer_S11.png%2Frevision%2Flatest%2Fscale-to-width-down%2F185%3Fcb%3D20171024203702&f=1"
+          width="200"
+          height="200"
+          layout="fixed"
+          alt="Image of Karen From Spongebob"></amp-img>
+
+        </main>
+      </div>
+    </body>
+
+</html>
