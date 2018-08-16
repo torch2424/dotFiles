@@ -47,6 +47,7 @@ http://0.0.0.0:9080 {
 
 	proxy /scrape/giantbomb https://www.giantbomb.com/api/games/?api_key={$GIANTBOMB_API_KEY} {
 	  without /scrape/giantbomb
+	  header_downstream Access-Control-Allow-Origin "*"
 	}
 }
 
