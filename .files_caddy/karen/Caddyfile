@@ -26,3 +26,10 @@ karen:80, torch2424:80, link.torch2424.com, links.torch2424.com {
     transparent
   }
 }
+
+# Speaker Pi
+speaker.torch2424.com {
+  proxy / 192.168.86.111:4242 {
+    transparent
+  }
+}

@@ -45,8 +45,8 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 
-" Linting
-Plugin 'w0rp/ale'
+" Linting (Always causes weird erros so commenting)
+" Plugin 'w0rp/ale'
 
 "Vim scrolling that wont make your eyes bleed
 Plugin 'yuttie/comfortable-motion.vim'
