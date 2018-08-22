@@ -17,4 +17,8 @@ amptestfile() {
   gulp test --nobuild --watch --files=$1
 }
 
+ampserveexample() {
+  gulp --extensions_from=$1
+}
+
 alias amptest='amptestfile'
