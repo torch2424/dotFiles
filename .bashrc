@@ -88,10 +88,10 @@ else
    # Set OSX Paths
   if [ "$(uname)" == "Darwin" ]; then
     # Java Path
-    export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+    # export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
     # Android Path
     export ANDROID_PATH="/Users/aaron/Library/Android/sdk"
-    export PATH="/Applications/VLC.app/Contents/MacOS/VLC:$PATH"
+    # export PATH="/Applications/VLC.app/Contents/MacOS/VLC:$PATH"
   fi
 
   # Clear the console
