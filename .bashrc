@@ -46,8 +46,11 @@ else
   # load our bash aliases
   _user_source .files_aliases.sh
 
-  # load our bash function
+  # Load our bash function
   _source_all .files_functions
+
+  # Load our active default work aliases and fucntions
+  _user_source .files_work/default.sh
 
   # Load Our bash libraries
   _user_source .files_libs/index.sh
@@ -90,9 +93,6 @@ else
     export ANDROID_PATH="/Users/aaron/Library/Android/sdk"
     export PATH="/Applications/VLC.app/Contents/MacOS/VLC:$PATH"
   fi
-
-  # Finally source all things inside of .files_work, especially for pedanco rvm
-  _source_all .files_work
 
   # Clear the console
   clear
