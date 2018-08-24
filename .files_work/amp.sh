@@ -4,6 +4,10 @@
 
 # See: https://github.com/ampproject/amphtml/blob/master/contributing/TESTING.md#testing-commands
 
+# Fix Java
+# https://github.com/ampproject/amphtml/issues/11574
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+
 # Ampe pre commit - useful stuff to run before commiting to ensure travis builds are going to work
 ampprecommit() {
     gulp lint --local-changes
