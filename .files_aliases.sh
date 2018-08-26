@@ -170,3 +170,8 @@ alias mic='micro'
 alias vim="stty stop '' start '' -ixoff; vim"
 alias v='vim'
 alias vi='vim'
+# When you're a crip, but you love to code...
+alias cim='vim'
+# When you have a homie who is a blood,
+# and you try to teach them to code...
+alias bim='vim'
