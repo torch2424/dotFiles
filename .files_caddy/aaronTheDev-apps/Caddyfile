@@ -16,6 +16,7 @@ tempmail.aaronthedev.com, http://0.0.0.0:9025 {
     basicauth / torch2424 htpasswd=.htpasswd
     proxy / localhost:9024 {
         transparent
+        websocket
     }
 }
 
