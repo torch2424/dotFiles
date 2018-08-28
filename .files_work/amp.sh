@@ -11,7 +11,8 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 # Ampe pre commit - useful stuff to run before commiting to ensure travis builds are going to work
 ampprecommit() {
     gulp lint --local-changes
-    gulp check-types
+    gulp check-types --local-changes
+    gulp test --local-changes
     # gulp presubmit
 }
 
