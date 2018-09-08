@@ -45,6 +45,9 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 
+" Typescript Support
+Plugin 'leafgarland/typescript-vim'
+
 " Linting (Always causes weird erros so commenting)
 " Plugin 'w0rp/ale'
 
