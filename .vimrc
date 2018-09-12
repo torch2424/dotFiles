@@ -118,9 +118,18 @@ let g:comfortable_motion_friction = 35.0
 let g:comfortable_motion_air_drag = 9.75
 
 " Vim Multiple Curosrs Mouse Support
+" Undo Ctrl C mapping
+let g:VM_maps = {}
+let g:VM_maps["Visual Cursors"] = ''
+let g:VM_maps["Case Setting"] = ''
+" Mouse
 " let g:VM_mouse_mappings = 1
 " Doing this manually because CTRL Left click is an osx thing
-nmap   <C-RightMouse>         <LeftMouse>g<Space>
+" So biunding to both left and right mouse
+nmap <C-LeftMouse> <LeftMouse>g<Space>
+nmap <C-RightMouse> <LeftMouse>g<Space>
+imap <C-LeftMouse> <esc><LeftMouse>g<Space>
+imap <C-RightMouse> <esc><LeftMouse>g<Space>
 
 " --- PLUGIN SETTINGS END   ---
 
