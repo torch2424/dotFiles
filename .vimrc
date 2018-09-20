@@ -104,6 +104,12 @@ augroup mySyntastic
   au FileType tex let b:syntastic_mode = "passive"
 augroup END
 
+" Ctrl-p new tab
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<c-t>'],
+    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+    \ }
+
 " ALE Linter settings
 let g:ale_sign_column_always = 1
 let g:ale_echo_msg_error_str = 'E'
