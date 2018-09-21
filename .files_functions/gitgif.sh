@@ -5,11 +5,12 @@ __gitgif() {
   if [ $# -lt 1 ] || [ $# -gt 4 ]; then
     echo "This will make a best guess to convert a video into a github friendly .gif"
     echo "Works best on videos ~30s"
+    echo "Default values will give you a ~4 MB file"
     echo " "
     echo " "
     echo "USAGE:"
     echo " "
-    echo "    gitgif [video file e.g (example.mp4)] [Optional: Where to start the gif in the input video. In seconds. Default: 0] [Optional: Where to end the gif in the input video. In Seconds. Default: Video End time ] [Optional: width of new video to scale to e.g 320. Default: 500]"
+    echo "    gitgif [video file e.g (example.mp4)] [Optional: Where to start the gif in the input video. In seconds. Default: 0] [Optional: Where to end the gif in the input video. In Seconds. Default: Video End time ] [Optional: width of new video to scale to e.g 320. Default: 1500]"
   elif ! type "ffmpeg" > /dev/null 2>&1; then
     echo "ffmpeg and gifgen are required for $0"
     echo "OSX: brew install lukechilds/tap/gifgen"
@@ -49,10 +50,10 @@ __gitgif() {
 
 
     # Resize the video to about 500
-    BASEWIDTH=500
+    BASEWIDTH=1250
     # Check if we passed a width
     if [ -z $4 ]; then
-      BASEWIDTH=500
+      BASEWIDTH=1250
     else
       BASEWIDTH=$4
     fi
