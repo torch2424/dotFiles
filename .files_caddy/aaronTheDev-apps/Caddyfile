@@ -34,10 +34,9 @@ http://0.0.0.0:9080 {
 	gzip
 	root /home/torch2424/vaporBoy/public
 
-  # Add some cache headers to images and ROMs
-	header (.png|.jpg|.gb|.gbc)$ {
-	  +Cache-Control "public, max-age=31536000"
-	}
+  header /assets {
+    Cache-Control "public, max-age=31536000"
+  }
 
 	rewrite {
 	  if {path} not_starts_with /scrape
