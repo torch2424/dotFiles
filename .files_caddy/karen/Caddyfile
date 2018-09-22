@@ -3,7 +3,6 @@ http://0.0.0.0:80, torch2424.com {
   root /home/pi/.files_caddy/karen/
 }
 
-
 # Pi Hole
 # Need to set lighttpd on port 1080 from guide:
 # https://github.com/pi-hole/pi-hole/wiki/Caddy-Webserver-Frontend
@@ -16,6 +15,21 @@ pi.hole:80, pihole.torch2424.com, http://0.0.0.0:24240 {
   }
 
   proxy / localhost:1080 {
+    transparent
+  }
+}
+
+# Go Links Service
+karen:80, torch2424:80, link.torch2424.com, links.torch2424.com {
+
+  proxy / localhost:8067 {
+    transparent
+  }
+}
+
+# Speaker Pi
+speaker.torch2424.com {
+  proxy / 192.168.86.111:4242 {
     transparent
   }
 }

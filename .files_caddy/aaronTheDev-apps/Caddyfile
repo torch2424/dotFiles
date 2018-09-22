@@ -12,10 +12,11 @@ http://0.0.0.0:2425 {
 }
 
 # Basic Auth for Inbucket
-http://0.0.0.0:9025 {
+tempmail.aaronthedev.com, http://0.0.0.0:9025 {
     basicauth / torch2424 htpasswd=.htpasswd
     proxy / localhost:9024 {
         transparent
+        websocket
     }
 }
 
@@ -45,8 +46,9 @@ http://0.0.0.0:9080 {
 	  header_upstream Accept application/json
 	}
 
-	proxy /scrape/giantbomb https://www.giantbomb.com/api/games?api_key={$GIANTBOMB_API_KEY} {
+	proxy /scrape/giantbomb https://www.giantbomb.com/api/games/?api_key={$GIANTBOMB_API_KEY} {
 	  without /scrape/giantbomb
+	  header_downstream Access-Control-Allow-Origin "*"
 	}
 }
 

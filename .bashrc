@@ -46,8 +46,11 @@ else
   # load our bash aliases
   _user_source .files_aliases.sh
 
-  # load our bash function
+  # Load our bash function
   _source_all .files_functions
+
+  # Load our active default work aliases and fucntions
+  _user_source .files_work/default.sh
 
   # Load Our bash libraries
   _user_source .files_libs/index.sh
@@ -59,7 +62,7 @@ else
   git config --global credential.helper 'cache --timeout=36000'
 
   # Set default editor
-  export VISUAL=micro
+  export VISUAL=vim
   export EDITOR="$VISUAL"
 
   # Load NVM
@@ -91,9 +94,6 @@ else
     export PATH="/Applications/VLC.app/Contents/MacOS/VLC:$PATH"
   fi
 
-  # Finally source all things inside of .files_work, especially for pedanco rvm
-  _source_all .files_work
-
   # Clear the console
   clear
 
@@ -104,13 +104,5 @@ else
   	echo " "
   	echo "To be really cool, install neofetch: https://github.com/dylanaraps/neofetch"
   	echo " "
-  fi
-
-  # Also mention to install micro if not found
-  if ! hash micro 2>/dev/null; then
-	echo " "
-	echo "Micro is not installed. Please install with: 'cd /usr/local/bin; curl https://getmic.ro | sudo bash'"
-	echo "Micro's install repo is at: https://github.com/benweissmann/getmic.ro"
-	echo " "
   fi
 fi

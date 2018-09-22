@@ -21,7 +21,7 @@ Plugin 'itchyny/lightline.vim'
 
 " Color Scheme
 Plugin 'morhetz/gruvbox'
-
+ 
 " File Tree
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
@@ -45,14 +45,18 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 
-" Linting
-Plugin 'w0rp/ale'
+" Typescript Support
+Plugin 'leafgarland/typescript-vim'
+
+" Linting (Always causes weird erros so commenting)
+" Plugin 'w0rp/ale'
 
 "Vim scrolling that wont make your eyes bleed
 Plugin 'yuttie/comfortable-motion.vim'
 
 " Vim Multiple Cursors
-Plugin 'terryma/vim-multiple-cursors'
+" Plugin 'terryma/vim-multiple-cursors'
+Plugin 'mg979/vim-visual-multi'
 
 call vundle#end()
 
@@ -100,6 +104,12 @@ augroup mySyntastic
   au FileType tex let b:syntastic_mode = "passive"
 augroup END
 
+" Ctrl-p new tab
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<c-t>'],
+    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+    \ }
+
 " ALE Linter settings
 let g:ale_sign_column_always = 1
 let g:ale_echo_msg_error_str = 'E'
@@ -115,6 +125,20 @@ noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(30)<CR>
 noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-30)<CR>
 let g:comfortable_motion_friction = 35.0
 let g:comfortable_motion_air_drag = 9.75
+
+" Vim Multiple Curosrs Mouse Support
+" Undo Ctrl C mapping
+let g:VM_maps = {}
+let g:VM_maps["Visual Cursors"] = ''
+let g:VM_maps["Case Setting"] = ''
+" Mouse
+" let g:VM_mouse_mappings = 1
+" Doing this manually because CTRL Left click is an osx thing
+" So biunding to both left and right mouse
+nmap <C-LeftMouse> <LeftMouse>g<Space>
+nmap <C-RightMouse> <LeftMouse>g<Space>
+imap <C-LeftMouse> <esc><LeftMouse>g<Space>
+imap <C-RightMouse> <esc><LeftMouse>g<Space>
 
 " --- PLUGIN SETTINGS END   ---
 
