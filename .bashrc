@@ -108,13 +108,5 @@ else
   	echo "To be really cool, install neofetch: https://github.com/dylanaraps/neofetch"
   	echo " "
   fi
-
-  # Also mention to install micro if not found
-  if ! hash micro 2>/dev/null; then
-	echo " "
-	echo "Micro is not installed. Please install with: 'cd /usr/local/bin; curl https://getmic.ro | sudo bash'"
-	echo "Micro's install repo is at: https://github.com/benweissmann/getmic.ro"
-	echo " "
-  fi
 fi
 
