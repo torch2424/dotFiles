@@ -70,6 +70,9 @@ else
   [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+  # Add support for globally installed Yarn Packages
+  export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
   # Npm no Sudo
   export NPM_PACKAGES="~/.npm-packages"
   export NODE_PATH="$NPM_PACKAGES/lib/node_modules${NODE_PATH:+:$NODE_PATH}"
@@ -114,3 +117,4 @@ else
 	echo " "
   fi
 fi
+
