@@ -1,0 +1,13 @@
+files.galaxynoiseradio.com {
+    gzip
+    proxy / localhost:8989 {
+        policy first
+        transparent
+        health_check /
+        websocket
+    }
+
+    header /$/ {
+        Cache-Control  "public, max-age=2678400"
+    }
+}
