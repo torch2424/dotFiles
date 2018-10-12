@@ -13,7 +13,7 @@ searchjsproject() {
     echo "searchjsproject [pattern]"
     echo "searchjsproject [pattern] [directory]"
   else
-    grep --exclude-dir={**/node_modules,**/*dist*,**/*build*,**/.git} -rnw $DIRECTORY -e $PATTERN
+    grep --exclude-dir={**/node_modules,**/*dist*,**/*build*,**/.git,**/.docz,**/third_party} -rn $DIRECTORY -e $PATTERN
   fi
 }
 
