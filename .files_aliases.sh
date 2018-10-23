@@ -53,7 +53,7 @@ alias gnauc="ungauc"
 alias unguac="ungauc"
 alias gitdiffbranch="git diff master...HEAD"
 alias gdb="gitdiffbranch"
-alias gitdiffbranchstat="gitdiffbranch --state"
+alias gitdiffbranchstat="gitdiffbranch --stat"
 alias gdbs="gitdiffbranchstat"
 alias gdsb="gdbs"
 
