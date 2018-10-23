@@ -51,6 +51,11 @@ alias ungauc="git update-index --no-assume-unchanged "
 alias noguac="ungauc"
 alias gnauc="ungauc"
 alias unguac="ungauc"
+alias gitdiffbranch="git diff master...HEAD"
+alias gdb="gitdiffbranch"
+alias gitdiffbranchstat="gitdiffbranch --state"
+alias gdbs="gitdiffbranchstat"
+alias gdsb="gdbs"
 
 
 # systemctl alias
