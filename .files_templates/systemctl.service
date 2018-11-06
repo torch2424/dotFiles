@@ -1,5 +1,5 @@
 # How to create systemd services: http://neilwebber.com/notes/2016/02/10/making-a-simple-systemd-file-for-raspberry-pi-jessie/
-# Original Template: https://github.com/torch2424/dotFiles/blob/master/.bash_templates/systemctl.service 
+# Original Template: https://github.com/torch2424/dotFiles/blob/master/.files_templates/systemctl.service 
 
 # Copy the file to /etc/systemd/system
 [Unit]
