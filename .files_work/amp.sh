@@ -21,7 +21,7 @@ alias amppresubmit='ampprecommit'
 
 # Function to simply run the passed test file with optimal flags
 amptestfile() {
-  gulp test --nobuild --watch --files=$1
+  gulp test --watch --files=$1
 }
 
 ampserveexample() {
