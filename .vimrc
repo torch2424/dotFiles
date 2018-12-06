@@ -21,7 +21,7 @@ Plugin 'itchyny/lightline.vim'
 
 " Color Scheme
 Plugin 'morhetz/gruvbox'
- 
+
 " File Tree
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
@@ -52,11 +52,12 @@ Plugin 'leafgarland/typescript-vim'
 " Plugin 'w0rp/ale'
 
 "Vim scrolling that wont make your eyes bleed
-Plugin 'yuttie/comfortable-motion.vim'
+" Plugin 'yuttie/comfortable-motion.vim'
 
 " Vim Multiple Cursors
+" Not using as they break my vim often
 " Plugin 'terryma/vim-multiple-cursors'
-Plugin 'mg979/vim-visual-multi'
+" Plugin 'mg979/vim-visual-multi'
 
 call vundle#end()
 
@@ -120,11 +121,11 @@ let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier']
 
 " Comfortable motion Mouse support
-let g:comfortable_motion_no_default_key_mappings = 1
-noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(30)<CR>
-noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-30)<CR>
-let g:comfortable_motion_friction = 35.0
-let g:comfortable_motion_air_drag = 9.75
+" let g:comfortable_motion_no_default_key_mappings = 1
+" noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(30)<CR>
+" noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-30)<CR>
+" let g:comfortable_motion_friction = 35.0
+" let g:comfortable_motion_air_drag = 9.75
 
 " Vim Multiple Curosrs Mouse Support
 " Undo Ctrl C mapping
