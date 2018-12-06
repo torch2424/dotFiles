@@ -29,3 +29,6 @@ ampserveexample() {
 }
 
 alias amptest='amptestfile'
+
+# Use our 'gitsyncfork' alias but for amphtml master
+alias gitsyncforkamp='gitsyncfork https://github.com/ampproject/amphtml.git'
