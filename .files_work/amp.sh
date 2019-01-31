@@ -28,7 +28,32 @@ ampserveexample() {
   gulp --extensions_from=$1
 }
 
+ampvisualdiff() {
+
+  if [ $# -eq 0 ]; then
+    echo "Must pass regex for tests you want to run."
+    return
+  fi
+  
+  echo " "
+  echo "Don't forget to run 'gulp build --fortesting' before running visual diffs on clean project."
+  echo " "
+  echo "Don't forget to add PERCY_TOKEN in .files_work/.env"
+  echo " "
+
+  source ~/.files_work/.env
+
+  echo "Using PERCY_TOKEN: $PERCY_TOKEN"
+
+  sleep 1s
+
+  gulp visual-diff --nobuild --percy_project ampproject/torch2424 --percy_token $PERCY_TOKEN --percy_branch master --grep $1
+}
+
 alias amptest='amptestfile'
 
 # Use our 'gitsyncfork' alias but for amphtml master
 alias gitsyncforkamp='gitsyncfork https://github.com/ampproject/amphtml.git'
+
+alias ampvisual='ampvisualdiff'
+alias amppercy='ampvisual'
