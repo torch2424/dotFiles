@@ -1,6 +1,41 @@
-#!/bin/sh
+#!/bin/bash
 while [ true ]
 do
-  goaccess ../access.log --log-format=VCOMBINED -e 127.0.0.1 -e 0.0.0.0 -o index.html
-  sleep 60
+  
+  # Some intro
+  echo " "
+  echo "Running goaccess logs..."
+  echo "Current Directory:"
+  pwd
+  echo " "
+
+  # Cat all logs into a file
+  echo " "
+  echo "Cat all logs into file..."
+  echo " "
+  cat /home/torch2424/.files_caddy/aaronTheDev-proxy/access* > /tmp/generateGoaccess.txt
+
+  # Standard ouput
+  echo " "
+  echo "Generating index.html"
+  echo " "
+  goaccess /tmp/generateGoaccess.txt --log-format=VCOMBINED -e 127.0.0.1 -e 0.0.0.0 -o index.html
+  
+  # JSON output
+  echo " "
+  echo "Generating index.json"
+  echo " "
+  goaccess /tmp/generateGoaccess.txt --log-format=VCOMBINED -e 127.0.0.1 -e 0.0.0.0 -o index.json
+  
+  # No Crawlers Output
+  echo " "
+  echo "Generating ignorecrawlers.html"
+  echo " "
+  goaccess /tmp/generateGoaccess.txt --log-format=VCOMBINED -e 127.0.0.1 -e 0.0.0.0 --ignore-crawlers -o ignorecrawlers.html
+
+  # Sleep for a while
+  echo " "
+  echo "Sleeping..."
+  echo " "
+  sleep 2h
 done

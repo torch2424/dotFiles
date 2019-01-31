@@ -4,7 +4,11 @@
 # Trying to emulate the VCOMBINED format for
 # goaccess
 (logsnippet) {
-  log / ./access.log "{hostonly}:{port} {remote} - {user} [{when}] \"{method} {uri} {proto}\" {status} {size} \"{>Referer}\" \"{>User-Agent}\""
+  log / ./access.log "{hostonly}:{port} {remote} - {user} [{when}] \"{method} {uri} {proto}\" {status} {size} \"{>Referer}\" \"{>User-Agent}\"" {
+    rotate_size 100
+    rotate_age  60
+    rotate_keep 10
+  }
 }
 
 # Our Maintenance Failover Website
