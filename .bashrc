@@ -88,6 +88,9 @@ else
   # Go bin Global
   export PATH="$PATH:$GOPATH/bin"
 
+  # Rust settings
+  export PATH="$HOME/.cargo/bin:$PATH"
+
    # Set OSX Paths
   if [ "$(uname)" == "Darwin" ]; then
     # Java Path
