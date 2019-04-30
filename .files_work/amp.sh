@@ -25,7 +25,7 @@ amptestfile() {
 }
 
 ampserveexample() {
-  gulp --extensions_from=$1
+  gulp --extensions_from=$1 --with_inabox
 }
 
 ampvisualdiff() {
