@@ -91,6 +91,10 @@ else
   # Rust settings
   export PATH="$HOME/.cargo/bin:$PATH"
 
+  # Wasmer
+  export WASMER_DIR="/home/$(whoami)/.wasmer"
+  [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"  # This loads wasmer
+
    # Set OSX Paths
   if [ "$(uname)" == "Darwin" ]; then
     # Java Path
