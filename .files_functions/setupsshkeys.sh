@@ -4,9 +4,9 @@
 
 setupSshKeys() {
 
-  if [ "$#" -lt 2 ] || [ "$#" -gt 2 ]; then
+  if [ "$#" -lt 3 ] || [ "$#" -gt 3 ]; then
     echo "setupSshKeys USAGE:"
-    echo "setupSshKeys [username] [url]"
+    echo "setupSshKeys [username] [url] [port]"
   else
     
     echo " "
@@ -31,13 +31,13 @@ setupSshKeys() {
 
 
     echo "Creating .ssh directory if none"
-    ssh $1@$2 mkdir -p .ssh
+    ssh -p $3 $1@$2 mkdir -p .ssh
 
     echo "Appending ssh key to authorized keys..."
-    cat /home/$(whoami)/.ssh/id_rsa.pub | ssh $1@$2 'cat >> .ssh/authorized_keys'
+    cat /home/$(whoami)/.ssh/id_rsa.pub | ssh -p $3 $1@$2 'cat >> .ssh/authorized_keys'
 
     echo "Setting .ssh permissions..."
-    ssh $1@$2 "chmod 700 .ssh; chmod 640 .ssh/authorized_keys"
+    ssh -p $3 $1@$2 "chmod 700 .ssh; chmod 640 .ssh/authorized_keys"
 
     echo " "
     echo "Done!"
