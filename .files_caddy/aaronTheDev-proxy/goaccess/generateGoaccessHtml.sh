@@ -19,19 +19,19 @@ do
   echo " "
   echo "Generating index.html"
   echo " "
-  goaccess /tmp/generateGoaccess.txt --log-format=VCOMBINED -e 127.0.0.1 -e 0.0.0.0 -o index.html
+  goaccess /tmp/generateGoaccess.txt --log-format=VCOMBINED -e 127.0.0.1 -e 0.0.0.0 --ignore-crawlers -o index.html
   
   # JSON output
   echo " "
   echo "Generating index.json"
   echo " "
-  goaccess /tmp/generateGoaccess.txt --log-format=VCOMBINED -e 127.0.0.1 -e 0.0.0.0 -o index.json
+  goaccess /tmp/generateGoaccess.txt --log-format=VCOMBINED -e 127.0.0.1 -e 0.0.0.0 --ignore-crawlers -o index.json
   
   # No Crawlers Output
   echo " "
-  echo "Generating ignorecrawlers.html"
+  echo "Generating withcrawlers.html"
   echo " "
-  goaccess /tmp/generateGoaccess.txt --log-format=VCOMBINED -e 127.0.0.1 -e 0.0.0.0 --ignore-crawlers -o ignorecrawlers.html
+  goaccess /tmp/generateGoaccess.txt --log-format=VCOMBINED -e 127.0.0.1 -e 0.0.0.0 -o withcrawlers.html
 
   # Sleep for a while
   echo " "

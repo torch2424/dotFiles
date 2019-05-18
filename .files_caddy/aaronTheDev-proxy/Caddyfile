@@ -4,7 +4,7 @@
 # Trying to emulate the VCOMBINED format for
 # goaccess
 (logsnippet) {
-  log / ./access.log "{hostonly}:{port} {remote} - {user} [{when}] \"{method} {uri} {proto}\" {status} {size} \"{>Referer}\" \"{>User-Agent}\"" {
+  log / ./access-{$SERVER_TAG}.log "{hostonly}:{port} {remote} - {user} [{when}] \"{method} {uri} {proto}\" {status} {size} \"{>Referer}\" \"{>User-Agent}\"" {
     rotate_size 100
     rotate_age  60
     rotate_keep 10
@@ -24,7 +24,7 @@ http://0.0.0.0:5000 {
   }
 }
 
-# goaccess for analyzing web logs
+# goaccess for analyzing (local) web logs
 logs.aaronthedev.com, http://0.0.0.0:7891 {
   basicauth / torch2424 htpasswd=../.htpasswd 
   gzip
@@ -35,7 +35,7 @@ logs.aaronthedev.com, http://0.0.0.0:7891 {
 aaronthedev.com, aaronthedev.app, http://0.0.0.0:8000 {
     import logsnippet
     gzip
-    proxy / {$APP_IP}:8000 0.0.0.0:5000/aaronTheDev {
+    proxy / {$APP_IP}:8000 {$APP_2_IP}:8000 0.0.0.0:5000/aaronTheDev {
         policy first
         transparent
         health_check /
@@ -46,7 +46,7 @@ aaronthedev.com, aaronthedev.app, http://0.0.0.0:8000 {
 leahrosegarza.com, http://0.0.0.0:2525 {
     import logsnippet
     gzip
-    proxy / {$APP_IP}:2525 0.0.0.0:5000/leahRoseGarza {
+    proxy / {$APP_IP}:2525 {$APP_2_IP}:8000 0.0.0.0:5000/leahRoseGarza {
         policy first
         transparent
         health_check /
@@ -88,7 +88,7 @@ getdismoney.com, http://0.0.0.0:3030 {
 # VaporBoy
 vaporboy.net, http://0.0.0.0:9080 {
   import logsnippet
-	proxy / {$APP_IP}:9080 0.0.0.0:5000 {
+  proxy / {$APP_IP}:9080 {$APP_2_IP}:8000 0.0.0.0:5000 {
 		policy first
 		transparent
 		health_check /
