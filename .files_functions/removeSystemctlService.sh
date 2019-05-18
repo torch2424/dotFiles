@@ -6,7 +6,7 @@ removeSystemctlService() {
     echo "removeSystemctlService [service file]"
   else
     echo "Removing /etc/systemd/system/$1"
-    rm /etc/systemd/system/$(basename $1)
+    sudo rm /etc/systemd/system/$(basename $1)
   fi
 }
 
