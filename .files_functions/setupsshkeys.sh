@@ -12,13 +12,13 @@ setupSshKeys() {
     echo "Will have to login for $1@$2 multiple times :)"
 
     echo "Generating passwordless keys..."
-    ssh-keygen -f id_rsa -t rsa -N ''
+    ssh-keygen -f /home/$(whoami)/.ssh/id_rsa -t rsa -N ''
 
     echo "Creating .ssh directory if none"
     ssh $1@$2 mkdir -p .ssh
 
     echo "Appending ssh key to authorized keys..."
-    cat .ssh/id_rsa.pub | ssh $1@$2 'cat >> .ssh/authorized_keys'
+    cat /home/$(whoami)/.ssh/id_rsa.pub | ssh $1@$2 'cat >> .ssh/authorized_keys'
 
     echo "Setting .ssh permissions..."
     ssh $1@$2 "chmod 700 .ssh; chmod 640 .ssh/authorized_keys"
