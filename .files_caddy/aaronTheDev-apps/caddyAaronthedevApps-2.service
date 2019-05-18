@@ -10,7 +10,7 @@ After=network.target
 Type=simple
 User=torch2424
 WorkingDirectory=/home/torch2424
-ExecStart=/bin/bash --login -c 'source $HOME/.bashrc; cd /home/torch2424/.files_caddy/aaronTheDev-apps && caddy -env caddy.env -email aaron@aaronthedev.com -agree -conf Caddyfile-vaporboy'
+ExecStart=/bin/bash --login -c 'source $HOME/.bashrc; cd /home/torch2424/.files_caddy/aaronTheDev-apps && caddy -env caddy.env -email aaron@aaronthedev.com -agree -conf hosts/Caddyfile-vaporboy'
 Restart=always
 
 [Install]
