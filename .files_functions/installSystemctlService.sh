@@ -13,3 +13,4 @@ installSystemctlService() {
 
 alias install-systemctl-service='installSystemctlService'
 alias installsystemctlservice='installSystemctlService'
+alias iss='installsystemctlservice'
