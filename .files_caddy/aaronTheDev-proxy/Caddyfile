@@ -140,8 +140,8 @@ mongo.aaronthedev.com, http://0.0.0.0:7000 {
     }
 }
 
-# Testbuild, Droppy directory for hosting quick builds
-testbuild.aaronthedev.com, http://0.0.0.0:2425 {
+# Testbuild / demo, Droppy directory for hosting quick builds
+demo.aaronthedev.com, http://0.0.0.0:2425 {
     gzip
     proxy / {$APP_IP}:2425 0.0.0.0:5000 {
         policy first
