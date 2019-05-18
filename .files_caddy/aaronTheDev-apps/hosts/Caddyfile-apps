@@ -1,0 +1,44 @@
+# No Comply Games Maintenance
+http://0.0.0.0:2424 {
+    gzip
+    root /home/torch2424/nocomplygames-maintenance
+}
+
+# Testbuild, Droppy directory for hosting quick builds
+http://0.0.0.0:2425 {
+    root /home/torch2424/droppyFileServer/files/testbuild.aaronthedev.com
+
+    browse
+}
+
+# Basic Auth for Inbucket
+tempmail.aaronthedev.com, http://0.0.0.0:9025 {
+    basicauth / torch2424 htpasswd=.htpasswd
+    proxy / localhost:9024 {
+        transparent
+        websocket
+    }
+}
+
+# Basic Auth for crontab-ui
+# https://github.com/alseambusher/crontab-ui
+cron.aaronthedev.com, http://0.0.0.0:9000 {
+    basicauth / torch2424 htpasswd=.htpasswd
+    proxy / localhost:9001 {
+        transparent
+    }
+}
+
+# Paint with Bob Dev
+http://0.0.0.0:6971 {
+  gzip
+  root /home/torch2424/paint-with-bob/frontend/public
+
+  # SPA Rewrites
+  # https://github.com/mholt/caddy/issues/1737
+  # https://caddy.community/t/configuring-caddy-to-be-used-with-a-spa-angular2/2506
+  rewrite {
+    regexp .*
+    to {path} {path}/ /
+  }
+}
