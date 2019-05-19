@@ -39,7 +39,9 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'airblade/vim-gitgutter'
 
 " Fuzzy Finding
-Plugin 'ctrlpvim/ctrlp.vim'
+" Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
 
 " Better JS Support
 Plugin 'pangloss/vim-javascript'
@@ -105,33 +107,42 @@ augroup mySyntastic
   au FileType tex let b:syntastic_mode = "passive"
 augroup END
 
+" ----- Ctrl-p settings -----
 " Ctrl-p new tab
 let g:ctrlp_prompt_mappings = {
     \ 'AcceptSelection("e")': ['<c-t>'],
     \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
     \ }
+" Ctrl-p not finding all files
+" https://github.com/kien/ctrlp.vim/issues/234
+let g:ctrlp_max_files=0
+let g:ctrlp_max_depth=100
 
-" ALE Linter settings
-let g:ale_sign_column_always = 1
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_linters = {'javascript': ['prettier']}
-let g:ale_fixers = {}
-let g:ale_fixers['javascript'] = ['prettier']
-
-" Comfortable motion Mouse support
-" let g:comfortable_motion_no_default_key_mappings = 1
-" noremap <silent> <ScrollWheelDown> :call comfortable_motion#flick(30)<CR>
-" noremap <silent> <ScrollWheelUp>   :call comfortable_motion#flick(-30)<CR>
-" let g:comfortable_motion_friction = 35.0
-" let g:comfortable_motion_air_drag = 9.75
+" ----- fzf settings -----
+" fzf new tab
+let g:fzf_action = {
+      \ 'return': 'tab split', 
+      \ 'ctrl-j': 'split',
+      \ 'ctrl-k': 'vsplit' }
+" Command for git grep
+" - fzf#vim#grep(command, with_column, [options], [fullscreen])
+command! -bang -nargs=* GGrep
+      \ call fzf#vim#grep(
+      \   'git grep --line-number '.shellescape(<q-args>), 0,
+      \   { 'dir': systemlist('git rev-parse --show-toplevel')[0] }, <bang>0)
+" Ctrl p to serch files
+nmap <c-p> :Files<cr>
+imap <c-p> :Files<cr>
+" Ctrl f to search in project
+nmap <c-f> :GGrep<cr>
+imap <c-f> :GGrep<cr>
 
 " Vim Multiple Curosrs Mouse Support
 " Undo Ctrl C mapping
 let g:VM_maps = {}
 let g:VM_maps["Visual Cursors"] = ''
 let g:VM_maps["Case Setting"] = ''
+
 " Mouse
 " let g:VM_mouse_mappings = 1
 " Doing this manually because CTRL Left click is an osx thing
@@ -172,7 +183,7 @@ imap <c-s> <esc>:w<cr>a
 nmap <c-q> :q<cr>
 imap <c-q> <esc>:q<cr>a
 
-" Ctrl p to paste like a normal person (with auto fixing indentation)
+" Ctrl v to paste like a normal person (with auto fixing indentation)
 " http://vim.wikia.com/wiki/Format_pasted_text_automatically
 nmap p p=`]
 nmap <c-v> p
@@ -206,6 +217,6 @@ autocmd InsertLeave * set nocul
 
 " Change Vim Cursor Depending on mode:
 " http://vim.wikia.com/wiki/Change_cursor_shape_in_different_modes
-let &t_SI = "\<Esc>[6 q"
+let &t_SI = "\<Esc>[4 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"

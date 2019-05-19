@@ -9,9 +9,13 @@
     "eofnewline": true,
     "fastdirty": true,
     "fileformat": "unix",
+    "filemanager-compressparent": true,
+    "filemanager-foldersfirst": true,
+    "filemanager-openonstart": false,
     "filemanager-showdotfiles": true,
     "filemanager-showignored": true,
     "ftoptions": true,
+    "hidehelp": false,
     "ignorecase": false,
     "indentchar": " ",
     "infobar": true,
@@ -20,6 +24,7 @@
     "linter": true,
     "literate": true,
     "matchbrace": true,
+    "matchbraceleft": false,
     "mouse": true,
     "pluginchannels": [
         "https://raw.githubusercontent.com/micro-editor/plugin-channel/master/channel.json"
