@@ -130,6 +130,8 @@ command! -bang -nargs=* GGrep
       \ call fzf#vim#grep(
       \   'git grep --line-number '.shellescape(<q-args>), 0,
       \   { 'dir': systemlist('git rev-parse --show-toplevel')[0] }, <bang>0)
+" When we need better searching / replacing
+" https://thevaluable.dev/vim-search/
 " Ctrl p to serch files
 nmap <c-p> :Files<cr>
 imap <c-p> :Files<cr>
