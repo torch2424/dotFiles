@@ -24,6 +24,10 @@ amptestfile() {
   gulp test --watch --files=$1
 }
 
+amptestlocalchanges() {
+  gulp test --local-changes --watch
+}
+
 ampserveexample() {
   gulp --extensions_from=$1 --with_inabox
 }
