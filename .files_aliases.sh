@@ -57,7 +57,6 @@ alias gitdiffbranchstat="gitdiffbranch --stat"
 alias gdbs="gitdiffbranchstat"
 alias gdsb="gdbs"
 
-
 # systemctl alias
 alias ssdr='sudo systemctl daemon-reload'
 alias ssstart='sudo systemctl start '
