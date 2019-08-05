@@ -92,7 +92,7 @@ else
   export PATH="$HOME/.cargo/bin:$PATH"
 
   # Wasmer
-  export WASMER_DIR="/home/$(whoami)/.wasmer"
+  export WASMER_DIR="$HOME/.wasmer"
   [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"  # This loads wasmer
 
    # Set OSX Paths
