@@ -137,6 +137,9 @@ alias android-avd="androidavd"
 alias pico8="/Applications/PICO-8.app/Contents/MacOS/pico8"
 alias pico-8="pico8"
 
+# Gbdk Compiler
+alias gbdk="lcc"
+
 # Alias to scan wifi for things like raspberry pi's
 alias scanwifi='nmap -sP 192.168.1.0/24'
 alias scanwifi-onhub='nmap -sP 192.168.86.0/24'

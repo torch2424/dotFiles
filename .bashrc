@@ -95,6 +95,9 @@ else
   export WASMER_DIR="/home/$(whoami)/.wasmer"
   [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"  # This loads wasmer
 
+  # GBDK
+  export PATH="/opt/gbdk/bin:$PATH"
+
    # Set OSX Paths
   if [ "$(uname)" == "Darwin" ]; then
     # Java Path
