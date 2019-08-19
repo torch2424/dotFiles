@@ -91,6 +91,10 @@ else
   # Rust settings
   export PATH="$HOME/.cargo/bin:$PATH"
 
+  # LLVM / Wasm Settings
+  # https://00f.net/2019/04/07/compiling-to-webassembly-with-llvm-and-clang/
+  export PATH="/usr/local/opt/llvm/bin:$PATH"
+
   # Wasmer
   export WASMER_DIR="$HOME/.wasmer"
   [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"  # This loads wasmer
