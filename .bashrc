@@ -98,6 +98,9 @@ else
   # GBDK
   export PATH="/opt/gbdk/bin:$PATH"
 
+  # gifgen
+  export PATH="$HOME/gifgen/gifgen:$PATH"
+
    # Set OSX Paths
   if [ "$(uname)" == "Darwin" ]; then
     # Java Path
