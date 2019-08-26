@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e
-
 # Function to compare wasm binaries
 # https://superuser.com/questions/125376/how-do-i-compare-binary-files-in-linux
 
