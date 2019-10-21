@@ -185,3 +185,6 @@ alias bim='vim'
 
 # Gifgen
 alias gifgen='~/gifgen/gifgen'
+
+# Thefuck
+eval "$(thefuck --alias)"
