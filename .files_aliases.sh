@@ -182,3 +182,6 @@ alias cim='vim'
 # When you have a homie who is a blood,
 # and you try to teach them to code...
 alias bim='vim'
+
+# Gifgen
+alias gifgen='~/gifgen/gifgen'
