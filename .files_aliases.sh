@@ -183,5 +183,8 @@ alias cim='vim'
 # and you try to teach them to code...
 alias bim='vim'
 
+# Gifgen
+alias gifgen='~/gifgen/gifgen'
+
 # Thefuck
 eval "$(thefuck --alias)"
