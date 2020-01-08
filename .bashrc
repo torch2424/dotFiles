@@ -103,6 +103,10 @@ else
   # gifgen
   export PATH="$HOME/gifgen/gifgen:$PATH"
 
+  # Wasienv
+  export WASIENV_DIR="$HOME/.wasienv"
+  [ -s "$WASIENV_DIR/wasienv.sh" ] && source "$WASIENV_DIR/wasienv.sh"
+
    # Set OSX Paths
   if [ "$(uname)" == "Darwin" ]; then
     # Java Path
