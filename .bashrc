@@ -87,6 +87,8 @@ else
   export GOPATH=$HOME/goPath
   # Go bin Global
   export PATH="$PATH:$GOPATH/bin"
+  # Add support for Go Modules
+  export GO111MODULE=on
 
   # Rust settings
   export PATH="$HOME/.cargo/bin:$PATH"
