@@ -35,6 +35,7 @@ echo '
  echo "export GOROOT=/usr/local/go" >> $BASHRC
  echo "export GOPATH=~/goPath" >> $BASHRC
  echo "export PATH=\"$PATH:$GOROOT/bin:$GOPATH/bin\"" >> $BASHRC
+ echo "export GO111MODULE=on" >> $BASHRC
  source $BASHRC
 
  #Create reuired go folders
