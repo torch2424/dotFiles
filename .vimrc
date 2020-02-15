@@ -163,7 +163,9 @@ set mouse=a
 " set mouse=r
 " Mouse select on long lines
 " https://stackoverflow.com/questions/7000960/in-vim-why-doesnt-my-mouse-work-past-the-220th-column
-set ttymouse=sgr
+if !has('nvim')
+  set ttymouse=sgr
+endif
 
 " Fix Copy Paste
 " https://stackoverflow.com/questions/17561706/vim-yank-does-not-seem-to-work
