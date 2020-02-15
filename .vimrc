@@ -73,6 +73,8 @@ set number
 set showcmd
 set incsearch
 set hlsearch
+" Always show gutter (dont move left to right)
+set signcolumn=yes
 " Update git and syntax more quickly
 set updatetime=250
 syntax on
