@@ -73,6 +73,8 @@ set number
 set showcmd
 set incsearch
 set hlsearch
+" Update git and syntax more quickly
+set updatetime=250
 syntax on
 
 " --- PLUGIN SETTINGS START ---
