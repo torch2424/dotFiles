@@ -35,8 +35,8 @@ Plugin 'editorconfig/editorconfig-vim'
 " () and {} autocomplete
 Plugin 'tpope/vim-surround'
 
-" Syntax Checking
-Plugin 'vim-syntastic/syntastic'
+" Syntax Checking and Highlighting
+Plugin 'sheerun/vim-polyglot'
 
 " Inline Git
 Plugin 'airblade/vim-gitgutter'
@@ -45,13 +45,6 @@ Plugin 'airblade/vim-gitgutter'
 " Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
-
-" Better JS Support
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-
-" Typescript Support
-Plugin 'leafgarland/typescript-vim'
 
 " Linting (Always causes weird erros so commenting)
 " Plugin 'w0rp/ale'
@@ -101,14 +94,6 @@ autocmd VimEnter * call NERDTreeAddKeyMap({ 'key': '<2-LeftMouse>', 'scope': "Fi
 " We need this for plugins like Syntastic and vim-gitgutter which put symbols
 " in the sign column.
 hi clear SignColumn
-
-" ----- scrooloose/syntastic settings -----
-let g:syntastic_error_symbol = '✘'
-let g:syntastic_warning_symbol = "▲"
-augroup mySyntastic
-  au!
-  au FileType tex let b:syntastic_mode = "passive"
-augroup END
 
 " ----- Ctrl-p settings -----
 " Ctrl-p new tab
