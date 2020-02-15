@@ -7,6 +7,9 @@
 " Enable most vim settings
 set nocompatible
 
+" Force bash as shell (fish/vundle not compatible)
+set shell=/bin/bash
+
 " Vundle Setup
 filetype off
 
