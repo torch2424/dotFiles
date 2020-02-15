@@ -49,6 +49,11 @@ Plugin 'junegunn/fzf.vim'
 " Linting
 Plugin 'dense-analysis/ale'
 
+" Autocomplete
+if has('nvim')
+  Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+endif
+
 "Vim scrolling that wont make your eyes bleed
 " Plugin 'yuttie/comfortable-motion.vim'
 
@@ -94,6 +99,11 @@ autocmd VimEnter * call NERDTreeAddKeyMap({ 'key': '<2-LeftMouse>', 'scope': "Fi
 " We need this for plugins like Syntastic and vim-gitgutter which put symbols
 " in the sign column.
 hi clear SignColumn
+
+" ----- Deoplete settings -----
+if has('nvim')
+  let g:deoplete#enable_at_startup = 1
+endif
 
 " ----- Ale settings -----
 let g:ale_sign_error = '✘'
