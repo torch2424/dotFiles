@@ -46,8 +46,8 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 
-" Linting (Always causes weird erros so commenting)
-" Plugin 'w0rp/ale'
+" Linting
+Plugin 'dense-analysis/ale'
 
 "Vim scrolling that wont make your eyes bleed
 " Plugin 'yuttie/comfortable-motion.vim'
@@ -94,6 +94,10 @@ autocmd VimEnter * call NERDTreeAddKeyMap({ 'key': '<2-LeftMouse>', 'scope': "Fi
 " We need this for plugins like Syntastic and vim-gitgutter which put symbols
 " in the sign column.
 hi clear SignColumn
+
+" ----- Ale settings -----
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '▲'
 
 " ----- Ctrl-p settings -----
 " Ctrl-p new tab
