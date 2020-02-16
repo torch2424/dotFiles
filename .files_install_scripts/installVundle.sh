@@ -1,15 +1,18 @@
 # https://github.com/jez/vim-as-an-ide/commit/dcc0c8d
 
-echo "Installing vim..."
+echo "Installing vim & neovim..."
 if [ "$(uname)" == "Darwin" ]; then
   # Do something under Mac OS X platform
 
   # Vim instlled by default
-  echo "vim already installed"
+  # echo "vim already installed"
+
+  # Install neovim
+  brew install neovim
 elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
   # Do something under GNU/Linux platform
   sudo apt update
-  sudo apt install -y vim vim-gui-common
+  sudo apt install -y vim vim-gui-common neovim
 fi
 
 echo "Installing fzf..."

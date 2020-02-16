@@ -174,7 +174,9 @@ alias mic='micro'
 
 # Vim Aliases
 # Need to allow CTRL S for vim: https://stackoverflow.com/questions/3446320/in-vim-how-to-map-save-to-ctrl-s
-alias vim="stty stop '' start '' -ixoff; vim"
+alias vim="stty stop '' start '' -ixoff; nvim"
+# Now using neovim by default
+alias nvim='vim'
 alias v='vim'
 alias vi='vim'
 # When you're a crip, but you love to code...
@@ -185,6 +187,3 @@ alias bim='vim'
 
 # Gifgen
 alias gifgen='~/gifgen/gifgen'
-
-# Thefuck
-eval "$(thefuck --alias)"
