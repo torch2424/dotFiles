@@ -172,11 +172,10 @@ alias karmatestfile='karma start --auto-watch --grep'
 alias m='micro'
 alias mic='micro'
 
-# Vim Aliases
+# Vim Aliases (I'm using NeoVim by default)
 # Need to allow CTRL S for vim: https://stackoverflow.com/questions/3446320/in-vim-how-to-map-save-to-ctrl-s
-alias vim="stty stop '' start '' -ixoff; nvim"
-# Now using neovim by default
-alias nvim='vim'
+# alias vim="stty stop '' start '' -ixoff; nvim"
+alias vim='nvim'
 alias v='vim'
 alias vi='vim'
 # When you're a crip, but you love to code...
