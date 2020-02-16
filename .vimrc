@@ -47,7 +47,7 @@ Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 
 " Linting
-Plugin 'dense-analysis/ale'
+" Plugin 'dense-analysis/ale'
 
 " Autocomplete
 if has('nvim')
