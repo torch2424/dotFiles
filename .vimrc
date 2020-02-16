@@ -7,6 +7,9 @@
 " Enable most vim settings
 set nocompatible
 
+" Force bash as shell (fish/vundle not compatible)
+set shell=/bin/bash
+
 " Vundle Setup
 filetype off
 
@@ -32,8 +35,8 @@ Plugin 'editorconfig/editorconfig-vim'
 " () and {} autocomplete
 Plugin 'tpope/vim-surround'
 
-" Syntax Checking
-Plugin 'vim-syntastic/syntastic'
+" Syntax Checking and Highlighting
+Plugin 'sheerun/vim-polyglot'
 
 " Inline Git
 Plugin 'airblade/vim-gitgutter'
@@ -43,15 +46,13 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
 
-" Better JS Support
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
+" Linting
+Plugin 'dense-analysis/ale'
 
-" Typescript Support
-Plugin 'leafgarland/typescript-vim'
-
-" Linting (Always causes weird erros so commenting)
-" Plugin 'w0rp/ale'
+" Autocomplete
+if has('nvim')
+  Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+endif
 
 "Vim scrolling that wont make your eyes bleed
 " Plugin 'yuttie/comfortable-motion.vim'
@@ -72,6 +73,10 @@ set number
 set showcmd
 set incsearch
 set hlsearch
+" Always show gutter (dont move left to right)
+set signcolumn=yes
+" Update git and syntax more quickly
+set updatetime=250
 syntax on
 
 " --- PLUGIN SETTINGS START ---
@@ -99,13 +104,14 @@ autocmd VimEnter * call NERDTreeAddKeyMap({ 'key': '<2-LeftMouse>', 'scope': "Fi
 " in the sign column.
 hi clear SignColumn
 
-" ----- scrooloose/syntastic settings -----
-let g:syntastic_error_symbol = '✘'
-let g:syntastic_warning_symbol = "▲"
-augroup mySyntastic
-  au!
-  au FileType tex let b:syntastic_mode = "passive"
-augroup END
+" ----- Deoplete settings -----
+if has('nvim')
+  let g:deoplete#enable_at_startup = 1
+endif
+
+" ----- Ale settings -----
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '▲'
 
 " ----- Ctrl-p settings -----
 " Ctrl-p new tab
@@ -163,7 +169,9 @@ set mouse=a
 " set mouse=r
 " Mouse select on long lines
 " https://stackoverflow.com/questions/7000960/in-vim-why-doesnt-my-mouse-work-past-the-220th-column
-set ttymouse=sgr
+if !has('nvim')
+  set ttymouse=sgr
+endif
 
 " Fix Copy Paste
 " https://stackoverflow.com/questions/17561706/vim-yank-does-not-seem-to-work
