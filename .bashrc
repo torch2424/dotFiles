@@ -97,6 +97,16 @@ else
   export WASMER_DIR="$HOME/.wasmer"
   [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"  # This loads wasmer
 
+  # Lucet
+  export PATH="/opt/lucet/bin:${PATH}"
+  export LD_LIBRARY_PATH="/opt/lucet/lib:${LD_LIBRARY_PATH}"
+  export DYLD_LIBRARY_PATH="/opt/lucet/lib:${DYLD_LIBRARY_PATH}"
+
+  if [ $# -gt 0 ]; then
+      exec "$@"
+  fi
+
+
   # GBDK
   export PATH="/opt/gbdk/bin:$PATH"
 
