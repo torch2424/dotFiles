@@ -101,10 +101,9 @@ else
   export PATH="/opt/lucet/bin:${PATH}"
   export LD_LIBRARY_PATH="/opt/lucet/lib:${LD_LIBRARY_PATH}"
   export DYLD_LIBRARY_PATH="/opt/lucet/lib:${DYLD_LIBRARY_PATH}"
-
-  if [ $# -gt 0 ]; then
-      exec "$@"
-  fi
+  #if [ $# -gt 0 ]; then
+  #    exec "$@"
+  #fi
 
 
   # GBDK
@@ -131,7 +130,9 @@ else
   fi
 
   # Clear the console
-  clear
+  # This will cause "TERM environment variable not set" error
+  # https://stackoverflow.com/questions/16242025/term-environment-variable-not-set#comment78763554_33679937
+  # clear
 
   # Finally, load neo fetch if it is installed
   if hash neofetch 2>/dev/null; then
