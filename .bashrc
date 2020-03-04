@@ -116,7 +116,7 @@ else
   export WASIENV_DIR="$HOME/.wasienv"
   [ -s "$WASIENV_DIR/wasienv.sh" ] && source "$WASIENV_DIR/wasienv.sh"
 
-   # Set OSX Paths
+   # Set OSX Development Paths
   if [ "$(uname)" == "Darwin" ]; then
     # Java Path
     export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
@@ -127,6 +127,11 @@ else
     # LLVM / Wasm Settings
     # https://00f.net/2019/04/07/compiling-to-webassembly-with-llvm-and-clang/
     export PATH="/usr/local/opt/llvm/bin:$PATH"
+  fi
+
+  # Set Linux Development Paths
+  if [ "$(uname)" == "Linux" ]; then
+    export LLVM_BIN="/usr/lib/llvm-*/bin"
   fi
 
   # Clear the console
