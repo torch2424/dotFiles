@@ -105,6 +105,10 @@ else
   #    exec "$@"
   #fi
 
+  # Wasmtime
+  export WASMTIME_HOME="$HOME/.wasmtime"
+  export PATH="$WASMTIME_HOME/bin:$PATH"
+
 
   # GBDK
   export PATH="/opt/gbdk/bin:$PATH"
