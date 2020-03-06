@@ -93,6 +93,11 @@ else
   # Rust settings
   export PATH="$HOME/.cargo/bin:$PATH"
 
+  # PyEnv Python Managment
+  export PATH="/home/torch2424/.pyenv/bin:$PATH"
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+
   # Wasmer
   export WASMER_DIR="$HOME/.wasmer"
   [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"  # This loads wasmer
