@@ -95,8 +95,11 @@ else
 
   # PyEnv Python Managment
   export PATH="/home/torch2424/.pyenv/bin:$PATH"
-  eval "$(pyenv init -)"
-  eval "$(pyenv virtualenv-init -)"
+  # https://stackoverflow.com/a/677212
+  if hash pyenv 2>/dev/null; then
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+  fi
 
   # Wasmer
   export WASMER_DIR="$HOME/.wasmer"
