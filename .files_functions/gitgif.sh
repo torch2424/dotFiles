@@ -2,7 +2,7 @@
 
 
 __gitgif() {
-  if [ $# -lt 1 ] || [ $# -gt 4 ]; then
+  if [ $# -lt 1 ] || [ $# -gt 6 ]; then
     echo "This will make a best guess to convert a video into a github friendly .gif"
     echo "Works best on videos ~30s"
     echo "Default values will give you a ~4 MB file"
@@ -10,7 +10,7 @@ __gitgif() {
     echo " "
     echo "USAGE:"
     echo " "
-    echo "gitgif [video file e.g (example.mp4)] [Optional: width of new video to scale to. Default: 1000] [Optional: Input FPS of the Input video. Default: 30] [Optional: Output FPS of the gif. Default: 30] [Optional: Where to start the gif in the input video. In seconds. Default: 0] [Optional: Where to end the gif in the input video. In Seconds. Default: Video End time ]"
+    echo "gitgif [video file e.g (example.mp4)] [Optional: width of new video to scale to. Default: 1000] [Optional: fps of the output gif] [Optional: Input FPS of the Input video. Default: 30] [Optional: Where to start the gif in the input video. In seconds. Default: 0] [Optional: Where to end the gif in the input video. In Seconds. Default: Video End time ]"
   elif ! type "ffmpeg" > /dev/null 2>&1; then
     echo "ffmpeg and gifgen are required for $0"
     echo "OSX: brew install lukechilds/tap/gifgen"
@@ -41,23 +41,26 @@ __gitgif() {
       BASEWIDTH=$2
     fi
 
-    # FPS of the video
-    INPUT_FPS=30
-    # Check if we passed a FPS
+    # FPS of the Gif
+    GIF_FPS=15
+    # Check if we passed a gif FPS
     if [ -z $3 ]; then
-      INPUT_FPS=30
+      GIF_FPS=15
     else
-      INPUT_FPS=$3
+      GIF_FPS=$3
     fi
 
     # FPS of the video
-    OUTPUT_FPS=30
+    INPUT_FPS=30
     # Check if we passed a FPS
     if [ -z $4 ]; then
-      OUTPUT_FPS=30
+      INPUT_FPS=30
     else
-      FPS=$4
+      INPUT_FPS=$4
     fi
+
+    # FPS of the output ffmpeg video
+    OUTPUT_FPS=30
 
     # Set a start time
     STARTTIME=0
@@ -101,7 +104,7 @@ __gitgif() {
     # Install gifgen:
     # https://github.com/lukechilds/gifgen
     # Generate the gif
-    gifgen -o "$FILENAME.gif" $TEMP
+    gifgen -f $GIF_FPS -o "$FILENAME.gif" $TEMP
   fi
 }
 
