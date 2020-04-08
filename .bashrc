@@ -117,6 +117,11 @@ else
   export WASMTIME_HOME="$HOME/.wasmtime"
   export PATH="$WASMTIME_HOME/bin:$PATH"
 
+  # Google CLoud SDK
+  # The next line updates PATH for the Google Cloud SDK.
+  if [ -f '/home/torch2424/google-cloud-sdk/path.bash.inc' ]; then . '/home/torch2424/google-cloud-sdk/path.bash.inc'; fi
+  # The next line enables shell command completion for gcloud.
+  if [ -f '/home/torch2424/google-cloud-sdk/completion.bash.inc' ]; then . '/home/torch2424/google-cloud-sdk/completion.bash.inc'; fi
 
   # GBDK
   export PATH="/opt/gbdk/bin:$PATH"
