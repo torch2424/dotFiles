@@ -89,6 +89,8 @@ else
   export PATH="$PATH:$GOPATH/bin"
   # Add support for Go Modules
   export GO111MODULE=on
+  #TinyGo
+  export PATH=$PATH:/usr/local/tinygo/bin
 
   # Rust settings
   export PATH="$HOME/.cargo/bin:$PATH"
