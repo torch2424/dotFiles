@@ -230,3 +230,8 @@ autocmd InsertLeave * set nocul
 let &t_SI = "\<Esc>[4 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
+
+" Disable Page Up and Page Down, as I never use them, and my work laptop has them in a horrible place
+noremap <PageUp> <Nop>
+noremap <PageDown> <Nop>
+

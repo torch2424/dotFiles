@@ -135,6 +135,9 @@ else
   export WASIENV_DIR="$HOME/.wasienv"
   [ -s "$WASIENV_DIR/wasienv.sh" ] && source "$WASIENV_DIR/wasienv.sh"
 
+  # Wabt
+  export PATH="$HOME/wabt/bin:$PATH"
+
    # Set OSX Development Paths
   if [ "$(uname)" == "Darwin" ]; then
     # Java Path
