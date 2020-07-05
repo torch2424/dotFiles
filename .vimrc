@@ -235,3 +235,6 @@ let &t_EI = "\<Esc>[2 q"
 noremap <PageUp> <Nop>
 noremap <PageDown> <Nop>
 
+" Add support for file write detection by things like parcel
+" https://en.parceljs.org/hmr.html#safe-write 
+:set backupcopy=yes 
