@@ -154,6 +154,9 @@ else
   # Set Linux Development Paths
   if [ "$(uname)" == "Linux" ]; then
     export LLVM_BIN="/usr/lib/llvm-*/bin"
+
+    # Kitty terminal
+    export PATH="$HOME/.local/bin/:$PATH"
   fi
 
   # Clear the console
