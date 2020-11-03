@@ -38,7 +38,7 @@ aaronTheDevHttpPortShare() {
     echo "NOTE: Service will continue to run without confirmation of successful connection."
     echo " "
 
-    ssh -p 1124 "$1"@proxy.aaronthedev.com -N -R 9090:localhost:"$2"
+    ssh -p 1124 "$1"@proxy.aaronthedev.com -N -R 9091:localhost:"$2"
   fi
 }
 
