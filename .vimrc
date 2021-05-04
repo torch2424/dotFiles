@@ -26,7 +26,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'morhetz/gruvbox'
 
 " File Tree
-Plugin 'scrooloose/nerdtree'
+Plugin 'preservim/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 
 " Editor Config

@@ -35,4 +35,10 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 # https://github.com/VundleVim/Vundle.vim/wiki/Tips-and-Tricks
 vim -c VundleUpdate -c quitall
 
+# nerdtree broke clicking a file to open it in 6.10.5, so we need to manually switch to this release
+# As in my experience, it was not fixed completely.
+# See: https://github.com/preservim/nerdtree/issues/1224
+# See: https://github.com/preservim/nerdtree/pull/1225
+(cd ~/.vim/bundle/nerdtree && git checkout 6.10.4)
+
 echo "Done!"
