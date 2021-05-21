@@ -49,6 +49,10 @@ Plugin 'junegunn/fzf.vim'
 " Linting
 " Plugin 'dense-analysis/ale'
 
+" Go Support
+" https://github.com/fatih/vim-go
+Plugin 'fatih/vim-go'
+
 " Autocomplete
 if has('nvim')
   Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -144,6 +148,10 @@ imap <c-p> :Files<cr>
 " Ctrl f to search in project
 nmap <c-f> :GGrep<cr>
 imap <c-f> :GGrep<cr>
+
+" --- vim-go ---
+" Set our fmt command
+let g:go_fmt_command = "goimports"
 
 " Vim Multiple Curosrs Mouse Support
 " Undo Ctrl C mapping
