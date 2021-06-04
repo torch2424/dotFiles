@@ -158,6 +158,9 @@ else
 
     # Kitty terminal
     export PATH="$HOME/.local/bin/:$PATH"
+
+    # Fzf
+    [ -f ~/.fzf.bash ] && source ~/.fzf.bash
   fi
 
   # Clear the console
