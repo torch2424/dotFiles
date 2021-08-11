@@ -168,9 +168,21 @@ else
   # https://stackoverflow.com/questions/16242025/term-environment-variable-not-set#comment78763554_33679937
   # clear
 
+  # Load our bash theme, if we are in an interactive shell
+  if [[ $- == *i* ]]; then
+    _source_all .files_libs/sexy_prompt
+
+    # Load a Demo friendly Bash theme
+    # https://ezprompt.net/
+    # export PS1="\[\e[36m\]demouser\[\e[m\] in \[\e[35m\]\w\[\e[m\] \\$ "
+
+    # return
+  fi
+
   # Finally, load neo fetch if it is installed
   if hash neofetch 2>/dev/null; then
-          neofetch
+    neofetch
+    # return
   else
   	echo " "
   	echo "To be really cool, install neofetch: https://github.com/dylanaraps/neofetch"
