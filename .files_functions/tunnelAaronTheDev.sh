@@ -32,13 +32,13 @@ aaronTheDevHttpPortShare() {
     echo " "
   else
 
-    echo "Connecting to $1@proxy.aaronthedev.com -p 1124."
-    echo "Remote Url: http://proxy.aaronthedev.com:9090 or https://tunnel.aaronthedev.com"
+    echo "Connecting to $1@apps-11-2021.aaronthedev.com -p 1124."
+    echo "Remote Url: http://apps-11-2021.aaronthedev.com:9090 or https://tunnel.aaronthedev.com"
     echo " "
     echo "NOTE: Service will continue to run without confirmation of successful connection."
     echo " "
 
-    ssh -p 1124 "$1"@proxy.aaronthedev.com -N -R 9091:localhost:"$2"
+    ssh -p 1124 "$1"@apps-11-2021.aaronthedev.com -N -R 9091:localhost:"$2"
   fi
 }
 
