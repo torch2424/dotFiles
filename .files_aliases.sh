@@ -67,6 +67,11 @@ alias ssstop='sudo systemctl stop '
 alias ssdisable='sudo systemctl disable '
 alias sj='sudo journalctl -a --no-pager -u '
 
+# Cron Aliases
+alias cronedit='crontab -e'
+alias cronlog='sudo grep CRON /var/log/syslog'
+alias cronlogs='sudo grep CRON /var/log/syslog'
+
 # Vagrant Aliases
 alias vu='vagrant up'
 alias vh='vagrant halt'
