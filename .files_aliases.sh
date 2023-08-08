@@ -96,6 +96,8 @@ alias cds='cd ~/Source/'
 alias cdg='cd ~/goPath/'
 alias cdpico='cd ~/Library/Application\ Support/pico-8/carts/'
 alias cdpico8='cdpico'
+alias cdw='cd /mnt/c/Users/torch'
+alias cdws='cd /mnt/c/Users/torch/Source'
 
 # chmod aliases
 alias chmx='chmod +x'
