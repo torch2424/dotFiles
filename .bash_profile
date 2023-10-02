@@ -1,5 +1,7 @@
 # Simply Source our agnostice .bashrc
-source ~/.bashrc
+if [ -f "$HOME/.bashrc" ]; then
+    source "$HOME/.bashrc"
+fi
 
 # startup virtualenv-burrito
 if [ -f $HOME/.venvburrito/startup.sh ]; then

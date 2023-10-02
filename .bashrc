@@ -28,11 +28,10 @@ checkenv() {
 # Run all check env commands here
 checkenv "SSH_CLIENT" 0 && checkenv "SSH_TTY" 1
 
-# Check if the previous check env commands all returned 0 for true / success
-if [ $? -eq 0 ] ; then
-    # Do not allow sourcing the bashrc
-    return
-else
+# Check if the last command did NOT return true / success. Thus, we want to check
+# for != 0. Also, sometimes things go weird with this check, so lets just allow us to override
+# with a variable. This is helpful for using Terminus's Mosh Functionality
+if [ $? -ne 0 ] || [ "$TORCH_SOURCE_BASHRC" = true ] ; then
   # Fucntion to source from the user home directory
   _user_source() {
   	source ~/$1
@@ -192,5 +191,7 @@ else
   	echo "To be really cool, install neofetch: https://github.com/dylanaraps/neofetch"
   	echo " "
   fi
+else
+  # Do not allow sourcing the bashrc
+  return
 fi
-
