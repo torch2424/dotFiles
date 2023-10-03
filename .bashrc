@@ -55,7 +55,8 @@ if [ $? -ne 0 ] || [ "$TORCH_SOURCE_BASHRC" = true ] ; then
   _user_source .files_libs/index.sh
 
   # Completion for all of our aliases
-  _user_source .files_completion.sh
+  # Not Working on OSX as of 10-3-2023
+  # _user_source .files_completion.sh
 
   # Cache our Git credentials
   git config --global credential.helper 'cache --timeout=36000'
@@ -173,6 +174,7 @@ if [ $? -ne 0 ] || [ "$TORCH_SOURCE_BASHRC" = true ] ; then
 
   # Load our bash theme, if we are in an interactive shell
   if [[ $- == *i* ]]; then
+    # Disabling Sexy Prompt as it's having issues with Kitty Term on the latest MacOs 10-3-2023
     _source_all .files_libs/sexy_prompt
 
     # Load a Demo friendly Bash theme
