@@ -96,6 +96,19 @@ let g:lightline = {
 " ----- jistr/vim-nerdtree-tabs -----
 " Open/close NERDTree Tabs with \t
 nmap <silent> <leader>t :NERDTreeTabsToggle<CR>
+" Double click to open files in a new tab
+function! OpenNERDTreeFileInTab()
+    let l:node = g:NERDTreeFileNode.GetSelected()
+    if l:node != {} && has_key(l:node, 'path')
+        if !l:node.path['isDirectory']
+            let l:filepath = l:node.path.str()
+            exec 'tabedit ' . l:filepath
+        else
+            normal! <CR>
+        endif
+    endif
+endfunction
+autocmd FileType nerdtree nnoremap <silent> <buffer> <2-LeftMouse> :call OpenNERDTreeFileInTab()<CR>
 " To have NERDTree always open on startup
 let g:nerdtree_tabs_open_on_console_startup = 1
 let NERDTreeShowHidden=1
