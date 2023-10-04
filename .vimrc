@@ -104,9 +104,10 @@ function! OpenNERDTreeFileInTab()
             let l:filepath = l:node.path.str()
             exec 'tabedit ' . l:filepath
         else
-            normal! <CR>
+            call l:node.toggleOpen()
         endif
     endif
+    NERDTreeRefresh
 endfunction
 autocmd FileType nerdtree nnoremap <silent> <buffer> <2-LeftMouse> :call OpenNERDTreeFileInTab()<CR>
 " To have NERDTree always open on startup
