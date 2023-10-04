@@ -256,14 +256,15 @@ sexy_bash_prompt_get_git_info () {
 }
 
 # Define the sexy-bash-prompt
+# Modified using ChatGPT to remove echo -n on 10-3-2023
 PS1="\[$sexy_bash_prompt_user_color\]\u\[$sexy_bash_prompt_reset\] \
 \[$sexy_bash_prompt_preposition_color\]at\[$sexy_bash_prompt_reset\] \
 \[$sexy_bash_prompt_device_color\]\h\[$sexy_bash_prompt_reset\] \
 \[$sexy_bash_prompt_preposition_color\]in\[$sexy_bash_prompt_reset\] \
 \[$sexy_bash_prompt_dir_color\]\w\[$sexy_bash_prompt_reset\]\
-\$( sexy_bash_prompt_is_on_git && \
-  echo -n \" \[$sexy_bash_prompt_preposition_color\]on\[$sexy_bash_prompt_reset\] \" && \
-  echo -n \"\[$sexy_bash_prompt_git_status_color\]\$(sexy_bash_prompt_get_git_info)\" && \
-  echo -n \"\[$sexy_bash_prompt_git_progress_color\]\$(sexy_bash_prompt_get_git_progress)\" && \
-  echo -n \"\[$sexy_bash_prompt_preposition_color\]\")\n\[$sexy_bash_prompt_reset\]\
-\[$sexy_bash_prompt_symbol_color\]$sexy_bash_prompt_symbol \[$sexy_bash_prompt_reset\]"
+\$(sexy_bash_prompt_is_on_git && \
+  echo \" \[$sexy_bash_prompt_preposition_color\]on\[$sexy_bash_prompt_reset\] \
+\[$sexy_bash_prompt_git_status_color\]\$(sexy_bash_prompt_get_git_info)\
+\[$sexy_bash_prompt_git_progress_color\]\$(sexy_bash_prompt_get_git_progress)\
+\[$sexy_bash_prompt_preposition_color\]\")\[$sexy_bash_prompt_reset\]\
+\[$sexy_bash_prompt_symbol_color\] $sexy_bash_prompt_symbol \[$sexy_bash_prompt_reset\]"
