@@ -175,10 +175,6 @@ alias webpack='./node_modules/.bin/webpack --config webpack.config.js'
 alias karma='./node_modules/karma/bin/karma'
 alias karmatestfile='karma start --auto-watch --grep'
 
-# Micro Aliases
-alias m='micro'
-alias mic='micro'
-
 # Vim Aliases (I'm using NeoVim by default)
 # Need to allow CTRL S for vim: https://stackoverflow.com/questions/3446320/in-vim-how-to-map-save-to-ctrl-s
 # alias vim="stty stop '' start '' -ixoff; nvim"
@@ -190,6 +186,9 @@ alias cim='vim'
 # When you have a homie who is a blood,
 # and you try to teach them to code...
 alias bim='vim'
+
+# pnpm aliases
+alias p='pnpm'
 
 # Gifgen
 alias gifgen='~/gifgen/gifgen'
