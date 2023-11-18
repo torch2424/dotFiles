@@ -187,7 +187,8 @@ alias cim='vim'
 # and you try to teach them to code...
 alias bim='vim'
 
-# pnpm aliases
+# npm aliases
+alias n='npm'
 alias p='pnpm'
 
 # Gifgen
