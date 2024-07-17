@@ -139,6 +139,10 @@ if [ $? -ne 0 ] || [ "$TORCH_SOURCE_BASHRC" = true ] ; then
   # Wabt
   export PATH="$HOME/wabt/bin:$PATH"
 
+  # Spotter AWS 
+  export AWS_PROFILE=aws1
+
+
    # Set OSX Development Paths
   if [ "$(uname)" == "Darwin" ]; then
     # Java Path
